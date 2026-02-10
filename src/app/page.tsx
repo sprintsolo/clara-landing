@@ -455,8 +455,8 @@ export default function Home() {
               <span>✦</span> AI가 학습하는 업무 협업 플랫폼
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              이메일 답장을 넘어 업무 전체를 이해하는<br />
-              <span className="gradient-text">우리 회사만의 AI 매니저</span>
+              우리 팀의 프로젝트 관리를 돕는<br />
+              첫 AI 매니저, <span className="gradient-text">클라라</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
               모든 업무 커뮤니케이션에 AI가 참여하여 학습하고,<br className="hidden md:block" />
