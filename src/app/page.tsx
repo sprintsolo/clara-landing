@@ -243,7 +243,7 @@ function ScreenshotChat() {
           <div className="text-[10px] font-semibold text-gray-500 mb-1.5">산출물</div>
           <div className="space-y-1.5">
             <div className="flex items-center gap-1.5 p-1.5 bg-gray-50 rounded text-[10px] text-gray-600">
-              📄 FutureNext-혁신기술지원센터
+              📄 SprintSolo-혁신기술지원센터
             </div>
             <div className="flex items-center gap-1.5 p-1.5 bg-gray-50 rounded text-[10px] text-gray-600">
               📄 창업기업 증빙 서류 준비 가이드
@@ -893,7 +893,7 @@ export default function Home() {
                 <span className="text-white font-bold text-xs">C</span>
               </div>
               <span className="text-lg font-bold text-gray-900">Clara</span>
-              <span className="text-xs text-gray-400 ml-2">AI 기반 이메일 협업 WorkOS</span>
+              <span className="text-xs text-gray-400 ml-2">AI 기반 이메일 협업 WorkOS by SprintSolo</span>
             </div>
             <div className="flex items-center gap-6 text-sm text-gray-500">
               <a href="#features" className="hover:text-violet-600 transition">기능</a>
@@ -903,7 +903,7 @@ export default function Home() {
             </div>
           </div>
           <div className="text-center text-xs text-gray-400 mt-8">
-            © 2026 Clara by FutureNext. All rights reserved.
+            © 2026 Clara by SprintSolo, Inc.(스프린트솔로). All rights reserved.
           </div>
         </div>
       </footer>
