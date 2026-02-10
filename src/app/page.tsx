@@ -175,91 +175,172 @@ function ScreenshotInbox() {
 
 function ScreenshotChat() {
   return (
-    <div className="screenshot-shadow bg-white rounded-xl border border-gray-200">
-      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-gray-50 rounded-t-xl">
+    <div className="screenshot-shadow bg-white rounded-xl border border-gray-200 overflow-hidden">
+      {/* 상단 툴바 */}
+      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-gray-50">
         <div className="flex items-center gap-2">
           <div className="w-3 h-3 rounded-full bg-red-400" />
           <div className="w-3 h-3 rounded-full bg-yellow-400" />
           <div className="w-3 h-3 rounded-full bg-green-400" />
         </div>
-        <span className="text-sm font-medium text-gray-600">업무 마무리 및 기한 설정</span>
-        <div className="flex -space-x-1">
-          <div className="w-5 h-5 rounded-full bg-amber-200 border border-white" />
-          <div className="w-5 h-5 rounded-full bg-green-200 border border-white" />
-          <div className="w-5 h-5 rounded-full bg-violet-200 border border-white" />
+        <span className="text-sm font-medium text-gray-600">그린플로우 투자 유치 제안 메일 검토</span>
+        <div className="flex items-center gap-2">
+          <div className="w-6 h-6 rounded-lg bg-gray-100 flex items-center justify-center"><span className="text-[10px]">📁</span></div>
+          <div className="w-6 h-6 rounded-lg bg-gray-100 flex items-center justify-center"><span className="text-[10px]">📊</span></div>
+          <div className="bg-violet-600 text-white px-3 py-1 rounded-md text-[10px] font-bold">New</div>
+          <div className="w-6 h-6 rounded-full bg-amber-200 border border-white" />
+          <div className="relative">
+            <div className="w-6 h-6 rounded-full bg-gray-200" />
+            <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 text-[8px] text-white rounded-full flex items-center justify-center">11</span>
+          </div>
         </div>
       </div>
-      <div className="flex">
-        {/* 채팅 영역 */}
-        <div className="flex-1 p-4 space-y-4">
-          {/* 사용자 메시지 */}
-          <div className="flex items-start gap-2">
-            <div className="w-7 h-7 rounded-full bg-amber-100 flex items-center justify-center text-[10px] font-bold text-amber-700 shrink-0">D</div>
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-semibold text-gray-800">김도윤 (Doyun Kim)</span>
-                <span className="text-[10px] text-gray-400">오후 05:10</span>
-              </div>
-              <div className="text-xs text-gray-700 bg-violet-500 text-white px-3 py-2 rounded-2xl rounded-tl-sm inline-block">
-                <span className="text-violet-200">@민지 이</span> 이거 챙겨주세요. 이번주 금요일 제출이니 그 전에 마무리해주세요. <span className="text-violet-200">@Clarence</span> Due Date 지정해라
-              </div>
-            </div>
-          </div>
-          {/* AI 응답 */}
-          <div className="flex items-start gap-2">
-            <div className="w-7 h-7 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
-              <span className="text-violet-600 text-[10px]">✦</span>
-            </div>
-            <div>
-              <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-semibold text-violet-700">Clarence</span>
-                <span className="text-[10px] text-gray-400">오후 05:11</span>
-              </div>
-              <div className="text-xs text-gray-700 bg-gray-50 p-3 rounded-2xl rounded-tl-sm border border-gray-100 max-w-sm">
-                <p className="mb-2">네, 도윤님. 요청하신 대로 태스크 설정을 완료했습니다.</p>
-                <div className="bg-violet-50 p-2 rounded-lg border border-violet-100 mb-2">
-                  <p className="text-[10px]">✅ <span className="font-semibold text-violet-700">2026년 혁신기술 고도화 사업 신청 부속 서류 준비</span> 태스크의 담당자를 <span className="text-violet-600">@민지</span> 님으로 지정하고, 마감일을 이번 주 금요일인 <span className="font-bold">2026년 2월 13일</span>로 설정하였습니다.</p>
+
+      <div className="flex h-[480px]">
+        {/* 1단: Ask (대화) */}
+        <div className="flex-1 border-r border-gray-100 flex flex-col">
+          <div className="flex-1 p-4 space-y-4 overflow-y-auto">
+            <div className="flex items-start gap-2">
+              <div className="w-7 h-7 rounded-full bg-amber-100 flex items-center justify-center text-[10px] font-bold text-amber-700 shrink-0">P</div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-semibold text-gray-800">박준용 (Junyong Park)</span>
+                  <span className="text-[10px] text-gray-400">오후 05:08</span>
                 </div>
-                <p className="text-gray-500">민지 님, 금요일 제출 일정에 맞춰 서류 준비 마무리 부탁드립니다!</p>
+                <div className="text-xs text-gray-700 bg-violet-500 text-white px-3 py-2 rounded-2xl rounded-tl-sm inline-block">
+                  <span className="text-violet-200">@Clarence</span> 첼시 님(Chelsea Kim) 명의로 동일한 내용의 메일 초안 작성을 완료해줘. IR 파일도 똑같이 첨부해줘.
+                </div>
+              </div>
+            </div>
+
+            <div className="bg-green-50/50 border border-green-100 rounded-xl p-3 flex items-center gap-3">
+              <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-[10px]">✓</div>
+              <span className="text-xs font-medium text-green-800">Email draft created</span>
+              <span className="ml-auto text-gray-400">▼</span>
+            </div>
+
+            <div className="flex items-start gap-2">
+              <div className="w-7 h-7 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
+                <span className="text-violet-600 text-[10px]">✦</span>
+              </div>
+              <div className="flex-1">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="text-xs font-semibold text-violet-700">Clarence</span>
+                  <span className="text-[10px] text-gray-400">오후 05:08</span>
+                </div>
+                <div className="text-xs text-gray-700 bg-gray-50 p-3 rounded-2xl rounded-tl-sm border border-gray-100">
+                  <p className="mb-2">박준용 님, 첼시 님 명의로 동일한 내용의 메일 초안 작성을 완료했습니다. <span className="font-bold">'GreenFlow IR DECK_2026.pdf'</span> 파일도 정상적으로 첨부되었습니다.</p>
+                  <div className="bg-white p-2.5 rounded-lg border border-gray-100 mb-2 space-y-2">
+                    <div className="text-[10px] text-violet-700 font-medium flex items-center gap-1.5">
+                      ✉ [미래넥스트] 스마트팜 혁신 기업 '그린플로우' Series B...
+                    </div>
+                    <div className="text-[10px] text-gray-500 flex items-center gap-1.5">
+                      📎 GreenFlow IR DECK_2026.pdf
+                    </div>
+                  </div>
+                  <p className="text-[10px] text-gray-400">임시보관함에서 해당 초안을 확인하실 수 있습니다.</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        {/* Folder 패널 */}
-        <div className="w-48 border-l border-gray-100 p-3">
-          <div className="flex items-center gap-2 mb-3">
-            <span className="text-xs font-semibold text-gray-700">📁 Folder</span>
-            <span className="text-[10px] text-gray-400">연결된 리소스</span>
-          </div>
-          <div className="text-[10px] font-semibold text-gray-500 mb-1.5">컨텍스트</div>
-          <div className="space-y-1.5 mb-3">
-            <div className="flex items-center gap-1.5 p-1.5 bg-violet-50 rounded text-[10px] text-violet-700">
-              ✅ 2026년 혁신기술 고도화 …
-            </div>
-            <div className="flex items-center gap-1.5 p-1.5 bg-gray-50 rounded text-[10px] text-gray-600">
-              📎 2_(신청서)2026년 혁…
-            </div>
-          </div>
-          <div className="text-[10px] font-semibold text-gray-500 mb-1.5">산출물</div>
-          <div className="space-y-1.5">
-            <div className="flex items-center gap-1.5 p-1.5 bg-gray-50 rounded text-[10px] text-gray-600">
-              📄 SprintSolo-혁신기술지원센터
-            </div>
-            <div className="flex items-center gap-1.5 p-1.5 bg-gray-50 rounded text-[10px] text-gray-600">
-              📄 창업기업 증빙 서류 준비 가이드
-            </div>
+          <div className="p-3 border-t border-gray-100">
+            <div className="bg-gray-50 rounded-lg px-3 py-2 text-xs text-gray-400">Ask AI or type a message...</div>
           </div>
         </div>
-      </div>
-      {/* 입력 영역 */}
-      <div className="border-t border-gray-100 px-4 py-2.5">
-        <div className="flex items-center gap-2 bg-gray-50 rounded-xl px-3 py-2">
-          <span className="text-gray-400 text-xs">AI에게 질문하거나 메시지를 입력하세요...</span>
-          <div className="ml-auto flex items-center gap-1.5">
-            <span className="text-gray-300">@</span>
-            <span className="text-gray-300">+</span>
-            <div className="w-6 h-6 rounded-full bg-violet-500 flex items-center justify-center">
-              <span className="text-white text-[10px]">▶</span>
+
+        {/* 2단: Folder (리소스) */}
+        <div className="w-52 border-r border-gray-100 p-3 bg-gray-50/30">
+          <div className="flex items-center justify-between mb-4">
+            <div className="flex items-center gap-1.5">
+              <span className="text-xs font-bold text-gray-700">Folder</span>
+              <span className="text-[9px] text-gray-400">Linked Resources</span>
+            </div>
+            <span className="text-gray-400 text-[10px]">◫</span>
+          </div>
+
+          <div className="mb-4">
+            <div className="flex items-center justify-between text-[10px] font-bold text-gray-500 mb-2">
+              <span>CONTEXT</span>
+              <span>▼</span>
+            </div>
+            <div className="flex items-center gap-2 p-2 bg-white rounded border border-gray-100 shadow-sm mb-1.5">
+              <span className="text-blue-500 text-[10px]">📎</span>
+              <span className="text-[10px] text-gray-700 truncate">GreenFlow IR DECK_2.</span>
+              <span className="ml-auto text-[8px] bg-green-100 text-green-700 px-1 rounded">Upload</span>
+            </div>
+          </div>
+
+          <div>
+            <div className="flex items-center justify-between text-[10px] font-bold text-gray-500 mb-2">
+              <span>ARTIFACTS</span>
+              <span>▼</span>
+            </div>
+            <div className="space-y-1.5">
+              {[
+                { title: "[미래넥스트] 스마트팜 혁신...", sub: "보낸사람: chelsea@futurenext.com", icon: "✉" },
+                { title: "[미래넥스트] 스마트팜 혁신...", sub: "보낸사람: chelsea@futurenext.com", icon: "✉" },
+                { title: "[미래넥스트] 스마트팜...", sub: "보낸사람: park@futurenext.com", icon: "✉", draft: true }
+              ].map((item, i) => (
+                <div key={i} className="p-2 bg-white rounded border border-gray-100 shadow-sm relative">
+                  <div className="flex items-start gap-2">
+                    <span className="text-orange-500 text-[10px]">{item.icon}</span>
+                    <div className="min-w-0">
+                      <div className="text-[9px] font-medium text-gray-800 truncate">{item.title}</div>
+                      <div className="text-[8px] text-gray-400 truncate">{item.sub}</div>
+                    </div>
+                    {item.draft && <span className="absolute top-1 right-1 text-[8px] bg-orange-100 text-orange-600 px-1 rounded">Draft</span>}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* 3단: Email Content */}
+        <div className="flex-[1.5] flex flex-col">
+          <div className="p-3 border-b border-gray-100 flex items-center justify-between bg-white">
+            <div className="flex items-center gap-2">
+              <div className="w-5 h-5 rounded bg-orange-50 text-orange-600 flex items-center justify-center text-[10px]">✉</div>
+              <div className="min-w-0">
+                <div className="text-[10px] font-bold text-gray-800 line-clamp-1">[미래넥스트] 스마트팜 혁신 기업 '그린플로우(GreenFlow)' Series B 후속 투자...</div>
+                <div className="text-[9px] text-gray-400">Email Thread</div>
+              </div>
+            </div>
+            <span className="text-gray-400 text-[10px]">◫</span>
+          </div>
+
+          <div className="flex-1 p-4 bg-gray-50/50 overflow-y-auto">
+            <div className="mb-4 flex items-center justify-between">
+              <span className="text-xs font-bold text-gray-800">Email Thread (1 messages)</span>
+            </div>
+
+            <div className="bg-white rounded-xl border border-violet-200 p-5 shadow-sm">
+              <div className="flex items-start justify-between mb-4 border-b border-gray-50 pb-3">
+                <div className="flex items-center gap-2">
+                  <div className="w-8 h-8 rounded-full bg-violet-100 text-violet-700 flex items-center justify-center text-xs font-bold">C</div>
+                  <div>
+                    <div className="text-[11px] font-bold text-gray-800">chelsea@futurenext.com <span className="font-normal text-gray-400">02/10</span> 📎</div>
+                  </div>
+                </div>
+                <span className="text-gray-300 text-xs">▲</span>
+              </div>
+
+              <div className="space-y-4 text-[11px] text-gray-700 leading-relaxed">
+                <p>To: park@futurenext.com 에게 <span className="text-gray-400 float-right">02/10</span></p>
+                <p className="font-bold text-gray-900 text-xs">[미래넥스트] 스마트팜 혁신 기업 '그린플로우(GreenFlow)' Series B 후속 투자 검토 제안드립니다.</p>
+
+                <p>안녕하세요 지민 님,</p>
+                <p>미래넥스트 심사역 김혜원입니다.</p>
+                <p>지난 Post TIPS IR DAY에서 뵙고 인사드릴 수 있어 정말 반가웠습니다. 당시 말씀드린 미래넥스트 보육 기업 소개 및 투자 검토와 관련하여, 저희가 Seed 단계부터 투자하여 육성해 온 스마트팜 솔루션 기업 그린플로우(GreenFlow)를 소개해드리고자 메일 드립니다.</p>
+                <p>그린플로우는 스마트팜 시공을 넘어, '자체 종자 개발-설비 구축-재배-유통'까지 딸기 밸류체인 전체를 내재화한 기업입니다. 2024년 Seed 투자 이후 주요 벤처캐피탈로부터 전략적 투자를 유치하며 안정적인 성장 궤도에 진입했습니다.</p>
+                <p>현재 Series B 라운드(총 30억 원 규모) 중 15억 원은 이미 확보되었으며, 잔여 15억 원에 대한 전략적 파트너로서의 검토를 제안드립니다.</p>
+                <p className="text-gray-400">[핵심 투자 포인트]</p>
+              </div>
+            </div>
+          </div>
+          <div className="p-3 border-t border-gray-100 flex justify-end">
+            <div className="bg-violet-600 text-white px-4 py-1.5 rounded-lg text-xs font-bold flex items-center gap-2 cursor-pointer">
+              <span className="text-[10px]">✉</span> Open in Gmail
             </div>
           </div>
         </div>
