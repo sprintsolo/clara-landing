@@ -108,13 +108,13 @@ function ScreenshotInbox() {
           <div className="px-2 py-1 text-gray-500">프로모션</div>
           <div className="border-t border-gray-100 mt-2 pt-2 font-semibold text-gray-500">공유 인박스</div>
           <div className="flex items-center gap-1.5 px-2 py-1">
-            <div className="w-4 h-4 rounded-full bg-blue-200 text-[8px] flex items-center justify-center font-bold text-blue-700">C</div>
-            <span className="text-gray-600">Chelsea Kim</span>
+            <div className="w-4 h-4 rounded-full bg-blue-200 text-[8px] flex items-center justify-center font-bold text-blue-700">S</div>
+            <span className="text-gray-600">이서연 (Seoyeon Lee)</span>
             <span className="ml-auto text-[10px] bg-violet-500 text-white rounded-full w-4 h-4 flex items-center justify-center">1</span>
           </div>
           <div className="flex items-center gap-1.5 px-2 py-1">
-            <div className="w-4 h-4 rounded-full bg-green-200 text-[8px] flex items-center justify-center font-bold text-green-700">H</div>
-            <span className="text-gray-600">Hyemin Lee</span>
+            <div className="w-4 h-4 rounded-full bg-green-200 text-[8px] flex items-center justify-center font-bold text-green-700">J</div>
+            <span className="text-gray-600">박지민 (Jimin Park)</span>
             <span className="ml-auto text-[10px] bg-violet-500 text-white rounded-full w-4 h-4 flex items-center justify-center">1</span>
           </div>
         </div>
@@ -125,13 +125,13 @@ function ScreenshotInbox() {
           <div className="p-3 rounded-lg bg-violet-50/50 border border-violet-100">
             <div className="flex items-start justify-between mb-1">
               <div>
-                <span className="text-xs font-semibold text-gray-800">Chelsea Ki…, Jaewon Lim, fundmanage…</span>
+                <span className="text-xs font-semibold text-gray-800">이서연 (Seoyeon Lee), 정현우, fundmanage…</span>
                 <span className="text-[10px] text-gray-400 ml-1">3</span>
               </div>
               <span className="text-[10px] text-gray-400">18:14</span>
             </div>
             <div className="text-xs font-medium text-violet-800 mb-1">Re: 2025년 결산 재무제표 및 사업현황 업데이트 요청</div>
-            <div className="text-[10px] text-gray-500 mb-2 line-clamp-2">김혜원 심사역은 보내주신 사업현황 업데이트가 LP 보고서와 일치하고...</div>
+            <div className="text-[10px] text-gray-500 mb-2 line-clamp-2">이서연 심사역은 보내주신 사업현황 업데이트가 LP 보고서와 일치하고...</div>
             {/* AI Brief/Suggest/Chat 버튼 */}
             <div className="flex items-center gap-2 mt-2">
               <span className="text-[10px] bg-violet-600 text-white px-2.5 py-1 rounded-full font-medium">Brief</span>
@@ -146,22 +146,22 @@ function ScreenshotInbox() {
               <div className="text-[10px] font-bold text-gray-500 mb-1">OVERVIEW</div>
               <div className="text-[10px] text-gray-600">사업현황 업데이트가 LP 보고서와 일치, 수정 없이 주주들에게 발송해도 좋습니다.</div>
               <div className="mt-1.5 text-[10px] font-bold text-gray-500">LINKED CONTEXT</div>
-              <div className="text-[10px] text-gray-600 flex items-center gap-1 mt-0.5">🏢 COMPANY: 빅뱅엔젤스</div>
+              <div className="text-[10px] text-gray-600 flex items-center gap-1 mt-0.5">🏢 COMPANY: 유니콘 어드바이저스</div>
             </div>
           </div>
           {/* 이메일 2 */}
           <div className="p-2.5 rounded-lg hover:bg-gray-50 border border-transparent">
             <div className="flex items-start justify-between">
-              <span className="text-xs font-semibold text-gray-800">Chelsea Kim</span>
+              <span className="text-xs font-semibold text-gray-800">이서연 (Seoyeon Lee)</span>
               <span className="text-[10px] text-gray-400">16:37</span>
             </div>
-            <div className="text-xs text-violet-700 font-medium">[빅뱅엔젤스 합자조합 22호] 투자 진행 현황 공유</div>
-            <div className="text-[10px] text-gray-500 line-clamp-1">빅뱅엔젤스 합자조합 22호는 포트폴리오사 이노보드의...</div>
+            <div className="text-xs text-violet-700 font-medium">[유니콘 어드바이저스 합자조합 22호] 투자 진행 현황 공유</div>
+            <div className="text-[10px] text-gray-500 line-clamp-1">유니콘 어드바이저스 합자조합 22호는 포트폴리오사 테크웨이브의...</div>
           </div>
           {/* 이메일 3 */}
           <div className="p-2.5 rounded-lg hover:bg-gray-50 border border-transparent">
             <div className="flex items-start justify-between">
-              <span className="text-xs font-semibold text-gray-800">axedu</span>
+              <span className="text-xs font-semibold text-gray-800">미래기술협회</span>
               <span className="text-[10px] text-gray-400">15:18</span>
             </div>
             <div className="text-xs text-violet-700 font-medium">2026 한국인공지능·소프트웨어산업협회 AX 전환 참여 안내</div>
@@ -194,14 +194,14 @@ function ScreenshotChat() {
         <div className="flex-1 p-4 space-y-4">
           {/* 사용자 메시지 */}
           <div className="flex items-start gap-2">
-            <div className="w-7 h-7 rounded-full bg-amber-100 flex items-center justify-center text-[10px] font-bold text-amber-700 shrink-0">M</div>
+            <div className="w-7 h-7 rounded-full bg-amber-100 flex items-center justify-center text-[10px] font-bold text-amber-700 shrink-0">D</div>
             <div>
               <div className="flex items-center gap-2 mb-1">
-                <span className="text-xs font-semibold text-gray-800">Michael ByungSun Hwang</span>
+                <span className="text-xs font-semibold text-gray-800">김도윤 (Doyun Kim)</span>
                 <span className="text-[10px] text-gray-400">오후 05:10</span>
               </div>
               <div className="text-xs text-gray-700 bg-violet-500 text-white px-3 py-2 rounded-2xl rounded-tl-sm inline-block">
-                <span className="text-violet-200">@지연 이</span> 이거 챙겨주세요. 이번주 금요일 제출이니 그 전에 마무리해주세요. <span className="text-violet-200">@Clarence</span> Due Date 지정해라
+                <span className="text-violet-200">@민지 이</span> 이거 챙겨주세요. 이번주 금요일 제출이니 그 전에 마무리해주세요. <span className="text-violet-200">@Clarence</span> Due Date 지정해라
               </div>
             </div>
           </div>
@@ -216,11 +216,11 @@ function ScreenshotChat() {
                 <span className="text-[10px] text-gray-400">오후 05:11</span>
               </div>
               <div className="text-xs text-gray-700 bg-gray-50 p-3 rounded-2xl rounded-tl-sm border border-gray-100 max-w-sm">
-                <p className="mb-2">네, Michael님. 요청하신 대로 태스크 설정을 완료했습니다.</p>
+                <p className="mb-2">네, 도윤님. 요청하신 대로 태스크 설정을 완료했습니다.</p>
                 <div className="bg-violet-50 p-2 rounded-lg border border-violet-100 mb-2">
-                  <p className="text-[10px]">✅ <span className="font-semibold text-violet-700">2026년 딥테크 창업사관학교 신청 부속 서류 준비</span> 태스크의 담당자를 <span className="text-violet-600">@지연</span> 님으로 지정하고, 마감일을 이번 주 금요일인 <span className="font-bold">2026년 2월 13일</span>로 설정하였습니다.</p>
+                  <p className="text-[10px]">✅ <span className="font-semibold text-violet-700">2026년 혁신기술 고도화 사업 신청 부속 서류 준비</span> 태스크의 담당자를 <span className="text-violet-600">@민지</span> 님으로 지정하고, 마감일을 이번 주 금요일인 <span className="font-bold">2026년 2월 13일</span>로 설정하였습니다.</p>
                 </div>
-                <p className="text-gray-500">지연 님, 금요일 제출 일정에 맞춰 서류 준비 마무리 부탁드립니다!</p>
+                <p className="text-gray-500">민지 님, 금요일 제출 일정에 맞춰 서류 준비 마무리 부탁드립니다!</p>
               </div>
             </div>
           </div>
@@ -234,16 +234,16 @@ function ScreenshotChat() {
           <div className="text-[10px] font-semibold text-gray-500 mb-1.5">컨텍스트</div>
           <div className="space-y-1.5 mb-3">
             <div className="flex items-center gap-1.5 p-1.5 bg-violet-50 rounded text-[10px] text-violet-700">
-              ✅ 2026년 딥테크 창업사관학…
+              ✅ 2026년 혁신기술 고도화 …
             </div>
             <div className="flex items-center gap-1.5 p-1.5 bg-gray-50 rounded text-[10px] text-gray-600">
-              📎 2_(신청서)2026년 딥…
+              📎 2_(신청서)2026년 혁…
             </div>
           </div>
           <div className="text-[10px] font-semibold text-gray-500 mb-1.5">산출물</div>
           <div className="space-y-1.5">
             <div className="flex items-center gap-1.5 p-1.5 bg-gray-50 rounded text-[10px] text-gray-600">
-              📄 SprintSolo-청년창업사관학교
+              📄 FutureNext-혁신기술지원센터
             </div>
             <div className="flex items-center gap-1.5 p-1.5 bg-gray-50 rounded text-[10px] text-gray-600">
               📄 창업기업 증빙 서류 준비 가이드
@@ -285,7 +285,7 @@ function ScreenshotAsk() {
           <span className="text-white text-2xl">✦</span>
         </div>
         <h3 className="text-xl font-bold text-gray-900 mb-1">Anything to Ask?</h3>
-        <p className="text-sm text-gray-500 text-center mb-6">Clara(AI)에게 물어나 동료에게 요청을 보내<br/>업무를 더 빠르게 처리하세요.</p>
+        <p className="text-sm text-gray-500 text-center mb-6">Clara(AI)에게 물어나 동료에게 요청을 보내<br />업무를 더 빠르게 처리하세요.</p>
         <div className="w-full max-w-md bg-gray-50 rounded-xl px-4 py-3 border border-gray-200 mb-6">
           <div className="text-sm text-gray-400 mb-2">무엇을 도와드릴까요? (e.g. 프로젝트 요약, 이메일 초안...)</div>
           <div className="flex items-center gap-2 text-gray-300">
@@ -341,11 +341,11 @@ function ScreenshotProject() {
       </div>
       <div className="p-4 space-y-3">
         {[
-          { title: "ASGH 2026 투자 멘토 심사용 최신 회사 소개서 송부", deadline: "3일 남음", color: "text-green-600", assignee: "bg-amber-200", desc: "홍콩무역발전국 양현서 과장 요청에 따라 ASGH 투자 멘토 내부 심사를 위한 최신 버전의 회…" },
-          { title: "ASGH 2026 헬스케어 기업 동행 및 이벤트 초대 관리", deadline: "기한 없음", color: "text-gray-400", assignee: "bg-green-200", desc: "헬스케어 기업 중 핀 곳과 동행하는 건을 챙겨주세요. 프로메디우스, 스텔로바이오 등 헬스케…" },
-          { title: "CB Insights 데이터 보완 및 투자 이력 제공", deadline: "기한 없음", color: "text-gray-400", assignee: "bg-blue-200", desc: "CB Insights의 데이터 검증 요청에 대응하여, 홍보 관점에서 적절한 수준의 최소 투자 이력…" },
-          { title: "2026년 대한의료인공지능학회 정회원 연회비 납부 및 증빙 처리", deadline: "24일 지남", color: "text-red-500", assignee: "bg-violet-200", desc: "학회 공지 내용에 따라 2026년도 정회원 연회비를 납부하고, 회계 처리를 위한 영수증 및 증…" },
-          { title: "학회 2026년 연간 일정 확인 및 주요 행사 마케팅 캘린더 반영", deadline: "26일 지남", color: "text-red-500", assignee: "bg-amber-200", desc: "학회 홈페이지 공지사항의 연간 일정을 확인하여, 마케팅 팀의 2026년 주요 이벤트 및 학술…" },
+          { title: "IT 솔루션 엑스포 2026 투자 멘토 심사용 최신 회사 소개서 송부", deadline: "3일 남음", color: "text-green-600", assignee: "bg-amber-200", desc: "글로벌 상공회의소 최유진 팀장 요청에 따라 엑스포 투자 멘토 내부 심사를 위한 최신 버전의 회…" },
+          { title: "IT 솔루션 엑스포 2026 헬스케어 기업 동행 및 이벤트 초대 관리", deadline: "기한 없음", color: "text-gray-400", assignee: "bg-green-200", desc: "헬스케어 기업 중 협력사와 동행하는 건을 챙겨주세요. 마이크로바이옴, 디지털헬스 등 헬스케…" },
+          { title: "마켓 인사이트 데이터 보완 및 투자 이력 제공", deadline: "기한 없음", color: "text-gray-400", assignee: "bg-blue-200", desc: "마켓 인사이트의 데이터 검증 요청에 대응하여, 홍보 관점에서 적절한 수준의 최소 투자 이력…" },
+          { title: "2026년 미래기술협회 정회원 연회비 납부 및 증빙 처리", deadline: "24일 지남", color: "text-red-500", assignee: "bg-violet-200", desc: "협회 공지 내용에 따라 2026년도 정회원 연회비를 납부하고, 회계 처리를 위한 영수증 및 증…" },
+          { title: "협회 2026년 연간 일정 확인 및 주요 행사 마케팅 캘린더 반영", deadline: "26일 지남", color: "text-red-500", assignee: "bg-amber-200", desc: "협회 홈페이지 공지사항의 연간 일정을 확인하여, 마케팅 팀의 2026년 주요 이벤트 및 학술…" },
         ].map((task, i) => (
           <div key={i} className="flex items-start gap-3 p-3 rounded-lg border border-gray-100 hover:bg-gray-50 transition">
             <div className={`w-8 h-8 rounded-full ${task.assignee} shrink-0 mt-0.5`} />
@@ -389,12 +389,12 @@ function ScreenshotContacts() {
           <div className="bg-gray-50 rounded-lg px-3 py-2 text-xs text-gray-400 mb-2">🔍 사람 검색...</div>
           <div className="text-[10px] text-gray-400 font-semibold mb-1">👥 연락처 (8,867)</div>
           {[
-            { name: "황병선", title: "대표이사 / 경영학 박사 · Allocato…", tag: "+14", color: "bg-amber-100 text-amber-700" },
-            { name: "김도완", title: "팀장 - 성장팀 · 은행권청년창업재…", tag: "", color: "bg-green-100 text-green-700" },
-            { name: "김민찬", title: "과장 - 기업투자본부 / 특별자산운…", tag: "+2", color: "bg-blue-100 text-blue-700" },
-            { name: "김영덕", title: "대표 / 상임이사 · 은행권청년창업…", tag: "+1", color: "bg-violet-100 text-violet-700" },
-            { name: "김은지", title: "차장 - 혁신투자금융본부 / 크레딧…", tag: "", color: "bg-pink-100 text-pink-700" },
-            { name: "박용희", title: "사원 - 특별자산운용팀 · 신한자산…", tag: "+2", color: "bg-red-100 text-red-700" },
+            { name: "김지훈", title: "대표이사 / 공학 박사 · 미래전략연구소", tag: "+14", color: "bg-amber-100 text-amber-700" },
+            { name: "이성민", title: "팀장 - 사업개발부 · 스타트업지원센터", tag: "", color: "bg-green-100 text-green-700" },
+            { name: "최준혁", title: "과장 - 투자심사본부 / 혁신자산운용", tag: "+2", color: "bg-blue-100 text-blue-700" },
+            { name: "한상우", title: "대표 / 이사장 · 스타트업성장재단", tag: "+1", color: "bg-violet-100 text-violet-700" },
+            { name: "서지혜", title: "차장 - 성장금융본부 / 신용사업부", tag: "", color: "bg-pink-100 text-pink-700" },
+            { name: "정다운", title: "사원 - 자산관리팀 · 신뢰자산운용", tag: "+2", color: "bg-red-100 text-red-700" },
           ].map((p, i) => (
             <div key={i} className="flex items-center gap-2 px-2 py-1.5 rounded-lg hover:bg-gray-50 cursor-pointer">
               <div className={`w-6 h-6 rounded-full ${p.color} text-[9px] flex items-center justify-center font-bold shrink-0`}>{p.name.slice(0, 2)}</div>
@@ -599,7 +599,7 @@ export default function Home() {
               </p>
               <ul className="space-y-3">
                 {[
-                  "팀원별 공유 인박스 (Chelsea Kim, Hyemin Lee...)",
+                  "팀원별 공유 인박스 (이서연, 박지민...)",
                   "스마트 라벨: Tasks, Urgent, Replies 자동 분류",
                   "AI가 이메일을 자동 요약하고 연결된 회사/프로젝트 표시",
                   "Brief / Suggest / Chat 원클릭 액션",
@@ -842,10 +842,10 @@ export default function Home() {
           </div>
           <div className="section-fade grid md:grid-cols-2 gap-6">
             {[
-              { project: "TIPS 과제 종료 및 최종평가 관리", type: "정부 과제", desc: "회계감사보고서 비용 정산, 특허등록증 대체 제출 등 복잡한 정부 과제 마감 업무를 팀원과 AI가 협업하여 관리합니다.", tasks: 2, members: 3 },
-              { project: "마케팅", type: "마케팅", desc: "ASGH 2026 투자 멘토 심사, 헬스케어 기업 이벤트 초대, CB Insights 데이터 보완 등 마케팅 태스크를 체계적으로 추적합니다.", tasks: 5, members: 3 },
-              { project: "서울바이오허브 글로벌진출 성장가속 프로그램", type: "프로그램 관리", desc: "선정 결과 확인, MOU 체결, 증빙 서류 보완, 제안서 협의 등 프로그램 참여의 전체 프로세스를 관리합니다.", tasks: 4, members: 1 },
-              { project: "사내 업무 소프트웨어 가이드", type: "내부 운영", desc: "Slack 연동 가이드 검토, 지메일 회신 주소 설정 등 사내 업무 도구 가이드를 팀과 함께 작성하고 관리합니다.", tasks: 2, members: 3 },
+              { project: "혁신성장 연구과제 종료 및 최종평가 관리", type: "정부 과제", desc: "회계감사보고서 비용 정산, 특허등록증 대체 제출 등 복잡한 정부 과제 마감 업무를 팀원과 AI가 협업하여 관리합니다.", tasks: 2, members: 3 },
+              { project: "마케팅", type: "마케팅", desc: "IT 솔루션 엑스포 2026 투자 멘토 심사, 헬스케어 기업 이벤트 초대, 마켓 인사이트 데이터 보완 등 마케팅 태스크를 체계적으로 추적합니다.", tasks: 5, members: 3 },
+              { project: "K-스타트업 글로벌 진출 가속화", type: "프로그램 관리", desc: "선정 결과 확인, MOU 체결, 증빙 서류 보완, 제안서 협의 등 프로그램 참여의 전체 프로세스를 관리합니다.", tasks: 4, members: 1 },
+              { project: "사내 업무 소프트웨어 가이드", type: "내부 운영", desc: "스마트 업무 연동 가이드 검토, 업무용 회신 주소 설정 등 사내 업무 도구 가이드를 팀과 함께 작성하고 관리합니다.", tasks: 2, members: 3 },
             ].map((item, i) => (
               <div key={i} className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-violet-200 hover:shadow-md transition">
                 <div className="flex items-center gap-2 mb-3">
@@ -875,7 +875,7 @@ export default function Home() {
               회사의 모든 업무 지식이 축적되기 시작합니다.
             </p>
             <div className="flex items-center justify-center gap-4">
-              <a href="https://email-stg.sprintsolo.dev" className="bg-violet-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-violet-700 transition flex items-center gap-2 shadow-lg shadow-violet-200">
+              <a href="#" className="bg-violet-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-violet-700 transition flex items-center gap-2 shadow-lg shadow-violet-200">
                 무료로 시작하기 <IconArrowRight />
               </a>
             </div>
@@ -903,7 +903,7 @@ export default function Home() {
             </div>
           </div>
           <div className="text-center text-xs text-gray-400 mt-8">
-            © 2026 Clara by SprintSolo. All rights reserved.
+            © 2026 Clara by FutureNext. All rights reserved.
           </div>
         </div>
       </footer>
