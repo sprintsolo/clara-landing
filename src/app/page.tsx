@@ -458,9 +458,9 @@ export default function Home() {
               팀의 프로젝트 관리를 돕는<br />
               첫 AI 매니저, <span className="gradient-text">클라라</span>
             </h1>
-            <p className="text-lg md:text-xl text-gray-500 max-w-2xl mx-auto mb-4 leading-relaxed">
-              모든 업무 커뮤니케이션에 AI가 참여하여 학습하고,<br className="hidden md:block" />
-              팀과 함께 문서를 작성하고, 프로젝트를 관리합니다.
+            <p className="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto mb-4 leading-relaxed">
+              첨부 파일 분석부터 의견 교환까지 이메일 옆에서 끝나는 협업이 가능하며,<br className="hidden md:block" />
+              AI가 프로젝트로 정리하고 회사만의 지식 자산을 구축합니다.
             </p>
             <p className="text-base text-gray-400 max-w-xl mx-auto mb-10">
               Front + Slack + ChatGPT + Monday.com을 하나로 통합.<br />
