@@ -76,97 +76,38 @@ function IconArrowRight() {
 /* ─── Mock 스크린샷 컴포넌트 (실제 앱 UI를 재현) ─── */
 function ScreenshotInbox() {
   return (
-    <div className="screenshot-shadow bg-white rounded-xl border border-gray-200">
-      {/* 탑바 */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-gray-50 rounded-t-xl">
-        <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-full bg-red-400" />
-          <div className="w-3 h-3 rounded-full bg-yellow-400" />
-          <div className="w-3 h-3 rounded-full bg-green-400" />
-        </div>
-        <span className="text-sm font-medium text-gray-600">Inbox</span>
-        <div className="flex items-center gap-2">
-          <span className="text-xs bg-violet-100 text-violet-700 px-2 py-0.5 rounded-full font-medium">New Email</span>
-        </div>
-      </div>
-      <div className="flex">
-        {/* 사이드 라벨 */}
-        <div className="w-40 border-r border-gray-100 p-3 space-y-1.5 text-xs">
-          <div className="font-semibold text-gray-500 mb-2">라벨</div>
-          <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-violet-50 text-violet-700 font-medium">
-            <span className="w-1.5 h-1.5 rounded-full bg-violet-500" />Tasks
+    <div className="relative group">
+      {/* 장식용 글로우 효과 */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-orange-500/20 to-rose-500/20 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+
+      <div className="relative screenshot-shadow bg-white rounded-2xl border border-gray-200 overflow-hidden">
+        {/* 상단 윈도우 툴바 스타일 */}
+        <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-gray-50/80 backdrop-blur-sm">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-red-400/80 shadow-sm" />
+            <div className="w-3 h-3 rounded-full bg-yellow-400/80 shadow-sm" />
+            <div className="w-3 h-3 rounded-full bg-green-400/80 shadow-sm" />
           </div>
-          <div className="flex items-center gap-1.5 px-2 py-1 rounded text-gray-600 hover:bg-gray-50">
-            <span className="w-1.5 h-1.5 rounded-full bg-red-500" />Urgent
+          <div className="flex items-center gap-2 px-3 py-1 bg-white border border-gray-200 rounded-md shadow-sm">
+            <span className="text-[10px] text-gray-400 font-mono">https://</span>
+            <span className="text-xs font-medium text-gray-600">clara.sprintsolo.dev/inbox</span>
           </div>
-          <div className="flex items-center gap-1.5 px-2 py-1 rounded text-gray-600">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />Replies
-          </div>
-          <div className="border-t border-gray-100 mt-2 pt-2 font-semibold text-gray-500">내 인박스</div>
-          <div className="flex items-center gap-1.5 px-2 py-1 rounded bg-violet-50 text-violet-700 font-medium">중요 <span className="ml-auto text-violet-400">●</span></div>
-          <div className="px-2 py-1 text-gray-500">업데이트</div>
-          <div className="px-2 py-1 text-gray-500">프로모션</div>
-          <div className="border-t border-gray-100 mt-2 pt-2 font-semibold text-gray-500">공유 인박스</div>
-          <div className="flex items-center gap-1.5 px-2 py-1">
-            <div className="w-4 h-4 rounded-full bg-blue-200 text-[8px] flex items-center justify-center font-bold text-blue-700">S</div>
-            <span className="text-gray-600">이서연 (Seoyeon Lee)</span>
-            <span className="ml-auto text-[10px] bg-violet-500 text-white rounded-full w-4 h-4 flex items-center justify-center">1</span>
-          </div>
-          <div className="flex items-center gap-1.5 px-2 py-1">
-            <div className="w-4 h-4 rounded-full bg-green-200 text-[8px] flex items-center justify-center font-bold text-green-700">J</div>
-            <span className="text-gray-600">박지민 (Jimin Park)</span>
-            <span className="ml-auto text-[10px] bg-violet-500 text-white rounded-full w-4 h-4 flex items-center justify-center">1</span>
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-full bg-orange-100 flex items-center justify-center">
+              <span className="text-orange-600 text-[10px]">✉</span>
+            </div>
           </div>
         </div>
-        {/* 이메일 목록 */}
-        <div className="flex-1 p-3 space-y-2">
-          <div className="text-[10px] text-gray-400 text-right mb-1">1-50 of 196</div>
-          {/* 이메일 1 - 펼쳐진 상태 */}
-          <div className="p-3 rounded-lg bg-violet-50/50 border border-violet-100">
-            <div className="flex items-start justify-between mb-1">
-              <div>
-                <span className="text-xs font-semibold text-gray-800">이서연 (Seoyeon Lee), 정현우, fundmanage…</span>
-                <span className="text-[10px] text-gray-400 ml-1">3</span>
-              </div>
-              <span className="text-[10px] text-gray-400">18:14</span>
-            </div>
-            <div className="text-xs font-medium text-violet-800 mb-1">Re: 2025년 결산 재무제표 및 사업현황 업데이트 요청</div>
-            <div className="text-[10px] text-gray-500 mb-2 line-clamp-2">이서연 심사역은 보내주신 사업현황 업데이트가 LP 보고서와 일치하고...</div>
-            {/* AI Brief/Suggest/Chat 버튼 */}
-            <div className="flex items-center gap-2 mt-2">
-              <span className="text-[10px] bg-violet-600 text-white px-2.5 py-1 rounded-full font-medium">Brief</span>
-              <span className="text-[10px] bg-white text-gray-600 px-2.5 py-1 rounded-full border border-gray-200">Suggest</span>
-              <div className="ml-auto flex items-center gap-2">
-                <span className="text-[10px] text-violet-600 font-medium flex items-center gap-1">💬 Chat</span>
-                <span className="text-[10px] text-gray-400">Dismiss</span>
-              </div>
-            </div>
-            {/* OVERVIEW */}
-            <div className="mt-2 p-2 bg-white rounded border border-gray-100">
-              <div className="text-[10px] font-bold text-gray-500 mb-1">OVERVIEW</div>
-              <div className="text-[10px] text-gray-600">사업현황 업데이트가 LP 보고서와 일치, 수정 없이 주주들에게 발송해도 좋습니다.</div>
-              <div className="mt-1.5 text-[10px] font-bold text-gray-500">LINKED CONTEXT</div>
-              <div className="text-[10px] text-gray-600 flex items-center gap-1 mt-0.5">🏢 COMPANY: 유니콘 어드바이저스</div>
-            </div>
-          </div>
-          {/* 이메일 2 */}
-          <div className="p-2.5 rounded-lg hover:bg-gray-50 border border-transparent">
-            <div className="flex items-start justify-between">
-              <span className="text-xs font-semibold text-gray-800">이서연 (Seoyeon Lee)</span>
-              <span className="text-[10px] text-gray-400">16:37</span>
-            </div>
-            <div className="text-xs text-violet-700 font-medium">[유니콘 어드바이저스 합자조합 22호] 투자 진행 현황 공유</div>
-            <div className="text-[10px] text-gray-500 line-clamp-1">유니콘 어드바이저스 합자조합 22호는 포트폴리오사 테크웨이브의...</div>
-          </div>
-          {/* 이메일 3 */}
-          <div className="p-2.5 rounded-lg hover:bg-gray-50 border border-transparent">
-            <div className="flex items-start justify-between">
-              <span className="text-xs font-semibold text-gray-800">미래기술협회</span>
-              <span className="text-[10px] text-gray-400">15:18</span>
-            </div>
-            <div className="text-xs text-violet-700 font-medium">2026 한국인공지능·소프트웨어산업협회 AX 전환 참여 안내</div>
-            <div className="text-[10px] text-gray-500 line-clamp-1">협회가 AI 전환 도입 기업을 대상으로...</div>
-          </div>
+
+        {/* 실제 이미지 배치 */}
+        <div className="relative overflow-hidden bg-gray-100">
+          <img
+            src="/screenshots/feature-inbox.png"
+            alt="Clara AI-Powered Shared Inbox"
+            className="w-full h-auto block"
+          />
+          {/* 이미지 위 오버레이 */}
+          <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-2xl pointer-events-none"></div>
         </div>
       </div>
     </div>
@@ -175,179 +116,44 @@ function ScreenshotInbox() {
 
 function ScreenshotChat() {
   return (
-    <div className="screenshot-shadow bg-white rounded-xl border border-gray-200 overflow-hidden">
-      {/* 상단 툴바 */}
-      <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-gray-50">
-        <div className="flex items-center gap-2">
-          <div className="w-3 h-3 rounded-full bg-red-400" />
-          <div className="w-3 h-3 rounded-full bg-yellow-400" />
-          <div className="w-3 h-3 rounded-full bg-green-400" />
-        </div>
-        <span className="text-sm font-medium text-gray-600">그린플로우 투자 유치 제안 메일 검토</span>
-        <div className="flex items-center gap-2">
-          <div className="w-6 h-6 rounded-lg bg-gray-100 flex items-center justify-center"><span className="text-[10px]">📁</span></div>
-          <div className="w-6 h-6 rounded-lg bg-gray-100 flex items-center justify-center"><span className="text-[10px]">📊</span></div>
-          <div className="bg-violet-600 text-white px-3 py-1 rounded-md text-[10px] font-bold">New</div>
-          <div className="w-6 h-6 rounded-full bg-amber-200 border border-white" />
-          <div className="relative">
-            <div className="w-6 h-6 rounded-full bg-gray-200" />
-            <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 text-[8px] text-white rounded-full flex items-center justify-center">11</span>
+    <div className="relative group">
+      {/* 장식용 글로우 효과 */}
+      <div className="absolute -inset-1 bg-gradient-to-r from-violet-500/20 to-fuchsia-500/20 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+
+      <div className="relative screenshot-shadow bg-white rounded-2xl border border-gray-200 overflow-hidden">
+        {/* 상단 윈도우 툴바 스타일 */}
+        <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-gray-50/80 backdrop-blur-sm">
+          <div className="flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-red-400/80 shadow-sm" />
+            <div className="w-3 h-3 rounded-full bg-yellow-400/80 shadow-sm" />
+            <div className="w-3 h-3 rounded-full bg-green-400/80 shadow-sm" />
           </div>
-        </div>
-      </div>
-
-      <div className="flex h-[480px]">
-        {/* 1단: Ask (대화) */}
-        <div className="flex-1 border-r border-gray-100 flex flex-col">
-          <div className="flex-1 p-4 space-y-4 overflow-y-auto">
-            <div className="flex items-start gap-2">
-              <div className="w-7 h-7 rounded-full bg-amber-100 flex items-center justify-center text-[10px] font-bold text-amber-700 shrink-0">P</div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs font-semibold text-gray-800">박준용 (Junyong Park)</span>
-                  <span className="text-[10px] text-gray-400">오후 05:08</span>
-                </div>
-                <div className="text-xs text-gray-700 bg-violet-500 text-white px-3 py-2 rounded-2xl rounded-tl-sm inline-block">
-                  <span className="text-violet-200">@Clarence</span> 첼시 님(Chelsea Kim) 명의로 동일한 내용의 메일 초안 작성을 완료해줘. IR 파일도 똑같이 첨부해줘.
-                </div>
-              </div>
-            </div>
-
-            <div className="bg-green-50/50 border border-green-100 rounded-xl p-3 flex items-center gap-3">
-              <div className="w-6 h-6 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-[10px]">✓</div>
-              <span className="text-xs font-medium text-green-800">Email draft created</span>
-              <span className="ml-auto text-gray-400">▼</span>
-            </div>
-
-            <div className="flex items-start gap-2">
-              <div className="w-7 h-7 rounded-full bg-violet-100 flex items-center justify-center shrink-0">
-                <span className="text-violet-600 text-[10px]">✦</span>
-              </div>
-              <div className="flex-1">
-                <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xs font-semibold text-violet-700">Clarence</span>
-                  <span className="text-[10px] text-gray-400">오후 05:08</span>
-                </div>
-                <div className="text-xs text-gray-700 bg-gray-50 p-3 rounded-2xl rounded-tl-sm border border-gray-100">
-                  <p className="mb-2">박준용 님, 첼시 님 명의로 동일한 내용의 메일 초안 작성을 완료했습니다. <span className="font-bold">'GreenFlow IR DECK_2026.pdf'</span> 파일도 정상적으로 첨부되었습니다.</p>
-                  <div className="bg-white p-2.5 rounded-lg border border-gray-100 mb-2 space-y-2">
-                    <div className="text-[10px] text-violet-700 font-medium flex items-center gap-1.5">
-                      ✉ [미래넥스트] 스마트팜 혁신 기업 '그린플로우' Series B...
-                    </div>
-                    <div className="text-[10px] text-gray-500 flex items-center gap-1.5">
-                      📎 GreenFlow IR DECK_2026.pdf
-                    </div>
-                  </div>
-                  <p className="text-[10px] text-gray-400">임시보관함에서 해당 초안을 확인하실 수 있습니다.</p>
-                </div>
-              </div>
-            </div>
+          <div className="flex items-center gap-2 px-3 py-1 bg-white border border-gray-200 rounded-md shadow-sm">
+            <span className="text-[10px] text-gray-400 font-mono">https://</span>
+            <span className="text-xs font-medium text-gray-600">clara.sprintsolo.dev/ask</span>
           </div>
-          <div className="p-3 border-t border-gray-100">
-            <div className="bg-gray-50 rounded-lg px-3 py-2 text-xs text-gray-400">Ask AI or type a message...</div>
-          </div>
-        </div>
-
-        {/* 2단: Folder (리소스) */}
-        <div className="w-52 border-r border-gray-100 p-3 bg-gray-50/30">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-1.5">
-              <span className="text-xs font-bold text-gray-700">Folder</span>
-              <span className="text-[9px] text-gray-400">Linked Resources</span>
-            </div>
-            <span className="text-gray-400 text-[10px]">◫</span>
-          </div>
-
-          <div className="mb-4">
-            <div className="flex items-center justify-between text-[10px] font-bold text-gray-500 mb-2">
-              <span>CONTEXT</span>
-              <span>▼</span>
-            </div>
-            <div className="flex items-center gap-2 p-2 bg-white rounded border border-gray-100 shadow-sm mb-1.5">
-              <span className="text-blue-500 text-[10px]">📎</span>
-              <span className="text-[10px] text-gray-700 truncate">GreenFlow IR DECK_2.</span>
-              <span className="ml-auto text-[8px] bg-green-100 text-green-700 px-1 rounded">Upload</span>
-            </div>
-          </div>
-
-          <div>
-            <div className="flex items-center justify-between text-[10px] font-bold text-gray-500 mb-2">
-              <span>ARTIFACTS</span>
-              <span>▼</span>
-            </div>
-            <div className="space-y-1.5">
-              {[
-                { title: "[미래넥스트] 스마트팜 혁신...", sub: "보낸사람: chelsea@futurenext.com", icon: "✉" },
-                { title: "[미래넥스트] 스마트팜 혁신...", sub: "보낸사람: chelsea@futurenext.com", icon: "✉" },
-                { title: "[미래넥스트] 스마트팜...", sub: "보낸사람: park@futurenext.com", icon: "✉", draft: true }
-              ].map((item, i) => (
-                <div key={i} className="p-2 bg-white rounded border border-gray-100 shadow-sm relative">
-                  <div className="flex items-start gap-2">
-                    <span className="text-orange-500 text-[10px]">{item.icon}</span>
-                    <div className="min-w-0">
-                      <div className="text-[9px] font-medium text-gray-800 truncate">{item.title}</div>
-                      <div className="text-[8px] text-gray-400 truncate">{item.sub}</div>
-                    </div>
-                    {item.draft && <span className="absolute top-1 right-1 text-[8px] bg-orange-100 text-orange-600 px-1 rounded">Draft</span>}
-                  </div>
-                </div>
-              ))}
+          <div className="flex items-center gap-2">
+            <div className="w-6 h-6 rounded-full bg-violet-100 flex items-center justify-center">
+              <span className="text-violet-600 text-[10px]">✦</span>
             </div>
           </div>
         </div>
 
-        {/* 3단: Email Content */}
-        <div className="flex-[1.5] flex flex-col">
-          <div className="p-3 border-b border-gray-100 flex items-center justify-between bg-white">
-            <div className="flex items-center gap-2">
-              <div className="w-5 h-5 rounded bg-orange-50 text-orange-600 flex items-center justify-center text-[10px]">✉</div>
-              <div className="min-w-0">
-                <div className="text-[10px] font-bold text-gray-800 line-clamp-1">[미래넥스트] 스마트팜 혁신 기업 '그린플로우(GreenFlow)' Series B 후속 투자...</div>
-                <div className="text-[9px] text-gray-400">Email Thread</div>
-              </div>
-            </div>
-            <span className="text-gray-400 text-[10px]">◫</span>
-          </div>
-
-          <div className="flex-1 p-4 bg-gray-50/50 overflow-y-auto">
-            <div className="mb-4 flex items-center justify-between">
-              <span className="text-xs font-bold text-gray-800">Email Thread (1 messages)</span>
-            </div>
-
-            <div className="bg-white rounded-xl border border-violet-200 p-5 shadow-sm">
-              <div className="flex items-start justify-between mb-4 border-b border-gray-50 pb-3">
-                <div className="flex items-center gap-2">
-                  <div className="w-8 h-8 rounded-full bg-violet-100 text-violet-700 flex items-center justify-center text-xs font-bold">C</div>
-                  <div>
-                    <div className="text-[11px] font-bold text-gray-800">chelsea@futurenext.com <span className="font-normal text-gray-400">02/10</span> 📎</div>
-                  </div>
-                </div>
-                <span className="text-gray-300 text-xs">▲</span>
-              </div>
-
-              <div className="space-y-4 text-[11px] text-gray-700 leading-relaxed">
-                <p>To: park@futurenext.com 에게 <span className="text-gray-400 float-right">02/10</span></p>
-                <p className="font-bold text-gray-900 text-xs">[미래넥스트] 스마트팜 혁신 기업 '그린플로우(GreenFlow)' Series B 후속 투자 검토 제안드립니다.</p>
-
-                <p>안녕하세요 지민 님,</p>
-                <p>미래넥스트 심사역 김혜원입니다.</p>
-                <p>지난 Post TIPS IR DAY에서 뵙고 인사드릴 수 있어 정말 반가웠습니다. 당시 말씀드린 미래넥스트 보육 기업 소개 및 투자 검토와 관련하여, 저희가 Seed 단계부터 투자하여 육성해 온 스마트팜 솔루션 기업 그린플로우(GreenFlow)를 소개해드리고자 메일 드립니다.</p>
-                <p>그린플로우는 스마트팜 시공을 넘어, '자체 종자 개발-설비 구축-재배-유통'까지 딸기 밸류체인 전체를 내재화한 기업입니다. 2024년 Seed 투자 이후 주요 벤처캐피탈로부터 전략적 투자를 유치하며 안정적인 성장 궤도에 진입했습니다.</p>
-                <p>현재 Series B 라운드(총 30억 원 규모) 중 15억 원은 이미 확보되었으며, 잔여 15억 원에 대한 전략적 파트너로서의 검토를 제안드립니다.</p>
-                <p className="text-gray-400">[핵심 투자 포인트]</p>
-              </div>
-            </div>
-          </div>
-          <div className="p-3 border-t border-gray-100 flex justify-end">
-            <div className="bg-violet-600 text-white px-4 py-1.5 rounded-lg text-xs font-bold flex items-center gap-2 cursor-pointer">
-              <span className="text-[10px]">✉</span> Open in Gmail
-            </div>
-          </div>
+        {/* 실제 이미지 배치 */}
+        <div className="relative overflow-hidden bg-gray-100">
+          <img
+            src="/screenshots/hero-3pane.png"
+            alt="Clara AI Workspace - KYC Analysis, Folder Context, and Linked Workflow"
+            className="w-full h-auto block"
+          />
+          {/* 이미지 위 오버레이 */}
+          <div className="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-2xl pointer-events-none"></div>
         </div>
       </div>
     </div>
   );
 }
+
 
 function ScreenshotAsk() {
   return (
@@ -536,8 +342,8 @@ export default function Home() {
               <span>✦</span> AI가 학습하는 업무 협업 플랫폼
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              팀의 프로젝트 관리를 돕는<br />
-              첫 AI 매니저, <span className="gradient-text">클라라</span>
+              프로젝트 관리를 돕는<br />
+              AI 직원, <span className="gradient-text">클라라</span>
             </h1>
             <p className="text-lg md:text-xl text-gray-500 max-w-3xl mx-auto mb-4 leading-relaxed">
               첨부 파일 분석부터 의견 교환까지 이메일 옆에서 끝나는 협업이 가능하며,<br className="hidden md:block" />
@@ -567,39 +373,40 @@ export default function Home() {
       <section className="py-20 px-6 bg-gradient-to-b from-violet-50/50 to-white">
         <div className="max-w-5xl mx-auto">
           <div className="section-fade text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              프로젝트 관리로 시작,<br /><span className="gradient-text">AI 직원 학습</span>이 진짜 목적
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
+              업무의 핵심에 집중할 수 있도록,<br />
+              클라라와 함께하는 스마트한 협업
             </h2>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">
-              Clara를 사용할수록 AI가 회사의 업무 방식, 고객 관계, 프로젝트 히스토리를 학습합니다.
-              직원이 퇴사해도 지식은 회사에 남습니다.
+            <p className="text-lg text-gray-500 max-w-3xl mx-auto mb-10 leading-relaxed">
+              번거로운 정리와 분류는 클라라에게 맡기고 당신은 더 중요한 결정에 몰입하세요.<br className="hidden md:block" />
+              흩어진 맥락을 연결하여 팀의 성장을 돕는 가장 강력한 조력자가 됩니다.
             </p>
           </div>
           <div className="section-fade grid md:grid-cols-3 gap-8">
             {/* Step 1 */}
             <div className="relative p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
               <div className="w-10 h-10 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center font-bold mb-4">1</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">프로젝트 관리 시작</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">시작은 익숙한 수신함에서</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
-                이메일로 시작되는 업무를 프로젝트와 태스크로 정리합니다. 팀원을 배정하고 기한을 설정하세요.
+                이메일 속 중요한 요청사항을 놓치지 않게 프로젝트와 태스크로 정리하고 일정을 꼼꼼히 챙겨줍니다.
               </p>
               <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-violet-300 text-2xl">→</div>
             </div>
             {/* Step 2 */}
             <div className="relative p-6 rounded-2xl bg-white border border-violet-200 shadow-sm ring-1 ring-violet-100">
               <div className="w-10 h-10 rounded-xl bg-violet-500 text-white flex items-center justify-center font-bold mb-4">2</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">모든 대화에 AI 참여</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">맥락을 잇는 스마트한 소통</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
-                이메일 공유, 문서 작성, 팀 채팅... 모든 업무 커뮤니케이션에 AI가 함께합니다. @멘션으로 즉시 지시하세요.
+                답장 초안 작성부터 과거 히스토리 파악까지, 모든 소통 과정에서 당신의 든든한 서포터가 되어줍니다.
               </p>
               <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-violet-300 text-2xl">→</div>
             </div>
             {/* Step 3 */}
             <div className="p-6 rounded-2xl bg-gradient-to-br from-violet-600 to-violet-800 text-white shadow-lg">
               <div className="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center font-bold mb-4">3</div>
-              <h3 className="text-lg font-bold mb-2">회사 지식 자산 축적</h3>
+              <h3 className="text-lg font-bold mb-2">팀을 위한 지식 가이드 구축</h3>
               <p className="text-sm text-white/80 leading-relaxed">
-                AI가 회사의 네트워크, 업무 패턴, 고객 히스토리를 학습합니다. 이직이 잦아도 지식은 남습니다.
+                우리 팀의 귀중한 경험과 노하우를 체계적으로 자산화하여, 누구나 스스로 답을 찾을 수 있는 지식 창고를 만듭니다.
               </p>
             </div>
           </div>
@@ -614,10 +421,10 @@ export default function Home() {
           </div>
           <div className="section-fade grid md:grid-cols-2 gap-6">
             {[
-              { icon: "😰", title: "소규모 팀, 다수의 고객 대응", desc: "적은 인원으로 수십, 수백 개의 고객사 이메일을 처리해야 합니다. 누락은 곧 비즈니스 손실입니다." },
-              { icon: "🔄", title: "잦은 이직, 사라지는 지식", desc: "핵심 인력이 퇴사하면 고객 관계와 업무 히스토리가 함께 사라집니다. 인수인계는 항상 불완전합니다." },
-              { icon: "📧", title: "이메일 속에 묻힌 정보", desc: "중요한 의사결정, 계약 조건, 고객 요청이 이메일에 흩어져 있습니다. 찾는 데만 시간을 허비합니다." },
-              { icon: "🔧", title: "너무 많은 도구, 연결되지 않는 업무", desc: "이메일은 Gmail, 채팅은 Slack, 프로젝트는 Monday.com, AI는 ChatGPT... 도구를 왔다갔다하며 시간을 낭비합니다." },
+              { icon: "😰", title: "소규모 팀, 다수의 고객 대응", desc: "적은 인원으로 수십, 수백 개의 고객사 이메일을 명확하게 분류하고 누락 없이 처리해야 합니다." },
+              { icon: "📈", title: "지속 가능한 팀 자산 관리", desc: "개별 인력에 의존하던 고객 관계와 업무 노하우를 팀의 공식적인 자산으로 축적하여 성장 기반을 만듭니다." },
+              { icon: "📧", title: "이메일 속에 흩어진 정보", desc: "중요한 의사결정, 계약 조건, 고객 요청이 이메일에 파편화되어 있어 맥락을 파악하는 데 에너지를 낭비합니다." },
+              { icon: "🔧", title: "파편화된 업무 도구", desc: "여러 도구를 오가며 소모되는 컨텍스트 스위칭 비용을 줄이고 싶은 전문 직업인을 위해 설계되었습니다." },
             ].map((item, i) => (
               <div key={i} className="p-6 rounded-2xl border border-gray-200 hover:border-violet-200 transition">
                 <span className="text-3xl mb-3 block">{item.icon}</span>
@@ -639,18 +446,19 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="section-fade text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              4개의 도구를 <span className="gradient-text">하나로</span>
+              복잡한 도구 사이의 탐색 대신,<br />
+              클라라 하나로 완성되는 워크플로우
             </h2>
             <p className="text-lg text-gray-500">
-              Front + Slack + ChatGPT + Monday.com, 더 이상 따로 쓰지 마세요.
+              메일, 채팅, AI, 프로젝트 관리까지 따로 쓸 필요 없이 한 곳에서 자연스럽게 연결됩니다.
             </p>
           </div>
           <div className="section-fade grid md:grid-cols-4 gap-6">
             {[
-              { tool: "Front", icon: <IconMail />, clara: "Shared Inbox", desc: "팀 이메일을 한곳에서 관리. 공유 인박스로 누가 어떤 이메일을 처리하는지 실시간 파악.", color: "bg-orange-50 text-orange-600 border-orange-200" },
-              { tool: "Slack", icon: <IconChat />, clara: "이메일 공유 채팅", desc: "이메일 내용을 바로 대화에서 공유하며 협업. 태스크와 연결된 채팅으로 맥락을 유지.", color: "bg-blue-50 text-blue-600 border-blue-200" },
-              { tool: "ChatGPT", icon: <IconAI />, clara: "AI 액티브 에이전트", desc: "회사 업무 맥락을 아는 AI. 이메일 요약, 답장 초안, 태스크 자동 지정까지.", color: "bg-green-50 text-green-600 border-green-200" },
-              { tool: "Monday.com", icon: <IconProject />, clara: "프로젝트 관리", desc: "이메일에서 시작되는 업무를 프로젝트와 태스크로. 기한, 담당자, 대화를 한곳에서.", color: "bg-purple-50 text-purple-600 border-purple-200" },
+              { tool: "Front", icon: <IconMail />, clara: "AI 프로젝트 인박스", desc: "넘쳐나는 메일 속에서 꼭 챙겨야 할 프로젝트와 태스크를 먼저 보여주고 스마트한 분류를 돕습니다.", color: "bg-orange-50 text-orange-600 border-orange-200" },
+              { tool: "Slack", icon: <IconChat />, clara: "이메일 공유 채팅", desc: "메일 내용을 따로 전송하거나 복사할 필요 없이, 이메일 바로 옆에서 맥락을 공유하며 팀원과 즉시 소통하세요.", color: "bg-blue-50 text-blue-600 border-blue-200" },
+              { tool: "ChatGPT", icon: <IconAI />, clara: "실시간 업무 현황 검색", desc: "일반 AI는 접근할 수 없는 우리 팀만의 이메일 히스토리와 업무 맥락을 자연어 검색으로 완벽하게 파악하고 대응합니다.", color: "bg-green-50 text-green-600 border-green-200" },
+              { tool: "Monday.com", icon: <IconProject />, clara: "대화형 프로젝트 매니저", desc: "수동적인 데이터 입력 대신, 팀원과 대화하듯 AI에게 자연어로 요청하세요. 프로젝트 관리의 모든 과정을 클라라가 직접 실행합니다.", color: "bg-purple-50 text-purple-600 border-purple-200" },
             ].map((item, i) => (
               <div key={i} className={`p-5 rounded-2xl border ${item.color} transition hover:shadow-md`}>
                 <div className="mb-3">{item.icon}</div>
@@ -672,21 +480,31 @@ export default function Home() {
                 <IconMail /> vs Front
               </div>
               <h2 className="text-3xl font-bold text-gray-900 mb-4">
-                Shared Inbox로<br />팀 이메일을 한곳에서
+                프로젝트 관리를 위한 Front
               </h2>
               <p className="text-base text-gray-500 mb-6 leading-relaxed">
-                팀원별 공유 인박스로 누가 어떤 이메일을 처리하는지 실시간으로 파악하세요.
-                Gmail과 완전히 연동되어 196개 이상의 이메일을 라벨별로 분류하고 관리합니다.
+                프론트(Front)는 고객대응을 위한 Shared Inbox입니다. 클라라는 여기서 한 걸음 더 나아가,
+                이메일 내의 비즈니스 맥락을 AI가 직접 읽고 실행 가능한 프로젝트 태스크로
+                즉시 연결하는 지능형 비서입니다.
               </p>
-              <ul className="space-y-3">
+
+              <ul className="space-y-4 mb-8">
                 {[
-                  "팀원별 공유 인박스 (이서연, 박지민...)",
-                  "스마트 라벨: Tasks, Urgent, Replies 자동 분류",
-                  "AI가 이메일을 자동 요약하고 연결된 회사/프로젝트 표시",
-                  "Brief / Suggest / Chat 원클릭 액션",
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
-                    <IconCheck /><span>{item}</span>
+                  { title: "AI 요약 및 자동 브리핑", desc: "메일 본문을 분석하여 'OVERVIEW'를 통해 핵심 내용과 즉각적인 액션 아이템을 브리핑합니다." },
+                  { title: "맥락 기반 프로젝트 연결", desc: "'Linked Context' 기능을 통해 해당 메일이 어떤 고객사, 프로젝트 업무와 연관되는지 AI가 찾아줍니다." },
+                  { title: "지능형 다음 단계 제안", desc: "'Suggest' 버튼 하나로 답장 초안 작성부터 태스크 생성까지 최적의 업무 워크플로우를 제안받으세요." },
+                  { title: "팀 통합 공유 인박스 및 채팅", desc: "팀원별 업무 처리 현황을 실시간으로 확인하고, 이메일 옆에서 즉시 채팅하며 지시를 내리세요." }
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <div className="mt-1 bg-violet-100 rounded-full p-0.5">
+                      <svg className="w-3.5 h-3.5 text-violet-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 13l4 4L19 7" />
+                      </svg>
+                    </div>
+                    <div>
+                      <span className="text-sm font-semibold text-gray-900 block">{item.title}</span>
+                      <span className="text-sm text-gray-500">{item.desc}</span>
+                    </div>
                   </li>
                 ))}
               </ul>
