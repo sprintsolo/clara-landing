@@ -456,10 +456,11 @@ export default function Home() {
             <span className="text-xl font-bold text-gray-900">Clara</span>
           </div>
           <nav className="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
-            <a href="#features" className="hover:text-violet-600 transition">기능</a>
-            <a href="#ai-agent" className="hover:text-violet-600 transition">AI 에이전트</a>
+            <a href="#core-features" className="hover:text-violet-600 transition">핵심 기능</a>
+            <a href="#features" className="hover:text-violet-600 transition">왜 Clara인가</a>
             <a href="#use-cases" className="hover:text-violet-600 transition">사용 사례</a>
             <a href="#pricing" className="hover:text-violet-600 transition">비교</a>
+            <a href="#plans" className="hover:text-violet-600 transition">요금제</a>
           </nav>
           <a href="#cta" className="bg-violet-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-violet-700 transition">
             시작하기
@@ -536,6 +537,214 @@ export default function Home() {
               <p className="text-sm text-white/80 leading-relaxed">
                 리서치→검토→문서 작성의 전체 과정이 재사용 가능한 플레이북이 됩니다. 다음 유사 안건에서 신입도 시니어의 검토 프로세스를 즉시 따릅니다.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 핵심 기능 ─── */}
+      <section id="core-features" className="py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="section-fade text-center mb-16">
+            <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+              <span>✦</span> Clara의 핵심 기능
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              하나의 앱에서 리서치부터<br />문서 작성까지
+            </h2>
+            <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+              이메일, 채팅, AI, 프로젝트, 연락처 관리가 모두 연결된 하나의 업무 환경입니다.
+            </p>
+          </div>
+
+          {/* 상단: Ask + Chat (메인, 넓게) + Inbox */}
+          <div className="section-fade grid md:grid-cols-2 gap-6 mb-6">
+
+            {/* Ask + Chat */}
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-violet-600 to-violet-800 text-white hover:shadow-lg transition">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                  <IconAI />
+                </div>
+                <div className="flex items-center gap-1.5 text-xs text-violet-300">
+                  <span className="bg-white/20 px-2 py-0.5 rounded-full font-bold text-white">Ask</span>
+                  <span>→</span>
+                  <span className="bg-white/20 px-2 py-0.5 rounded-full font-bold text-white">Chat</span>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold mb-1">Ask + Chat</h3>
+              <p className="text-xs text-violet-300 mb-4">AI에게 질문하면 대화가 시작되고, 팀원을 초대하면 협업이 됩니다</p>
+              <p className="text-sm text-white/80 leading-relaxed mb-5">
+                Clara에게 자연어로 무엇이든 요청하세요. AI가 이메일·Drive·프로젝트를 탐색해 답을 찾고,
+                팀원을 초대하는 순간 같은 대화방에서 함께 검토합니다.
+                모든 대화에는 <strong>Folder</strong>(참조 자료·산출물 목록)와 <strong>Preview</strong>(파일 즉시 미리보기)가 내장되어 있습니다.
+              </p>
+              <div className="grid grid-cols-2 gap-x-4 gap-y-2.5">
+                {[
+                  { skill: "통합 자연어 검색", desc: "이메일·Drive·대화·일정을 한 번에" },
+                  { skill: "리서치 & 교차 검증", desc: "외부 리서치 + 내부 자료 자동 대조" },
+                  { skill: "팀원 초대 → 그룹 검토", desc: "AI 대화방에 팀원 바로 초대" },
+                  { skill: "@멘션으로 동시 지시", desc: "팀원과 Clara에게 한 번에 요청" },
+                  { skill: "태스크·일정 실행", desc: "대화만으로 생성·배정·기한 설정" },
+                  { skill: "검토 근거 자동 보존", desc: "의사결정 이력이 대화에 남음" },
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <span className="shrink-0 mt-0.5 w-4 h-4 rounded bg-white/20 text-[9px] font-bold flex items-center justify-center">{i + 1}</span>
+                    <div>
+                      <span className="text-[11px] font-bold block">{item.skill}</span>
+                      <span className="text-[10px] text-white/50">{item.desc}</span>
+                    </div>
+                  </div>
+                ))}
+              </div>
+              <div className="mt-5 pt-4 border-t border-white/10 flex gap-3">
+                <div className="flex-1 p-2.5 rounded-lg bg-white/10">
+                  <div className="text-[10px] font-bold text-violet-300 mb-1">Folder 내장</div>
+                  <div className="text-[10px] text-white/60">대화에서 언급된 파일·태스크·이메일이 자동 수집되어 한눈에 정리</div>
+                </div>
+                <div className="flex-1 p-2.5 rounded-lg bg-white/10">
+                  <div className="text-[10px] font-bold text-violet-300 mb-1">Preview 내장</div>
+                  <div className="text-[10px] text-white/60">PDF·Docs·Sheets·Word·Excel·HWP를 열지 않고 즉시 미리보기 + AI 질의</div>
+                </div>
+              </div>
+            </div>
+
+            {/* Inbox */}
+            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-orange-200 hover:shadow-lg transition">
+              <div className="w-10 h-10 rounded-xl bg-orange-100 text-orange-600 flex items-center justify-center mb-4">
+                <IconMail />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-1">Inbox</h3>
+              <p className="text-xs text-gray-400 mb-4">AI가 브리핑하는 팀 공유 인박스</p>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                고객사 이메일이 도착하면 AI가 핵심을 요약하고, 관련 프로젝트와 내부 문서를 자동 연결합니다.
+                이메일 옆에서 바로 팀 채팅을 시작하고, 다음 액션을 제안받으세요.
+              </p>
+              <ul className="space-y-2.5">
+                {[
+                  "OVERVIEW — 이메일 핵심 자동 요약 & 브리핑",
+                  "Linked Context — 관련 프로젝트·고객사·문서 연결",
+                  "Suggest — 답장 초안·태스크 생성·후속 액션 제안",
+                  "팀원별 처리 현황 실시간 확인",
+                  "이메일 옆에서 바로 팀 채팅 시작",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
+                    <IconCheck /><span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* 중단: Compose, Playbook */}
+          <div className="section-fade grid md:grid-cols-2 gap-6 mb-6">
+
+            {/* Compose */}
+            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-rose-200 hover:shadow-lg transition">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                  </svg>
+                </div>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-1">Compose</h3>
+              <p className="text-xs text-gray-400 mb-4">AI가 맥락을 이해하고 작성하는 문서·이메일</p>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                Clara에게 &ldquo;이메일 답장 작성해줘&rdquo; &ldquo;보고서 초안 만들어줘&rdquo;라고 요청하면,
+                대화 맥락·내부 자료·팀 검토 의견을 반영한 문서를 생성합니다. 작성된 이메일은 바로 발송할 수 있습니다.
+              </p>
+              <ul className="space-y-2">
+                {[
+                  "이메일 답장 — 과거 대화 맥락 반영 초안",
+                  "보고서·제안서 — 내부 자료 기반 문서 생성",
+                  "팀 검토 의견을 자동 반영한 수정 버전",
+                  "작성 즉시 이메일 발송 또는 Drive 저장",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
+                    <IconCheck /><span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Playbook */}
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white hover:shadow-lg transition">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-white/20 flex items-center justify-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                  </svg>
+                </div>
+                <span className="bg-white/20 px-2.5 py-0.5 rounded-full text-[10px] font-bold">핵심 차별점</span>
+              </div>
+              <h3 className="text-xl font-bold mb-1">Playbook</h3>
+              <p className="text-xs text-amber-200 mb-4">업무 프로세스가 자동으로 재사용 가능한 가이드가 됩니다</p>
+              <p className="text-sm text-white/80 leading-relaxed mb-5">
+                &ldquo;이걸 플레이북으로 만들어줘&rdquo; 한마디면, 리서치→검토→문서 작성의 전체 과정이
+                단계별 워크플로우로 자동 정리됩니다. 다음 유사 안건에서 신입도 시니어의 프로세스를 따릅니다.
+              </p>
+              <ul className="space-y-2">
+                {[
+                  "대화 한 번으로 업무 프로세스 자동 추출",
+                  "단계별 워크플로우 + 참고 자료 링크 포함",
+                  "팀 전체가 동일한 품질로 업무 수행",
+                  "신규 입사자 온보딩 시간 대폭 단축",
+                  "유사 안건에서 즉시 재사용·커스터마이징",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs text-white/80">
+                    <IconCheck /><span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* 하단: Project, People */}
+          <div className="section-fade grid md:grid-cols-2 gap-6">
+
+            {/* Project */}
+            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-purple-200 hover:shadow-lg transition">
+              <div className="w-10 h-10 rounded-xl bg-purple-100 text-purple-600 flex items-center justify-center mb-4">
+                <IconProject />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-1">Project</h3>
+              <p className="text-xs text-gray-400 mb-4">이메일에서 시작되는 프로젝트·태스크 관리</p>
+              <ul className="space-y-2">
+                {[
+                  "프로젝트별 태스크 — 기한·담당자·설명",
+                  "이메일 → 태스크 자동 생성",
+                  "태스크마다 Chat 자동 연결 (Folder·Preview 포함)",
+                  "이메일·문서를 컨텍스트로 자동 연결",
+                  "전체 워크플로우가 Playbook으로 축적",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
+                    <IconCheck /><span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* People */}
+            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-green-200 hover:shadow-lg transition">
+              <div className="w-10 h-10 rounded-xl bg-green-100 text-green-600 flex items-center justify-center mb-4">
+                <IconUsers />
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-1">People</h3>
+              <p className="text-xs text-gray-400 mb-4">별도 CRM 없는 지능형 연락처 관리</p>
+              <ul className="space-y-2">
+                {[
+                  "이메일에서 연락처·회사 정보 자동 추출",
+                  "연락처별 이메일 히스토리 자동 관리",
+                  "스마트 그룹 & 자연어 연락처 검색",
+                  "직함·소속·관계 AI 자동 업데이트",
+                  "고객사별 커뮤니케이션 한눈에 파악",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
+                    <IconCheck /><span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -682,12 +891,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── AI 액티브 에이전트 (vs ChatGPT) - 가장 중요 ─── */}
-      <section id="ai-agent" className="py-20 px-6 bg-gradient-to-b from-violet-600 to-violet-800 text-white">
+      {/* ─── Ask: AI 동료 (vs ChatGPT) - 가장 중요 ─── */}
+      <section id="ai-ask" className="py-20 px-6 bg-gradient-to-b from-violet-600 to-violet-800 text-white">
         <div className="max-w-6xl mx-auto">
           <div className="section-fade text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-              ✦ 핵심 기능
+              ✦ Ask — AI 동료
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
               ChatGPT는 우리 회사를 모릅니다.<br />
@@ -816,30 +1025,33 @@ export default function Home() {
                     <th className="py-4 px-2 text-center font-semibold text-gray-400 border-b border-gray-200">Slack<br /><span className="text-[10px] font-normal text-orange-500">AI 플랜 $12.50/월</span></th>
                     <th className="py-4 px-2 text-center font-semibold text-gray-400 border-b border-gray-200">ChatGPT<br /><span className="text-[10px] font-normal text-orange-500">Team $25/월</span></th>
                     <th className="py-4 px-2 text-center font-semibold text-gray-400 border-b border-gray-200">Monday<br /><span className="text-[10px] font-normal text-orange-500">AI 플랜 $19/월</span></th>
+                    <th className="py-4 px-2 text-center font-semibold text-gray-400 border-b border-gray-200">HubSpot<br /><span className="text-[10px] font-normal text-orange-500">Pro $90+/월</span></th>
                     <th className="py-4 px-6 text-center font-bold text-violet-600 bg-violet-50 rounded-t-2xl border-x border-t border-violet-100 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">Clara<br /><span className="text-xs font-bold uppercase tracking-wider">All-in-One AI</span></th>
                   </tr>
                 </thead>
                 <tbody>
                   {[
-                    { feature: "Shared Inbox (팀 메일 관리)", values: ["✅", "❌", "❌", "❌", "✅"] },
-                    { feature: "팀 채팅 (실시간 소통)", values: ["❌", "✅", "❌", "❌", "✅"] },
-                    { feature: "AI 에이전트 (자연어 명령)", values: ["⚠️", "⚠️", "✅", "⚠️", "✅"] },
-                    { feature: "프로젝트 관리 (태스크/기한)", values: ["❌", "❌", "❌", "✅", "✅"] },
-                    { feature: "이메일 옆 실시간 채팅", values: ["⚠️", "❌", "❌", "❌", "✅"] },
-                    { feature: "이메일 AI 자동 요약/브리핑", values: ["⚠️", "❌", "⚠️", "❌", "✅"] },
-                    { feature: "업무 맥락 AI (앱 간 데이터 연동)", values: ["❌", "❌", "❌", "❌", "✅"] },
-                    { feature: "연락처 CRM + AI 분석", values: ["❌", "❌", "❌", "❌", "✅"] },
-                    { feature: "Gmail 네이티브 연동", values: ["✅", "❌", "❌", "❌", "✅"] },
+                    { feature: "Shared Inbox (팀 메일 관리)", values: ["✅", "❌", "❌", "❌", "❌", "✅"] },
+                    { feature: "팀 채팅 (실시간 소통)", values: ["❌", "✅", "❌", "❌", "❌", "✅"] },
+                    { feature: "Ask — AI 자연어 검색·실행", values: ["⚠️", "⚠️", "✅", "⚠️", "⚠️", "✅"] },
+                    { feature: "프로젝트 관리 (태스크/기한)", values: ["❌", "❌", "❌", "✅", "❌", "✅"] },
+                    { feature: "이메일 옆 실시간 채팅", values: ["⚠️", "❌", "❌", "❌", "❌", "✅"] },
+                    { feature: "이메일 AI 자동 요약/브리핑", values: ["⚠️", "❌", "⚠️", "❌", "❌", "✅"] },
+                    { feature: "업무 맥락 AI (앱 간 데이터 연동)", values: ["❌", "❌", "❌", "❌", "❌", "✅"] },
+                    { feature: "연락처 자동 추출 & AI 분석", values: ["❌", "❌", "❌", "❌", "✅", "✅"] },
+                    { feature: "연락처별 이메일 히스토리 관리", values: ["❌", "❌", "❌", "❌", "✅", "✅"] },
+                    { feature: "스마트 연락처 그룹 & 검색", values: ["❌", "❌", "❌", "❌", "✅", "✅"] },
+                    { feature: "Gmail 네이티브 연동", values: ["✅", "❌", "❌", "❌", "✅", "✅"] },
                   ].map((row, i) => (
                     <tr key={i} className="group hover:bg-gray-50/50 transition-colors">
                       <td className="py-4 px-4 font-medium text-gray-700 border-b border-gray-100 bg-white sticky left-0 z-10 group-hover:bg-gray-50/50 transition-colors">{row.feature}</td>
-                      {row.values.slice(0, 4).map((v, j) => (
+                      {row.values.slice(0, 5).map((v, j) => (
                         <td key={j} className="py-4 px-2 text-center text-gray-400 border-b border-gray-100">
                           {v}
                         </td>
                       ))}
                       <td className="py-4 px-6 text-center bg-violet-50/50 font-bold text-violet-600 border-b border-x border-violet-100 group-last:border-b-0">
-                        {row.values[4]}
+                        {row.values[5]}
                       </td>
                     </tr>
                   ))}
@@ -849,6 +1061,7 @@ export default function Home() {
                     <td className="py-6 px-2 text-center text-orange-500">$12.50</td>
                     <td className="py-6 px-2 text-center text-orange-500">$25</td>
                     <td className="py-6 px-2 text-center text-orange-500">$19</td>
+                    <td className="py-6 px-2 text-center text-orange-500">$90+</td>
                     <td className="py-6 px-6 text-center text-violet-600 bg-violet-50 rounded-b-2xl border-x border-b border-violet-100 shadow-[0_4px_6px_-1px_rgba(0,0,0,0.05)] text-xl">All-in-One</td>
                   </tr>
                 </tbody>
@@ -856,7 +1069,7 @@ export default function Home() {
             </div>
             <div className="mt-6 p-5 bg-red-50 rounded-2xl border border-red-100 text-center">
               <p className="text-base text-red-700 font-bold mb-1">
-                합계: 1인당 월 $81.50+ — 그런데 AI끼리 교차 검증이 불가능합니다.
+                합계: 1인당 월 $171.50+ — 그런데 AI끼리 교차 검증이 불가능합니다.
               </p>
               <p className="text-sm text-red-600">
                 리서치 결과를 내부 문서와 대조하고, 팀 검토를 거쳐 문서를 만드는 전 과정이 연결되지 않습니다.
@@ -868,6 +1081,116 @@ export default function Home() {
                 리서치→교차 검증→검토→문서 작성의 전 과정이 팀의 재사용 가능한 자산으로 축적됩니다.
               </p>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── Pricing ─── */}
+      <section id="plans" className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="section-fade text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              우리 팀에 맞는 플랜을 선택하세요
+            </h2>
+            <p className="text-lg text-gray-500">
+              모든 플랜에 이메일·채팅·프로젝트·AI 기능이 포함됩니다. 팀 규모와 보안 요건에 따라 선택하세요.
+            </p>
+          </div>
+          <div className="section-fade grid md:grid-cols-3 gap-8">
+
+            {/* SaaS */}
+            <div className="relative p-8 rounded-2xl bg-white border-2 border-violet-200 shadow-lg">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-violet-600 text-white text-xs font-bold px-4 py-1 rounded-full">추천</div>
+              <div className="text-sm font-semibold text-violet-600 mb-2">SaaS</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-1">Clara Cloud</h3>
+              <p className="text-sm text-gray-500 mb-6">빠르게 시작하고 싶은 팀</p>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-gray-900">$100</span>
+                <span className="text-gray-500 text-sm"> / 인 / 월</span>
+              </div>
+              <div className="text-xs text-gray-400 mb-6">+ AI 크레딧 (사용량 기반)</div>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "이메일·채팅·프로젝트·AI 전체 기능",
+                  "Google Workspace 완전 연동",
+                  "AI 리서치 & 내부 자료 교차 검증",
+                  "플레이북 자동 생성",
+                  "Clara 관리형 서버 (자동 업데이트)",
+                  "SSL 암호화 및 SOC 2 준수",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                    <IconCheck /><span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="#cta" className="block w-full text-center bg-violet-600 text-white py-3 rounded-full font-medium hover:bg-violet-700 transition">
+                무료 체험 시작
+              </a>
+            </div>
+
+            {/* Dedicated */}
+            <div className="p-8 rounded-2xl bg-white border border-gray-200 hover:border-violet-200 transition">
+              <div className="text-sm font-semibold text-gray-500 mb-2">Dedicated</div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-1">독립 서버</h3>
+              <p className="text-sm text-gray-500 mb-6">데이터 보안이 중요한 팀</p>
+              <div className="mb-6">
+                <span className="text-4xl font-bold text-gray-900">$2,000</span>
+                <span className="text-gray-500 text-sm"> / 서버 / 월</span>
+              </div>
+              <div className="text-xs text-gray-400 mb-6">최대 100명 · BYOK (자체 LLM 키 사용)</div>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "SaaS 플랜의 모든 기능 포함",
+                  "전용 서버 격리 (데이터 분리)",
+                  "BYOK — 자체 OpenAI/Anthropic 키 사용",
+                  "LLM 비용을 팀이 직접 관리·절감",
+                  "커스텀 보안 정책 적용 가능",
+                  "우선 기술 지원",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
+                    <IconCheck /><span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="#cta" className="block w-full text-center bg-gray-900 text-white py-3 rounded-full font-medium hover:bg-gray-800 transition">
+                도입 상담 요청
+              </a>
+            </div>
+
+            {/* Enterprise */}
+            <div className="p-8 rounded-2xl bg-gradient-to-br from-gray-900 to-gray-800 text-white">
+              <div className="text-sm font-semibold text-violet-300 mb-2">Enterprise</div>
+              <h3 className="text-2xl font-bold mb-1">커스텀</h3>
+              <p className="text-sm text-gray-400 mb-6">맞춤 개발이 필요한 조직</p>
+              <div className="mb-6">
+                <span className="text-4xl font-bold">별도 협의</span>
+              </div>
+              <div className="text-xs text-gray-500 mb-6">팀 규모·요구사항에 따라 맞춤 견적</div>
+              <ul className="space-y-3 mb-8">
+                {[
+                  "독립 서버 플랜의 모든 기능 포함",
+                  "온프레미스 / 프라이빗 클라우드 배포",
+                  "커스텀 AI 모델 학습 및 파인튜닝",
+                  "기존 사내 시스템 연동 개발",
+                  "전담 엔지니어 배정",
+                  "SLA 및 감사 로그",
+                ].map((item, i) => (
+                  <li key={i} className="flex items-start gap-2 text-sm text-white/80">
+                    <IconCheck /><span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <a href="#cta" className="block w-full text-center bg-white text-gray-900 py-3 rounded-full font-medium hover:bg-gray-100 transition">
+                커스텀 상담 요청
+              </a>
+            </div>
+
+          </div>
+
+          <div className="section-fade mt-12 text-center">
+            <p className="text-sm text-gray-400">
+              모든 플랜은 14일 무료 체험을 제공합니다 · 신용카드 없이 시작 · Google Workspace 연동으로 5분 내 셋업
+            </p>
           </div>
         </div>
       </section>
@@ -1092,10 +1415,11 @@ export default function Home() {
               <span className="text-xs text-gray-400 ml-2">전문직 팀을 위한 AI 동료 by SprintSolo</span>
             </div>
             <div className="flex items-center gap-6 text-sm text-gray-500">
-              <a href="#features" className="hover:text-violet-600 transition">기능</a>
-              <a href="#ai-agent" className="hover:text-violet-600 transition">AI 에이전트</a>
+              <a href="#core-features" className="hover:text-violet-600 transition">핵심 기능</a>
+              <a href="#features" className="hover:text-violet-600 transition">왜 Clara인가</a>
               <a href="#use-cases" className="hover:text-violet-600 transition">사용 사례</a>
               <a href="#pricing" className="hover:text-violet-600 transition">비교</a>
+              <a href="#plans" className="hover:text-violet-600 transition">요금제</a>
             </div>
           </div>
           <div className="text-center text-xs text-gray-400 mt-8">
