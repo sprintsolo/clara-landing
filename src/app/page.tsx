@@ -81,8 +81,8 @@ const PAIN_POINTS = [
     icon: "✉",
     badge: "bg-red-50 text-red-600 border-red-200",
     highlight: "bg-red-50 border-red-100",
-    title: "'Share in chat' — 이메일을 보면서 논의할 수 없습니다",
-    desc: "Gmail에서 'Share in chat'을 눌러도 수신자를 고르고, 채팅방을 새로 만들고, 맥락을 다시 설명해야 합니다. 공유된 이메일은 읽기 전용 미리보기일 뿐 — 답장도, 액션도, 문서 연결도 Chat 안에서 할 수 없습니다. 논의는 Chat에, 원문은 Gmail에, 문서는 Drive에 분산되어 하나로 연결되지 않습니다.",
+    title: "경력자의 이메일 검토 맥락, 신입에게 전달할 방법이 없습니다",
+    desc: "경력자가 Gmail에서 검토한 판단 근거, 고객사 히스토리, 참고한 문서가 Chat으로 공유되지 않습니다. 신입이 같은 고객 건을 맡으면 이메일을 처음부터 다시 읽고, 맥락을 다시 파악해야 합니다. 논의는 Chat에, 원문은 Gmail에, 문서는 Drive에 — 경력자의 검토 과정이 흩어져 재사용이 불가능합니다.",
   },
   {
     app: "Gmail + Slack",
@@ -90,8 +90,8 @@ const PAIN_POINTS = [
     icon: "💬",
     badge: "bg-pink-50 text-pink-600 border-pink-200",
     highlight: "bg-pink-50 border-pink-100",
-    title: "Slack에 공유한 이메일은 답장도, 추적도 안 됩니다",
-    desc: "Slack에 이메일을 전달하면 서식이 깨진 알림 한 줄로 도착합니다. 원문 스레드와 연결되지 않아 답장도 불가능하고, 빠르게 흘러가는 채널에 몇 분 만에 묻힙니다. 30개 고객사를 관리하는 팀이라면 이메일이 수십 개 채널에 흩어져 한 고객의 전체 흐름을 볼 수 없습니다.",
+    title: "경력자의 검토 의견이 Slack 채널에 묻혀 사라집니다",
+    desc: "경력자가 Slack에서 공유한 검토 기준, 리스크 판단, 수정 지시사항이 빠르게 흘러가는 채널에 몇 분 만에 묻힙니다. 다음에 비슷한 안건을 맡는 신입은 그 검토 이력을 찾을 수 없어 같은 질문을 반복합니다. 30개 고객사의 검토 맥락이 수십 개 채널에 흩어져 있습니다.",
   },
   {
     app: "Front",
@@ -99,8 +99,8 @@ const PAIN_POINTS = [
     icon: "📮",
     badge: "bg-orange-50 text-orange-600 border-orange-200",
     highlight: "bg-orange-50 border-orange-100",
-    title: "공유 인박스는 좋지만, AI 추가하면 인당 $85/월입니다",
-    desc: "Front의 공유 인박스는 이메일 협업 문제를 해결하지만, Starter($25)는 10명 제한·단일 채널뿐이라 실질적으로 Professional($65) + AI Copilot($20) = 인당 $85/월이 필요합니다. 40명이면 연 $40,800입니다. 그런데 AI는 이메일만 학습하고 — Google Drive 자료, 과거 검토 이력, 리서치 결과와의 교차 검증은 불가능합니다.",
+    title: "공유 인박스는 있지만, 경력자의 판단 기준은 공유 안 됩니다",
+    desc: "Front의 공유 인박스로 이메일은 함께 볼 수 있지만, 경력자가 왜 그렇게 답장했는지, 어떤 내부 문서를 참고했는지, 과거 유사 건을 어떻게 처리했는지는 기록되지 않습니다. AI Copilot($20 추가)도 이메일만 학습하고 — 경력자의 검토 프로세스 자체를 팀에 전달하지 못합니다.",
   },
   {
     app: "HubSpot",
@@ -108,8 +108,8 @@ const PAIN_POINTS = [
     icon: "🔶",
     badge: "bg-amber-50 text-amber-600 border-amber-200",
     highlight: "bg-amber-50 border-amber-100",
-    title: "도입에만 수천만 원, 그런데 영업 파이프라인 도구입니다",
-    desc: "HubSpot Professional은 인당 $90+/월이지만 진짜 비용은 도입입니다 — 데이터 마이그레이션, 커스터마이징, 교육에 $25,000~$50,000가 소요됩니다. 핵심 UX가 영업 딜·마케팅 퍼널 중심이라 법무·회계·자문사의 고객별 검토 워크플로우와 맞지 않습니다. 랜딩페이지 빌더, 광고 관리 등 쓰지 않을 기능에 비용을 내게 됩니다.",
+    title: "기능은 많지만 너무 복잡하고, 정작 업무 노하우는 쌓이지 않습니다",
+    desc: "HubSpot은 CRM·마케팅·서비스까지 수백 개 기능을 제공하지만, 그만큼 배우기 어렵고 도입 비용만 $25,000~$50,000입니다. 인당 $90+/월을 내도 팀이 실제로 쓰는 기능은 일부뿐입니다. 무엇보다 경력자가 고객을 어떻게 대응했는지 — 검토 기준, 리서치 방법, 문서 작성 과정은 기록되지 않아 신입에게 전달할 수 없습니다.",
   },
   {
     app: "Monday.com",
@@ -117,8 +117,8 @@ const PAIN_POINTS = [
     icon: "📋",
     badge: "bg-blue-50 text-blue-600 border-blue-200",
     highlight: "bg-blue-50 border-blue-100",
-    title: "이메일 연동이 불안정하고, 문서 맥락이 끊깁니다",
-    desc: "Monday.com의 이메일 연동은 발신자·수신자·참조가 모두 일치해야 작동하는 취약한 구조입니다. 이메일이 누락되거나 연결이 끊기면 동기화된 이메일이 전부 사라집니다. 이메일-태스크 AI 자동 추출의 정확도는 약 80% — 5건 중 1건이 잘못 분류됩니다. 원본 이메일 스레드와 리서치 문서, 검토 논의를 하나의 뷰에서 볼 수 없습니다.",
+    title: "태스크는 관리되지만, '왜 그렇게 했는지'는 기록 안 됩니다",
+    desc: "Monday.com에서 태스크 완료 여부는 추적되지만, 경력자가 그 태스크를 어떤 순서로, 어떤 기준으로 처리했는지는 남지 않습니다. 이메일 원문, 참고 문서, 검토 논의가 태스크와 연결되지 않아 — 신입이 같은 유형의 태스크를 맡으면 경력자에게 다시 물어봐야 합니다.",
   },
   {
     app: "ChatGPT",
@@ -126,8 +126,8 @@ const PAIN_POINTS = [
     icon: "🤖",
     badge: "bg-emerald-50 text-emerald-600 border-emerald-200",
     highlight: "bg-emerald-50 border-emerald-100",
-    title: "Gmail 검색에 12분, 결과의 1/3이 틀립니다",
-    desc: "ChatGPT의 Gmail 연동 테스트에서 네이티브 Gmail로 수 초면 되는 검색이 12분 걸렸고, Deep Research 모드에서 3건 중 정확한 이메일은 1건뿐이었습니다. PDF 속 이미지 텍스트나 복잡한 재무 데이터는 제대로 읽지 못합니다. 무엇보다 별도의 브라우저 탭이라 — 고객사 이메일, Drive 자료, 팀 검토 이력을 하나의 질의로 교차 참조할 수 없습니다.",
+    title: "AI가 리서치해줘도, 우리 회사의 과거 사례는 모릅니다",
+    desc: "ChatGPT가 아무리 뛰어나도 우리 회사가 지난번 비슷한 건을 어떻게 처리했는지, 경력자가 어떤 기준으로 검토했는지는 알 수 없습니다. 별도 브라우저 탭에서 작동하라 — 내부 이메일, Drive 자료, 과거 검토 이력과 교차 검증이 불가능합니다. 결국 경력자가 직접 확인해야 합니다.",
   },
 ];
 
@@ -135,7 +135,7 @@ function PainPointCarousel() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [animState, setAnimState] = useState<"enter" | "exit">("enter");
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const INTERVAL = 4500;
+  const INTERVAL = 9000;
 
   const goTo = useCallback(
     (next: number) => {
@@ -476,7 +476,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="section-fade">
             <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-              <span>✦</span> 전문직 팀을 위한 AI 동료, Clara
+              <span>✦</span> 전문직 회사를 위한 AI 동료, Clara
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               경력자는 반나절, 신입은 이틀<br />
@@ -506,7 +506,7 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="section-fade text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-              전문직 팀의 업무는<br />
+              전문직 회사의 업무는<br />
               왜 매번 처음부터일까요?
             </h2>
             <p className="text-lg text-gray-500 max-w-3xl mx-auto mb-10 leading-relaxed">
@@ -1415,7 +1415,7 @@ export default function Home() {
                 <span className="text-white font-bold text-xs">C</span>
               </div>
               <span className="text-lg font-bold text-gray-900">Clara</span>
-              <span className="text-xs text-gray-400 ml-2">전문직 팀을 위한 AI 동료 by SprintSolo</span>
+              <span className="text-xs text-gray-400 ml-2">전문직 회사를 위한 AI 동료 by SprintSolo</span>
             </div>
             <div className="flex items-center gap-6 text-sm text-gray-500">
               <a href="#core-features" className="hover:text-violet-600 transition">핵심 기능</a>

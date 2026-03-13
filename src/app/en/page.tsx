@@ -81,8 +81,8 @@ const PAIN_POINTS = [
     icon: "✉",
     badge: "bg-red-50 text-red-600 border-red-200",
     highlight: "bg-red-50 border-red-100",
-    title: "'Share in chat' — you can't discuss while viewing the email",
-    desc: "Clicking 'Share in chat' in Gmail still requires picking recipients, creating a new chat room, and re-explaining context. The shared email is just a read-only preview — no replies, no actions, no document linking inside Chat. Discussions end up in Chat, originals in Gmail, docs in Drive — nothing connects.",
+    title: "A senior's email review context can't be passed to juniors",
+    desc: "A senior's judgment, client history, and referenced docs from Gmail don't carry over to Chat. When a junior takes over the same client, they have to re-read every email and rebuild context from scratch. Discussions in Chat, originals in Gmail, docs in Drive — the senior's review process scatters and can't be reused.",
   },
   {
     app: "Gmail + Slack",
@@ -90,8 +90,8 @@ const PAIN_POINTS = [
     icon: "💬",
     badge: "bg-pink-50 text-pink-600 border-pink-200",
     highlight: "bg-pink-50 border-pink-100",
-    title: "Emails shared in Slack can't be replied to or tracked",
-    desc: "Forwarding emails to Slack produces a single broken-format notification. It's disconnected from the original thread — no replies possible, and it gets buried in fast-moving channels within minutes. If your team manages 30 clients, emails scatter across dozens of channels with no way to see a single client's full thread.",
+    title: "Senior review comments get buried and lost in Slack channels",
+    desc: "A senior's review criteria, risk assessments, and revision instructions shared in Slack get buried in fast-moving channels within minutes. The next junior handling a similar case can't find that review history and ends up asking the same questions. Review context for 30 clients scatters across dozens of channels.",
   },
   {
     app: "Front",
@@ -99,8 +99,8 @@ const PAIN_POINTS = [
     icon: "📮",
     badge: "bg-orange-50 text-orange-600 border-orange-200",
     highlight: "bg-orange-50 border-orange-100",
-    title: "Great shared inbox, but adding AI costs $85/user/month",
-    desc: "Front's shared inbox solves email collaboration, but Starter ($25) limits you to 10 users and a single channel. In practice you need Professional ($65) + AI Copilot ($20) = $85/user/month. For 40 people, that's $40,800/year. And the AI only learns from emails — no cross-verification with Google Drive files, past reviews, or research results.",
+    title: "Shared inbox exists, but senior judgment isn't shared",
+    desc: "Front's shared inbox lets the team see emails together, but it doesn't capture why a senior replied that way, which internal docs they referenced, or how they handled a similar past case. Even the AI Copilot (+$20) only learns from emails — it can't transfer a senior's actual review process to the team.",
   },
   {
     app: "HubSpot",
@@ -108,8 +108,8 @@ const PAIN_POINTS = [
     icon: "🔶",
     badge: "bg-amber-50 text-amber-600 border-amber-200",
     highlight: "bg-amber-50 border-amber-100",
-    title: "Tens of thousands to deploy, yet it's a sales pipeline tool",
-    desc: "HubSpot Professional costs $90+/user/month, but the real cost is onboarding — data migration, customization, and training run $25,000–$50,000. Its core UX centers on sales deals and marketing funnels, which doesn't fit the client-by-client review workflows of law firms, accounting firms, and advisory firms. You end up paying for landing page builders and ad management you'll never use.",
+    title: "Hundreds of features but too complex, and work expertise still doesn't accumulate",
+    desc: "HubSpot offers hundreds of features across CRM, marketing, and service — but that complexity makes it hard to learn, with onboarding costs of $25,000–$50,000. At $90+/user/month, teams only use a fraction of what they pay for. Most importantly, how a senior actually handled a client — review criteria, research methods, document process — never gets recorded or passed to juniors.",
   },
   {
     app: "Monday.com",
@@ -117,8 +117,8 @@ const PAIN_POINTS = [
     icon: "📋",
     badge: "bg-blue-50 text-blue-600 border-blue-200",
     highlight: "bg-blue-50 border-blue-100",
-    title: "Unstable email integration, broken document context",
-    desc: "Monday.com's email integration has a fragile structure requiring exact sender/recipient/CC matches. When emails are missed or connections break, all synced emails vanish. The AI email-to-task extraction accuracy is about 80% — 1 in 5 gets misclassified. You can't view the original email thread, research docs, and review discussion in a single view.",
+    title: "Tasks are tracked, but 'why it was done that way' isn't recorded",
+    desc: "Monday.com tracks whether a task is complete, but not in what order or by what criteria a senior handled it. The original email, reference docs, and review discussion aren't linked to the task — so when a junior gets the same type of task, they have to ask the senior again from scratch.",
   },
   {
     app: "ChatGPT",
@@ -126,8 +126,8 @@ const PAIN_POINTS = [
     icon: "🤖",
     badge: "bg-emerald-50 text-emerald-600 border-emerald-200",
     highlight: "bg-emerald-50 border-emerald-100",
-    title: "Gmail search takes 12 min, 1/3 of results are wrong",
-    desc: "In testing ChatGPT's Gmail integration, a search that takes seconds in native Gmail took 12 minutes. In Deep Research mode, only 1 out of 3 emails was accurate. It can't properly read image text in PDFs or complex financial data. Most importantly, it's a separate browser tab — you can't cross-reference client emails, Drive files, and team review history in a single query.",
+    title: "AI does research, but it doesn't know your firm's past cases",
+    desc: "No matter how capable ChatGPT is, it can't know how your firm handled a similar case last time or what criteria a senior used for review. Running in a separate browser tab, it can't cross-verify with internal emails, Drive files, or past review history. In the end, the senior still has to verify everything personally.",
   },
 ];
 
@@ -135,7 +135,7 @@ function PainPointCarousel() {
   const [activeIdx, setActiveIdx] = useState(0);
   const [animState, setAnimState] = useState<"enter" | "exit">("enter");
   const timerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
-  const INTERVAL = 4500;
+  const INTERVAL = 9000;
 
   const goTo = useCallback(
     (next: number) => {
@@ -463,10 +463,10 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="section-fade">
             <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-              <span>✦</span> AI Colleague for Professional Teams, Clara
+              <span>✦</span> AI Colleague for Professional Firms, Clara
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Half a day for a senior, two for a new hire<br />
+              Half a day for a senior, two days for a junior<br />
               Everything changes with <span className="gradient-text">Clara</span>
             </h1>
             <div className="mb-10">
@@ -1402,7 +1402,7 @@ export default function Home() {
                 <span className="text-white font-bold text-xs">C</span>
               </div>
               <span className="text-lg font-bold text-gray-900">Clara</span>
-              <span className="text-xs text-gray-400 ml-2">AI Colleague for Professional Teams by SprintSolo</span>
+              <span className="text-xs text-gray-400 ml-2">AI Colleague for Professional Firms by SprintSolo</span>
             </div>
             <div className="flex items-center gap-6 text-sm text-gray-500">
               <a href="#core-features" className="hover:text-violet-600 transition">Core Features</a>
