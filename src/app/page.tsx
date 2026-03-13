@@ -100,7 +100,7 @@ const PAIN_POINTS = [
     badge: "bg-orange-50 text-orange-600 border-orange-200",
     highlight: "bg-orange-50 border-orange-100",
     title: "공유 인박스는 있지만, 경력자의 판단 기준은 공유 안 됩니다",
-    desc: "Front의 공유 인박스로 이메일은 함께 볼 수 있지만, 경력자가 왜 그렇게 답장했는지, 어떤 내부 문서를 참고했는지, 과거 유사 건을 어떻게 처리했는지는 기록되지 않습니다. AI Copilot($20 추가)도 이메일만 학습하고 — 경력자의 검토 프로세스 자체를 팀에 전달하지 못합니다.",
+    desc: "Front의 공유 인박스로 이메일은 함께 볼 수 있지만, 경력자가 왜 그렇게 답장했는지, 어떤 내부 문서를 참고했는지, 과거 유사 건을 어떻게 처리했는지는 기록되지 않습니다. AI Copilot($20 추가)도 이메일만 참고할 뿐 — 경력자의 검토 프로세스 자체를 팀에 전달하지 못합니다.",
   },
   {
     app: "HubSpot",
@@ -117,8 +117,8 @@ const PAIN_POINTS = [
     icon: "📋",
     badge: "bg-blue-50 text-blue-600 border-blue-200",
     highlight: "bg-blue-50 border-blue-100",
-    title: "태스크는 관리되지만, '왜 그렇게 했는지'는 기록 안 됩니다",
-    desc: "Monday.com에서 태스크 완료 여부는 추적되지만, 경력자가 그 태스크를 어떤 순서로, 어떤 기준으로 처리했는지는 남지 않습니다. 이메일 원문, 참고 문서, 검토 논의가 태스크와 연결되지 않아 — 신입이 같은 유형의 태스크를 맡으면 경력자에게 다시 물어봐야 합니다.",
+    title: "태스크에 고객 이메일이 자동 연결되지 않아, 맥락이 끊깁니다",
+    desc: "Monday.com에서 태스크를 만들어도 고객과 주고받은 이메일, 참고 문서, 팀 검토 논의가 자동으로 연결되지 않습니다. 태스크에 맥락이 없으니 경력자가 왜 그렇게 처리했는지 알 수 없고, 신입이 같은 유형의 업무를 맡으면 고객 이메일부터 다시 찾아 읽어야 합니다.",
   },
   {
     app: "ChatGPT",
@@ -501,7 +501,38 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 핵심 스토리: 프로젝트 관리 → AI 학습 ─── */}
+      {/* ─── 타겟 고객 Pain Point ─── */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="section-fade text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              법무·회계·자문·투자사가<br />겪는 공통 문제
+            </h2>
+            <p className="text-lg text-gray-500">20~100명 전문직 회사에서 소수 팀이 다수 고객사를 대응할 때 발생합니다.</p>
+          </div>
+          <div className="section-fade grid md:grid-cols-2 gap-6">
+            {[
+              { icon: "🔍", title: "AI 리서치 결과를 내부 자료와 대조할 수 없습니다", desc: "ChatGPT로 리서치한 결과를 고객사별 Google Drive 자료, 과거 이메일과 교차 검증하려면 탭을 오가며 수동으로 비교해야 합니다." },
+              { icon: "📧", title: "고객사별 맥락이 이메일에 묻혀 있습니다", desc: "고객사의 협의 내용, 계약 조건, 검토 이력이 Gmail에 파묻혀 있지만, 프로젝트나 채팅에서 다시 꺼내 쓸 수 없습니다." },
+              { icon: "👥", title: "검토·검수 과정이 기록으로 남지 않습니다", desc: "전문직 산출물은 반드시 동료 검토를 거쳐야 하지만, 검토 의견이 Slack 채팅에 흩어져 '왜 이렇게 결론 났는지' 추적이 불가능합니다." },
+              { icon: "🔄", title: "유사 안건인데 매번 처음부터 작업합니다", desc: "지난번 비슷한 고객사 건을 어떻게 처리했는지 찾을 수 없어, 리서치·검토·문서 작성을 반복합니다. 시니어의 경험이 팀 자산이 되지 못합니다." },
+            ].map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl border border-gray-200 hover:border-violet-200 transition">
+                <span className="text-3xl mb-3 block">{item.icon}</span>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="section-fade text-center mt-12">
+            <div className="inline-flex items-center gap-2 bg-violet-600 text-white px-6 py-3 rounded-full text-base font-medium">
+              Clara는 이 모든 맥락을 연결합니다 ↓
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 핵심 스토리: 프로젝트 관리 → AI 자동 정리 ─── */}
       <section className="py-20 px-6 bg-gradient-to-b from-violet-50/50 to-white">
         <div className="max-w-5xl mx-auto">
           <div className="section-fade text-center mb-16">
@@ -753,63 +784,186 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── 타겟 고객 Pain Point ─── */}
-      <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="section-fade text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              법무·회계·자문·투자사가<br />겪는 공통 문제
-            </h2>
-            <p className="text-lg text-gray-500">20~100명 전문직 회사에서 소수 팀이 다수 고객사를 대응할 때 발생합니다.</p>
-          </div>
-          <div className="section-fade grid md:grid-cols-2 gap-6">
-            {[
-              { icon: "🔍", title: "AI 리서치 결과를 내부 자료와 대조할 수 없습니다", desc: "ChatGPT로 리서치한 결과를 고객사별 Google Drive 자료, 과거 이메일과 교차 검증하려면 탭을 오가며 수동으로 비교해야 합니다." },
-              { icon: "📧", title: "고객사별 맥락이 이메일에 묻혀 있습니다", desc: "고객사의 협의 내용, 계약 조건, 검토 이력이 Gmail에 파묻혀 있지만, 프로젝트나 채팅에서 다시 꺼내 쓸 수 없습니다." },
-              { icon: "👥", title: "검토·검수 과정이 기록으로 남지 않습니다", desc: "전문직 산출물은 반드시 동료 검토를 거쳐야 하지만, 검토 의견이 Slack 채팅에 흩어져 '왜 이렇게 결론 났는지' 추적이 불가능합니다." },
-              { icon: "🔄", title: "유사 안건인데 매번 처음부터 작업합니다", desc: "지난번 비슷한 고객사 건을 어떻게 처리했는지 찾을 수 없어, 리서치·검토·문서 작성을 반복합니다. 시니어의 경험이 팀 자산이 되지 못합니다." },
-            ].map((item, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-gray-200 hover:border-violet-200 transition">
-                <span className="text-3xl mb-3 block">{item.icon}</span>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="section-fade text-center mt-12">
-            <div className="inline-flex items-center gap-2 bg-violet-600 text-white px-6 py-3 rounded-full text-base font-medium">
-              Clara는 이 모든 맥락을 연결합니다 ↓
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 통합 가치: 4개 도구를 하나로 ─── */}
-      <section id="features" className="py-20 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
+      {/* ─── 업종별 사용 사례 ─── */}
+      <section id="use-cases" className="py-20 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
           <div className="section-fade text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              리서치 → 교차 검증 → 문서 작성<br />
-              전 과정이 하나로 연결됩니다
+              리서치·검토·문서 작성이<br />플레이북으로 쌓이는 과정
             </h2>
-            <p className="text-lg text-gray-500">
-              각 앱의 AI는 서로의 데이터를 모릅니다. Clara는 이메일·내부 문서·AI 리서치·팀 검토가 처음부터 연결된 하나의 업무 환경입니다.
+            <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+              팀원들이 Clara에서 리서치하고, 검토하고, 문서를 만들면 — 그 전체 과정이<br className="hidden md:block" />
+              다음 유사 안건에서 즉시 재사용할 수 있는 플레이북으로 자동 축적됩니다.
             </p>
           </div>
-          <div className="section-fade grid md:grid-cols-4 gap-6">
-            {[
-              { tool: "Front", icon: <IconMail />, clara: "이메일 → 검토 기록으로", desc: "고객사 이메일이 프로젝트·검토 채팅과 자동 연결됩니다. 과거 고객 히스토리를 다음 안건에서 즉시 참조할 수 있습니다.", color: "bg-orange-50 text-orange-600 border-orange-200" },
-              { tool: "Slack", icon: <IconChat />, clara: "검토 논의 → 근거로", desc: "팀원 간 검토 의견이 사라지지 않습니다. 이메일·문서와 연결된 채팅이 의사결정 근거로 보존됩니다.", color: "bg-blue-50 text-blue-600 border-blue-200" },
-              { tool: "ChatGPT", icon: <IconAI />, clara: "AI 리서치 → 검증까지", desc: "ChatGPT에 배경을 다시 설명할 필요 없습니다. Clara AI가 내부 문서와 이메일까지 참조해 교차 검증된 리서치를 제공합니다.", color: "bg-green-50 text-green-600 border-green-200" },
-              { tool: "Monday.com", icon: <IconProject />, clara: "태스크 → 프로세스로", desc: "고객사 이메일에서 태스크가 자동 생성됩니다. 리서치·검토·문서 작성의 전 과정이 연결되어 재사용 가능한 프로세스가 됩니다.", color: "bg-purple-50 text-purple-600 border-purple-200" },
-            ].map((item, i) => (
-              <div key={i} className={`p-5 rounded-2xl border ${item.color} transition hover:shadow-md`}>
-                <div className="mb-3">{item.icon}</div>
-                <div className="text-[10px] font-semibold text-gray-400 mb-1">vs {item.tool}</div>
-                <h3 className="text-sm font-bold text-gray-900 mb-2">{item.clara}</h3>
-                <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+
+          {/* ── VC / 투자회사 사례 (스크린샷 포함) ── */}
+          <div className="section-fade mb-20">
+            <div className="grid md:grid-cols-2 gap-10 items-start">
+              {/* 왼쪽: 스크린샷 */}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+                <div className="relative screenshot-shadow bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                  <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-gray-50/80">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-red-400/80" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
+                      <div className="w-3 h-3 rounded-full bg-green-400/80" />
+                    </div>
+                    <span className="text-xs font-medium text-gray-600">IDV 펀드의 퍼밋 투자 적합성 분석</span>
+                    <div className="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center">
+                      <span className="text-amber-600 text-[10px]">📊</span>
+                    </div>
+                  </div>
+                  <img
+                    src="/screenshots/usecase-vc-playbook.png"
+                    alt="Clara VC 후속 투자 연계지원 플레이북 생성 과정"
+                    className="w-full h-auto block"
+                  />
+                </div>
               </div>
-            ))}
+
+              {/* 오른쪽: 설명 */}
+              <div>
+                <div className="inline-flex items-center gap-2 bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold mb-4">
+                  📊 벤처캐피탈 / 투자회사
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  포트폴리오사 투자 유치,<br />대화 한 번으로 플레이북까지
+                </h3>
+                <p className="text-sm text-gray-500 mb-6 leading-relaxed">
+                  포트폴리오사의 후속 투자 유치를 위해 잠재 투자자(VC/AC)의 펀드 여력, 투자 성향,
+                  기존 포트폴리오 유사성을 분석하고 전략적 매칭을 진행해야 합니다.
+                  이 과정이 이메일·Slack·스프레드시트에 흩어지면,
+                  다음 포트폴리오사 투자 유치 때 처음부터 다시 시작합니다.
+                </p>
+
+                <div className="space-y-4 mb-6">
+                  <div className="flex gap-3 p-3 bg-amber-50/50 rounded-xl border border-amber-100">
+                    <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 text-xs font-bold">1</div>
+                    <div>
+                      <div className="text-xs font-bold text-gray-800">팀원이 Clara에게 투자 분석 요청</div>
+                      <div className="text-[11px] text-gray-500">채팅에서 "퍼밋의 투자 적합도 분석해줘"라고 요청하면, Clara가 펀드 현황·투자 이력·Dry Powder를 분석하고 관련 이메일과 문서를 Folder에 자동 연결합니다.</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-3 p-3 bg-amber-50/50 rounded-xl border border-amber-100">
+                    <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 text-xs font-bold">2</div>
+                    <div>
+                      <div className="text-xs font-bold text-gray-800">분석 결과로 투자 제안서 작성·발송</div>
+                      <div className="text-[11px] text-gray-500">Clara가 투자자별 맞춤 제안서(Teaser) 초안을 작성하고, 팀원 승인 후 이메일로 바로 발송합니다. 분석 보고서와 제안서가 Folder에 산출물로 보존됩니다.</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-3 p-3 bg-violet-50/50 rounded-xl border border-violet-100">
+                    <div className="w-7 h-7 rounded-lg bg-violet-100 text-violet-700 flex items-center justify-center shrink-0 text-xs font-bold">3</div>
+                    <div>
+                      <div className="text-xs font-bold text-gray-800">"이걸 범용 플레이북으로 만들어줘"</div>
+                      <div className="text-[11px] text-gray-500">한 건의 투자 유치 과정이 5단계 워크플로우(현황 파악→투자자 탐색→심층 분석→매칭 실행→사후 관리)로 자동 정리되어, 다음 포트폴리오사에 즉시 재사용됩니다.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-3 bg-gray-50 rounded-xl border border-gray-200">
+                  <div className="text-[10px] font-semibold text-violet-600 mb-1">생성된 플레이북</div>
+                  <div className="text-xs font-bold text-gray-800 mb-0.5">VC 후속 투자 연계지원</div>
+                  <div className="text-[11px] text-gray-500">포트폴리오사 프로파일링 → 잠재 투자자 탐색 → Dry Powder·피어 분석 → 맞춤 제안·미팅 주선 → 사후 관리·자산화</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ── 나머지 3개 업종 카드 ── */}
+          <div className="section-fade grid md:grid-cols-3 gap-8">
+
+            {/* 법무법인 */}
+            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-blue-200 hover:shadow-lg transition group">
+              <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full text-[10px] font-semibold mb-4">
+                ⚖️ 법무법인
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">계약서 검토 → 리걸 플레이북</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                고객사가 이메일로 계약서 검토를 요청하면, 변호사들이 Clara 채팅에서 리스크 조항을 논의합니다.
+                AI가 과거 유사 계약 사례와 판례를 Folder에 자동 연결하고, 검토 의견서 초안을 작성합니다.
+              </p>
+              <div className="space-y-2 mb-5">
+                {[
+                  "고객 이메일 → 계약서 자동 분류 및 리스크 하이라이트",
+                  "팀 채팅에서 조항별 리스크 논의 → 의사결정 이력 보존",
+                  "유사 과거 계약 검토 히스토리를 AI가 자동 참조",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 text-[11px] text-gray-600">
+                    <IconCheck /><span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="p-2.5 bg-blue-50/50 rounded-lg border border-blue-100">
+                <div className="text-[10px] font-semibold text-blue-600 mb-0.5">생성되는 플레이북</div>
+                <div className="text-[11px] text-gray-700 font-medium">계약 유형별 검토 체크리스트 & 리스크 대응 가이드</div>
+              </div>
+            </div>
+
+            {/* 회계법인 */}
+            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-emerald-200 hover:shadow-lg transition group">
+              <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full text-[10px] font-semibold mb-4">
+                📋 회계법인
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">감사 대응 → 컴플라이언스 플레이북</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                고객사에서 재무제표와 증빙서류가 이메일로 도착하면, 담당 회계사가 Clara에서 검토 포인트를 팀과 논의합니다.
+                AI가 관련 회계기준과 과거 감사 이력을 연결하고, 감사조서 초안을 생성합니다.
+              </p>
+              <div className="space-y-2 mb-5">
+                {[
+                  "고객 재무자료 이메일 → 감사 항목별 자동 분류",
+                  "팀 채팅에서 이슈 논의 → 감사 판단 근거 자동 기록",
+                  "전기 감사 내역과 회계기준 변경사항을 AI가 자동 비교",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 text-[11px] text-gray-600">
+                    <IconCheck /><span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100">
+                <div className="text-[10px] font-semibold text-emerald-600 mb-0.5">생성되는 플레이북</div>
+                <div className="text-[11px] text-gray-700 font-medium">산업별 감사 체크리스트 & 이슈 대응 매뉴얼</div>
+              </div>
+            </div>
+
+            {/* 컨설팅 */}
+            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-purple-200 hover:shadow-lg transition group">
+              <div className="inline-flex items-center gap-2 bg-purple-50 text-purple-700 px-2.5 py-1 rounded-full text-[10px] font-semibold mb-4">
+                💼 컨설팅
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">프로젝트 제안 → 딜리버리 플레이북</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                고객사 RFP가 이메일로 도착하면, 컨설턴트들이 Clara에서 접근 전략을 논의합니다.
+                AI가 과거 유사 프로젝트의 제안서·산출물을 자동 연결하고, 새 제안서 초안을 작성합니다.
+              </p>
+              <div className="space-y-2 mb-5">
+                {[
+                  "고객 RFP 이메일 → 요구사항 자동 분석 및 태스크 생성",
+                  "팀 채팅에서 제안 전략 논의 → 과거 유사 프로젝트 자동 참조",
+                  "프로젝트 종료 후 교훈(Lessons Learned)이 자동 축적",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 text-[11px] text-gray-600">
+                    <IconCheck /><span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="p-2.5 bg-purple-50/50 rounded-lg border border-purple-100">
+                <div className="text-[10px] font-semibold text-purple-600 mb-0.5">생성되는 플레이북</div>
+                <div className="text-[11px] text-gray-700 font-medium">산업별 프로젝트 제안 템플릿 & 딜리버리 가이드</div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* 플레이북 강조 배너 */}
+          <div className="section-fade mt-12 p-6 bg-gradient-to-r from-violet-600 to-violet-800 rounded-2xl text-white text-center">
+            <h3 className="text-lg font-bold mb-2">전문직 회사의 공통점: 검토 과정이 곧 지식입니다</h3>
+            <p className="text-sm text-violet-200 max-w-2xl mx-auto">
+              20~100명 규모의 법무·회계·자문·투자사에서 소수 팀이 다수 고객사를 대응할 때,<br />
+              리서치→교차 검증→팀 검토→문서 작성의 전 과정이 쌓이면 — 신입도 시니어의 프로세스를 즉시 재사용합니다.
+            </p>
           </div>
         </div>
       </section>
@@ -1080,7 +1234,7 @@ export default function Home() {
             </div>
             <div className="mt-4 p-5 bg-violet-50 rounded-2xl border border-violet-100 text-center">
               <p className="text-sm text-violet-700 font-medium">
-                <strong>Clara는 이메일·내부 문서·AI 리서치·팀 검토가 하나로 연결된 채 학습합니다.</strong><br />
+                <strong>Clara는 이메일·내부 문서·AI 리서치·팀 검토를 자동으로 정리하고, 필요할 때 바로 찾을 수 있게 관리합니다.</strong><br />
                 리서치→교차 검증→검토→문서 작성의 전 과정이 팀의 재사용 가능한 자산으로 축적됩니다.
               </p>
             </div>
@@ -1173,7 +1327,7 @@ export default function Home() {
                 {[
                   "독립 서버 플랜의 모든 기능 포함",
                   "온프레미스 / 프라이빗 클라우드 배포",
-                  "커스텀 AI 모델 학습 및 파인튜닝",
+                  "커스텀 AI 모델 구축 및 파인튜닝",
                   "기존 사내 시스템 연동 개발",
                   "전담 엔지니어 배정",
                   "SLA 및 감사 로그",
@@ -1193,190 +1347,6 @@ export default function Home() {
           <div className="section-fade mt-12 text-center">
             <p className="text-sm text-gray-400">
               모든 플랜은 14일 무료 체험을 제공합니다 · 신용카드 없이 시작 · Google Workspace 연동으로 5분 내 셋업
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── 업종별 사용 사례 ─── */}
-      <section id="use-cases" className="py-20 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="section-fade text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              리서치·검토·문서 작성이<br />플레이북으로 쌓이는 과정
-            </h2>
-            <p className="text-lg text-gray-500 max-w-3xl mx-auto">
-              팀원들이 Clara에서 리서치하고, 검토하고, 문서를 만들면 — 그 전체 과정이<br className="hidden md:block" />
-              다음 유사 안건에서 즉시 재사용할 수 있는 플레이북으로 자동 축적됩니다.
-            </p>
-          </div>
-
-          {/* ── VC / 투자회사 사례 (스크린샷 포함) ── */}
-          <div className="section-fade mb-20">
-            <div className="grid md:grid-cols-2 gap-10 items-start">
-              {/* 왼쪽: 스크린샷 */}
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
-                <div className="relative screenshot-shadow bg-white rounded-2xl border border-gray-200 overflow-hidden">
-                  <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-gray-50/80">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-red-400/80" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
-                      <div className="w-3 h-3 rounded-full bg-green-400/80" />
-                    </div>
-                    <span className="text-xs font-medium text-gray-600">IDV 펀드의 퍼밋 투자 적합성 분석</span>
-                    <div className="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center">
-                      <span className="text-amber-600 text-[10px]">📊</span>
-                    </div>
-                  </div>
-                  <img
-                    src="/screenshots/usecase-vc-playbook.png"
-                    alt="Clara VC 후속 투자 연계지원 플레이북 생성 과정"
-                    className="w-full h-auto block"
-                  />
-                </div>
-              </div>
-
-              {/* 오른쪽: 설명 */}
-              <div>
-                <div className="inline-flex items-center gap-2 bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold mb-4">
-                  📊 벤처캐피탈 / 투자회사
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  포트폴리오사 투자 유치,<br />대화 한 번으로 플레이북까지
-                </h3>
-                <p className="text-sm text-gray-500 mb-6 leading-relaxed">
-                  포트폴리오사의 후속 투자 유치를 위해 잠재 투자자(VC/AC)의 펀드 여력, 투자 성향,
-                  기존 포트폴리오 유사성을 분석하고 전략적 매칭을 진행해야 합니다.
-                  이 과정이 이메일·Slack·스프레드시트에 흩어지면,
-                  다음 포트폴리오사 투자 유치 때 처음부터 다시 시작합니다.
-                </p>
-
-                <div className="space-y-4 mb-6">
-                  <div className="flex gap-3 p-3 bg-amber-50/50 rounded-xl border border-amber-100">
-                    <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 text-xs font-bold">1</div>
-                    <div>
-                      <div className="text-xs font-bold text-gray-800">팀원이 Clara에게 투자 분석 요청</div>
-                      <div className="text-[11px] text-gray-500">채팅에서 "퍼밋의 투자 적합도 분석해줘"라고 요청하면, Clara가 펀드 현황·투자 이력·Dry Powder를 분석하고 관련 이메일과 문서를 Folder에 자동 연결합니다.</div>
-                    </div>
-                  </div>
-                  <div className="flex gap-3 p-3 bg-amber-50/50 rounded-xl border border-amber-100">
-                    <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 text-xs font-bold">2</div>
-                    <div>
-                      <div className="text-xs font-bold text-gray-800">분석 결과로 투자 제안서 작성·발송</div>
-                      <div className="text-[11px] text-gray-500">Clara가 투자자별 맞춤 제안서(Teaser) 초안을 작성하고, 팀원 승인 후 이메일로 바로 발송합니다. 분석 보고서와 제안서가 Folder에 산출물로 보존됩니다.</div>
-                    </div>
-                  </div>
-                  <div className="flex gap-3 p-3 bg-violet-50/50 rounded-xl border border-violet-100">
-                    <div className="w-7 h-7 rounded-lg bg-violet-100 text-violet-700 flex items-center justify-center shrink-0 text-xs font-bold">3</div>
-                    <div>
-                      <div className="text-xs font-bold text-gray-800">"이걸 범용 플레이북으로 만들어줘"</div>
-                      <div className="text-[11px] text-gray-500">한 건의 투자 유치 과정이 5단계 워크플로우(현황 파악→투자자 탐색→심층 분석→매칭 실행→사후 관리)로 자동 정리되어, 다음 포트폴리오사에 즉시 재사용됩니다.</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-3 bg-gray-50 rounded-xl border border-gray-200">
-                  <div className="text-[10px] font-semibold text-violet-600 mb-1">생성된 플레이북</div>
-                  <div className="text-xs font-bold text-gray-800 mb-0.5">VC 후속 투자 연계지원</div>
-                  <div className="text-[11px] text-gray-500">포트폴리오사 프로파일링 → 잠재 투자자 탐색 → Dry Powder·피어 분석 → 맞춤 제안·미팅 주선 → 사후 관리·자산화</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ── 나머지 3개 업종 카드 ── */}
-          <div className="section-fade grid md:grid-cols-3 gap-8">
-
-            {/* 법무법인 */}
-            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-blue-200 hover:shadow-lg transition group">
-              <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full text-[10px] font-semibold mb-4">
-                ⚖️ 법무법인
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">계약서 검토 → 리걸 플레이북</h3>
-              <p className="text-sm text-gray-500 leading-relaxed mb-5">
-                고객사가 이메일로 계약서 검토를 요청하면, 변호사들이 Clara 채팅에서 리스크 조항을 논의합니다.
-                AI가 과거 유사 계약 사례와 판례를 Folder에 자동 연결하고, 검토 의견서 초안을 작성합니다.
-              </p>
-              <div className="space-y-2 mb-5">
-                {[
-                  "고객 이메일 → 계약서 자동 분류 및 리스크 하이라이트",
-                  "팀 채팅에서 조항별 리스크 논의 → 의사결정 이력 보존",
-                  "유사 과거 계약 검토 히스토리를 AI가 자동 참조",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-2 text-[11px] text-gray-600">
-                    <IconCheck /><span>{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="p-2.5 bg-blue-50/50 rounded-lg border border-blue-100">
-                <div className="text-[10px] font-semibold text-blue-600 mb-0.5">생성되는 플레이북</div>
-                <div className="text-[11px] text-gray-700 font-medium">계약 유형별 검토 체크리스트 & 리스크 대응 가이드</div>
-              </div>
-            </div>
-
-            {/* 회계법인 */}
-            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-emerald-200 hover:shadow-lg transition group">
-              <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full text-[10px] font-semibold mb-4">
-                📋 회계법인
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">감사 대응 → 컴플라이언스 플레이북</h3>
-              <p className="text-sm text-gray-500 leading-relaxed mb-5">
-                고객사에서 재무제표와 증빙서류가 이메일로 도착하면, 담당 회계사가 Clara에서 검토 포인트를 팀과 논의합니다.
-                AI가 관련 회계기준과 과거 감사 이력을 연결하고, 감사조서 초안을 생성합니다.
-              </p>
-              <div className="space-y-2 mb-5">
-                {[
-                  "고객 재무자료 이메일 → 감사 항목별 자동 분류",
-                  "팀 채팅에서 이슈 논의 → 감사 판단 근거 자동 기록",
-                  "전기 감사 내역과 회계기준 변경사항을 AI가 자동 비교",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-2 text-[11px] text-gray-600">
-                    <IconCheck /><span>{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100">
-                <div className="text-[10px] font-semibold text-emerald-600 mb-0.5">생성되는 플레이북</div>
-                <div className="text-[11px] text-gray-700 font-medium">산업별 감사 체크리스트 & 이슈 대응 매뉴얼</div>
-              </div>
-            </div>
-
-            {/* 컨설팅 */}
-            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-purple-200 hover:shadow-lg transition group">
-              <div className="inline-flex items-center gap-2 bg-purple-50 text-purple-700 px-2.5 py-1 rounded-full text-[10px] font-semibold mb-4">
-                💼 컨설팅
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">프로젝트 제안 → 딜리버리 플레이북</h3>
-              <p className="text-sm text-gray-500 leading-relaxed mb-5">
-                고객사 RFP가 이메일로 도착하면, 컨설턴트들이 Clara에서 접근 전략을 논의합니다.
-                AI가 과거 유사 프로젝트의 제안서·산출물을 자동 연결하고, 새 제안서 초안을 작성합니다.
-              </p>
-              <div className="space-y-2 mb-5">
-                {[
-                  "고객 RFP 이메일 → 요구사항 자동 분석 및 태스크 생성",
-                  "팀 채팅에서 제안 전략 논의 → 과거 유사 프로젝트 자동 참조",
-                  "프로젝트 종료 후 교훈(Lessons Learned)이 자동 축적",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-2 text-[11px] text-gray-600">
-                    <IconCheck /><span>{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="p-2.5 bg-purple-50/50 rounded-lg border border-purple-100">
-                <div className="text-[10px] font-semibold text-purple-600 mb-0.5">생성되는 플레이북</div>
-                <div className="text-[11px] text-gray-700 font-medium">산업별 프로젝트 제안 템플릿 & 딜리버리 가이드</div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* 플레이북 강조 배너 */}
-          <div className="section-fade mt-12 p-6 bg-gradient-to-r from-violet-600 to-violet-800 rounded-2xl text-white text-center">
-            <h3 className="text-lg font-bold mb-2">전문직 회사의 공통점: 검토 과정이 곧 지식입니다</h3>
-            <p className="text-sm text-violet-200 max-w-2xl mx-auto">
-              20~100명 규모의 법무·회계·자문·투자사에서 소수 팀이 다수 고객사를 대응할 때,<br />
-              리서치→교차 검증→팀 검토→문서 작성의 전 과정이 쌓이면 — 신입도 시니어의 프로세스를 즉시 재사용합니다.
             </p>
           </div>
         </div>

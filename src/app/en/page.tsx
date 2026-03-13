@@ -100,7 +100,7 @@ const PAIN_POINTS = [
     badge: "bg-orange-50 text-orange-600 border-orange-200",
     highlight: "bg-orange-50 border-orange-100",
     title: "Shared inbox exists, but senior judgment isn't shared",
-    desc: "Front's shared inbox lets the team see emails together, but it doesn't capture why a senior replied that way, which internal docs they referenced, or how they handled a similar past case. Even the AI Copilot (+$20) only learns from emails — it can't transfer a senior's actual review process to the team.",
+    desc: "Front's shared inbox lets the team see emails together, but it doesn't capture why a senior replied that way, which internal docs they referenced, or how they handled a similar past case. Even the AI Copilot (+$20) only references emails — it can't transfer a senior's actual review process to the team.",
   },
   {
     app: "HubSpot",
@@ -109,7 +109,7 @@ const PAIN_POINTS = [
     badge: "bg-amber-50 text-amber-600 border-amber-200",
     highlight: "bg-amber-50 border-amber-100",
     title: "Hundreds of features but too complex, and work expertise still doesn't accumulate",
-    desc: "HubSpot offers hundreds of features across CRM, marketing, and service — but that complexity makes it hard to learn, with onboarding costs of $25,000–$50,000. At $90+/user/month, teams only use a fraction of what they pay for. Most importantly, how a senior actually handled a client — review criteria, research methods, document process — never gets recorded or passed to juniors.",
+    desc: "HubSpot offers hundreds of features across CRM, marketing, and service — but that complexity makes it hard to adopt, with onboarding costs of $25,000–$50,000. At $90+/user/month, teams only use a fraction of what they pay for. Most importantly, how a senior actually handled a client — review criteria, research methods, document process — never gets recorded or passed to juniors.",
   },
   {
     app: "Monday.com",
@@ -117,8 +117,8 @@ const PAIN_POINTS = [
     icon: "📋",
     badge: "bg-blue-50 text-blue-600 border-blue-200",
     highlight: "bg-blue-50 border-blue-100",
-    title: "Tasks are tracked, but 'why it was done that way' isn't recorded",
-    desc: "Monday.com tracks whether a task is complete, but not in what order or by what criteria a senior handled it. The original email, reference docs, and review discussion aren't linked to the task — so when a junior gets the same type of task, they have to ask the senior again from scratch.",
+    title: "Client emails don't auto-link to tasks, so context breaks",
+    desc: "Creating a task in Monday.com doesn't automatically connect the client emails, reference docs, or team review discussions behind it. Without context on the task, there's no way to know why a senior handled it that way — and when a junior gets the same type of work, they have to dig through client emails from scratch.",
   },
   {
     app: "ChatGPT",
@@ -488,6 +488,37 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── Target Customer Pain Points ─── */}
+      <section className="py-20 px-6">
+        <div className="max-w-5xl mx-auto">
+          <div className="section-fade text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Common problems at law, accounting,<br />advisory, and investment firms
+            </h2>
+            <p className="text-lg text-gray-500">These arise when small teams at 20–100 person professional firms serve multiple clients simultaneously.</p>
+          </div>
+          <div className="section-fade grid md:grid-cols-2 gap-6">
+            {[
+              { icon: "🔍", title: "Can't cross-verify AI research with internal documents", desc: "To cross-verify ChatGPT research results with client-specific Google Drive files and past emails, you have to manually compare across tabs." },
+              { icon: "📧", title: "Client context is buried in email threads", desc: "Client discussions, contract terms, and review history are buried in Gmail, but you can't pull them back into projects or chats." },
+              { icon: "👥", title: "Review and QA processes leave no trail", desc: "Professional deliverables must go through peer review, but review comments scatter across Slack chats, making it impossible to trace 'why we reached this conclusion'." },
+              { icon: "🔄", title: "Similar engagements, yet starting from zero each time", desc: "You can't find how you handled a similar client case last time, so you repeat research, review, and document creation. Senior expertise never becomes a team asset." },
+            ].map((item, i) => (
+              <div key={i} className="p-6 rounded-2xl border border-gray-200 hover:border-violet-200 transition">
+                <span className="text-3xl mb-3 block">{item.icon}</span>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
+                <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <div className="section-fade text-center mt-12">
+            <div className="inline-flex items-center gap-2 bg-violet-600 text-white px-6 py-3 rounded-full text-base font-medium">
+              Clara connects all this context ↓
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ─── Core Story: 3 Steps ─── */}
       <section className="py-20 px-6 bg-gradient-to-b from-violet-50/50 to-white">
         <div className="max-w-5xl mx-auto">
@@ -740,63 +771,186 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ─── Target Customer Pain Points ─── */}
-      <section className="py-20 px-6">
-        <div className="max-w-5xl mx-auto">
-          <div className="section-fade text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Common problems at law, accounting,<br />advisory, and investment firms
-            </h2>
-            <p className="text-lg text-gray-500">These arise when small teams at 20–100 person professional firms serve multiple clients simultaneously.</p>
-          </div>
-          <div className="section-fade grid md:grid-cols-2 gap-6">
-            {[
-              { icon: "🔍", title: "Can't cross-verify AI research with internal documents", desc: "To cross-verify ChatGPT research results with client-specific Google Drive files and past emails, you have to manually compare across tabs." },
-              { icon: "📧", title: "Client context is buried in email threads", desc: "Client discussions, contract terms, and review history are buried in Gmail, but you can't pull them back into projects or chats." },
-              { icon: "👥", title: "Review and QA processes leave no trail", desc: "Professional deliverables must go through peer review, but review comments scatter across Slack chats, making it impossible to trace 'why we reached this conclusion'." },
-              { icon: "🔄", title: "Similar engagements, yet starting from zero each time", desc: "You can't find how you handled a similar client case last time, so you repeat research, review, and document creation. Senior expertise never becomes a team asset." },
-            ].map((item, i) => (
-              <div key={i} className="p-6 rounded-2xl border border-gray-200 hover:border-violet-200 transition">
-                <span className="text-3xl mb-3 block">{item.icon}</span>
-                <h3 className="text-lg font-bold text-gray-900 mb-2">{item.title}</h3>
-                <p className="text-sm text-gray-500 leading-relaxed">{item.desc}</p>
-              </div>
-            ))}
-          </div>
-          <div className="section-fade text-center mt-12">
-            <div className="inline-flex items-center gap-2 bg-violet-600 text-white px-6 py-3 rounded-full text-base font-medium">
-              Clara connects all this context ↓
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── Integrated Value: 4 Tools in One ─── */}
-      <section id="features" className="py-20 px-6 bg-gray-50">
-        <div className="max-w-5xl mx-auto">
+      {/* ─── Use Cases by Industry ─── */}
+      <section id="use-cases" className="py-20 px-6 bg-gray-50">
+        <div className="max-w-6xl mx-auto">
           <div className="section-fade text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Research → cross-verification → document creation<br />
-              The entire process, connected as one
+              How research, review, and documents<br />accumulate as Playbooks
             </h2>
-            <p className="text-lg text-gray-500">
-              Each app's AI doesn't know the other's data. Clara is a single workspace where email, internal docs, AI research, and team reviews are connected from the start.
+            <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+              When teams research, review, and create documents in Clara — the entire process<br className="hidden md:block" />
+              auto-accumulates as Playbooks that can be instantly reused on the next similar engagement.
             </p>
           </div>
-          <div className="section-fade grid md:grid-cols-4 gap-6">
-            {[
-              { tool: "Front", icon: <IconMail />, clara: "Emails → review records", desc: "Client emails auto-link to projects and review chats. Past client history can be instantly referenced on the next engagement.", color: "bg-orange-50 text-orange-600 border-orange-200" },
-              { tool: "Slack", icon: <IconChat />, clara: "Review discussions → evidence", desc: "Team review opinions don't disappear. Chats linked to emails and docs are preserved as decision-making evidence.", color: "bg-blue-50 text-blue-600 border-blue-200" },
-              { tool: "ChatGPT", icon: <IconAI />, clara: "AI research → verified results", desc: "No need to re-explain context to ChatGPT. Clara AI references internal docs and emails to provide cross-verified research.", color: "bg-green-50 text-green-600 border-green-200" },
-              { tool: "Monday.com", icon: <IconProject />, clara: "Tasks → reusable processes", desc: "Tasks auto-created from client emails. The entire research→review→document creation flow connects into reusable processes.", color: "bg-purple-50 text-purple-600 border-purple-200" },
-            ].map((item, i) => (
-              <div key={i} className={`p-5 rounded-2xl border ${item.color} transition hover:shadow-md`}>
-                <div className="mb-3">{item.icon}</div>
-                <div className="text-[10px] font-semibold text-gray-400 mb-1">vs {item.tool}</div>
-                <h3 className="text-sm font-bold text-gray-900 mb-2">{item.clara}</h3>
-                <p className="text-xs text-gray-500 leading-relaxed">{item.desc}</p>
+
+          {/* ── VC / Investment Firm Case (with screenshot) ── */}
+          <div className="section-fade mb-20">
+            <div className="grid md:grid-cols-2 gap-10 items-start">
+              {/* Left: Screenshot */}
+              <div className="relative group">
+                <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
+                <div className="relative screenshot-shadow bg-white rounded-2xl border border-gray-200 overflow-hidden">
+                  <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-gray-50/80">
+                    <div className="flex items-center gap-2">
+                      <div className="w-3 h-3 rounded-full bg-red-400/80" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
+                      <div className="w-3 h-3 rounded-full bg-green-400/80" />
+                    </div>
+                    <span className="text-xs font-medium text-gray-600">IDV Fund Investment Suitability Analysis</span>
+                    <div className="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center">
+                      <span className="text-amber-600 text-[10px]">📊</span>
+                    </div>
+                  </div>
+                  <img
+                    src="/screenshots/usecase-vc-playbook.png"
+                    alt="Clara VC Follow-on Investment Playbook Creation Process"
+                    className="w-full h-auto block"
+                  />
+                </div>
               </div>
-            ))}
+
+              {/* Right: Description */}
+              <div>
+                <div className="inline-flex items-center gap-2 bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold mb-4">
+                  📊 Venture Capital / Investment Firms
+                </div>
+                <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                  Portfolio company fundraising,<br />from conversation to Playbook
+                </h3>
+                <p className="text-sm text-gray-500 mb-6 leading-relaxed">
+                  For portfolio company follow-on fundraising, you need to analyze potential investors' (VC/AC) fund capacity, investment style,
+                  and existing portfolio similarity to execute strategic matching.
+                  When this process scatters across email, Slack, and spreadsheets,
+                  you start from scratch on the next portfolio company fundraising.
+                </p>
+
+                <div className="space-y-4 mb-6">
+                  <div className="flex gap-3 p-3 bg-amber-50/50 rounded-xl border border-amber-100">
+                    <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 text-xs font-bold">1</div>
+                    <div>
+                      <div className="text-xs font-bold text-gray-800">Team member asks Clara for investment analysis</div>
+                      <div className="text-[11px] text-gray-500">Ask &ldquo;Analyze Permit's investment suitability&rdquo; in chat, and Clara analyzes fund status, investment history, Dry Powder and auto-links relevant emails and docs to Folder.</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-3 p-3 bg-amber-50/50 rounded-xl border border-amber-100">
+                    <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 text-xs font-bold">2</div>
+                    <div>
+                      <div className="text-xs font-bold text-gray-800">Create and send investment proposals from analysis</div>
+                      <div className="text-[11px] text-gray-500">Clara drafts investor-specific teasers, sends via email after team approval. Analysis reports and proposals are preserved as deliverables in Folder.</div>
+                    </div>
+                  </div>
+                  <div className="flex gap-3 p-3 bg-violet-50/50 rounded-xl border border-violet-100">
+                    <div className="w-7 h-7 rounded-lg bg-violet-100 text-violet-700 flex items-center justify-center shrink-0 text-xs font-bold">3</div>
+                    <div>
+                      <div className="text-xs font-bold text-gray-800">&ldquo;Turn this into a reusable Playbook&rdquo;</div>
+                      <div className="text-[11px] text-gray-500">One fundraising process auto-organizes into a 5-step workflow (assessment→investor search→deep analysis→matching execution→post-management), instantly reusable for the next portfolio company.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="p-3 bg-gray-50 rounded-xl border border-gray-200">
+                  <div className="text-[10px] font-semibold text-violet-600 mb-1">Generated Playbook</div>
+                  <div className="text-xs font-bold text-gray-800 mb-0.5">VC Follow-on Investment Support</div>
+                  <div className="text-[11px] text-gray-500">Portfolio company profiling → potential investor search → Dry Powder & peer analysis → custom proposal & meeting setup → post-management & documentation</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* ── Other 3 Industry Cards ── */}
+          <div className="section-fade grid md:grid-cols-3 gap-8">
+
+            {/* Law Firm */}
+            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-blue-200 hover:shadow-lg transition group">
+              <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full text-[10px] font-semibold mb-4">
+                ⚖️ Law Firms
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Contract review → Legal Playbook</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                When a client requests contract review via email, attorneys discuss risk clauses in Clara chat.
+                AI auto-links similar past contracts and case law to Folder and drafts the review opinion letter.
+              </p>
+              <div className="space-y-2 mb-5">
+                {[
+                  "Client email → auto contract classification & risk highlights",
+                  "Clause-by-clause risk discussion in team chat → decision trail preserved",
+                  "AI auto-references similar past contract review history",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 text-[11px] text-gray-600">
+                    <IconCheck /><span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="p-2.5 bg-blue-50/50 rounded-lg border border-blue-100">
+                <div className="text-[10px] font-semibold text-blue-600 mb-0.5">Generated Playbook</div>
+                <div className="text-[11px] text-gray-700 font-medium">Contract type review checklist & risk response guide</div>
+              </div>
+            </div>
+
+            {/* Accounting Firm */}
+            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-emerald-200 hover:shadow-lg transition group">
+              <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full text-[10px] font-semibold mb-4">
+                📋 Accounting Firms
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Audit response → Compliance Playbook</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                When client financial statements and supporting documents arrive via email, the assigned accountant discusses review points with the team in Clara.
+                AI links relevant accounting standards and past audit history, and generates audit workpaper drafts.
+              </p>
+              <div className="space-y-2 mb-5">
+                {[
+                  "Client financial data email → auto audit item classification",
+                  "Issue discussion in team chat → audit judgment rationale auto-recorded",
+                  "AI auto-compares prior audit records and accounting standard changes",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 text-[11px] text-gray-600">
+                    <IconCheck /><span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100">
+                <div className="text-[10px] font-semibold text-emerald-600 mb-0.5">Generated Playbook</div>
+                <div className="text-[11px] text-gray-700 font-medium">Industry-specific audit checklist & issue response manual</div>
+              </div>
+            </div>
+
+            {/* Consulting */}
+            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-purple-200 hover:shadow-lg transition group">
+              <div className="inline-flex items-center gap-2 bg-purple-50 text-purple-700 px-2.5 py-1 rounded-full text-[10px] font-semibold mb-4">
+                💼 Consulting
+              </div>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Project proposal → Delivery Playbook</h3>
+              <p className="text-sm text-gray-500 leading-relaxed mb-5">
+                When a client RFP arrives via email, consultants discuss approach strategy in Clara.
+                AI auto-links past similar project proposals and deliverables, and drafts the new proposal.
+              </p>
+              <div className="space-y-2 mb-5">
+                {[
+                  "Client RFP email → auto requirement analysis & task creation",
+                  "Proposal strategy discussion in team chat → past similar projects auto-referenced",
+                  "Post-project insights auto-organized for reuse",
+                ].map((item, i) => (
+                  <div key={i} className="flex items-start gap-2 text-[11px] text-gray-600">
+                    <IconCheck /><span>{item}</span>
+                  </div>
+                ))}
+              </div>
+              <div className="p-2.5 bg-purple-50/50 rounded-lg border border-purple-100">
+                <div className="text-[10px] font-semibold text-purple-600 mb-0.5">Generated Playbook</div>
+                <div className="text-[11px] text-gray-700 font-medium">Industry-specific project proposal template & delivery guide</div>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Playbook Emphasis Banner */}
+          <div className="section-fade mt-12 p-6 bg-gradient-to-r from-violet-600 to-violet-800 rounded-2xl text-white text-center">
+            <h3 className="text-lg font-bold mb-2">What professional firms have in common: the review process is the knowledge</h3>
+            <p className="text-sm text-violet-200 max-w-2xl mx-auto">
+              At 20–100 person law, accounting, advisory, and investment firms where small teams serve multiple clients,<br />
+              when the entire research→cross-verification→team review→document creation process accumulates — even new hires instantly reuse a senior's process.
+            </p>
           </div>
         </div>
       </section>
@@ -1067,7 +1221,7 @@ export default function Home() {
             </div>
             <div className="mt-4 p-5 bg-violet-50 rounded-2xl border border-violet-100 text-center">
               <p className="text-sm text-violet-700 font-medium">
-                <strong>Clara learns with email, internal docs, AI research, and team reviews all connected.</strong><br />
+                <strong>Clara auto-organizes email, internal docs, AI research, and team reviews — so you can find what you need, when you need it.</strong><br />
                 The entire research→cross-verification→review→document creation process accumulates as your team's reusable asset.
               </p>
             </div>
@@ -1180,190 +1334,6 @@ export default function Home() {
           <div className="section-fade mt-12 text-center">
             <p className="text-sm text-gray-400">
               All plans include a 14-day free trial · No credit card required · Set up in 5 minutes with Google Workspace
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ─── Use Cases by Industry ─── */}
-      <section id="use-cases" className="py-20 px-6 bg-gray-50">
-        <div className="max-w-6xl mx-auto">
-          <div className="section-fade text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              How research, review, and documents<br />accumulate as Playbooks
-            </h2>
-            <p className="text-lg text-gray-500 max-w-3xl mx-auto">
-              When teams research, review, and create documents in Clara — the entire process<br className="hidden md:block" />
-              auto-accumulates as Playbooks that can be instantly reused on the next similar engagement.
-            </p>
-          </div>
-
-          {/* ── VC / Investment Firm Case (with screenshot) ── */}
-          <div className="section-fade mb-20">
-            <div className="grid md:grid-cols-2 gap-10 items-start">
-              {/* Left: Screenshot */}
-              <div className="relative group">
-                <div className="absolute -inset-1 bg-gradient-to-r from-amber-500/20 to-orange-500/20 rounded-[2rem] blur-2xl opacity-50 group-hover:opacity-100 transition duration-1000"></div>
-                <div className="relative screenshot-shadow bg-white rounded-2xl border border-gray-200 overflow-hidden">
-                  <div className="flex items-center justify-between px-4 py-3 border-b border-gray-100 bg-gray-50/80">
-                    <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-red-400/80" />
-                      <div className="w-3 h-3 rounded-full bg-yellow-400/80" />
-                      <div className="w-3 h-3 rounded-full bg-green-400/80" />
-                    </div>
-                    <span className="text-xs font-medium text-gray-600">IDV Fund Investment Suitability Analysis</span>
-                    <div className="w-6 h-6 rounded-full bg-amber-100 flex items-center justify-center">
-                      <span className="text-amber-600 text-[10px]">📊</span>
-                    </div>
-                  </div>
-                  <img
-                    src="/screenshots/usecase-vc-playbook.png"
-                    alt="Clara VC Follow-on Investment Playbook Creation Process"
-                    className="w-full h-auto block"
-                  />
-                </div>
-              </div>
-
-              {/* Right: Description */}
-              <div>
-                <div className="inline-flex items-center gap-2 bg-amber-50 text-amber-700 px-3 py-1 rounded-full text-xs font-semibold mb-4">
-                  📊 Venture Capital / Investment Firms
-                </div>
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                  Portfolio company fundraising,<br />from conversation to Playbook
-                </h3>
-                <p className="text-sm text-gray-500 mb-6 leading-relaxed">
-                  For portfolio company follow-on fundraising, you need to analyze potential investors' (VC/AC) fund capacity, investment style,
-                  and existing portfolio similarity to execute strategic matching.
-                  When this process scatters across email, Slack, and spreadsheets,
-                  you start from scratch on the next portfolio company fundraising.
-                </p>
-
-                <div className="space-y-4 mb-6">
-                  <div className="flex gap-3 p-3 bg-amber-50/50 rounded-xl border border-amber-100">
-                    <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 text-xs font-bold">1</div>
-                    <div>
-                      <div className="text-xs font-bold text-gray-800">Team member asks Clara for investment analysis</div>
-                      <div className="text-[11px] text-gray-500">Ask &ldquo;Analyze Permit's investment suitability&rdquo; in chat, and Clara analyzes fund status, investment history, Dry Powder and auto-links relevant emails and docs to Folder.</div>
-                    </div>
-                  </div>
-                  <div className="flex gap-3 p-3 bg-amber-50/50 rounded-xl border border-amber-100">
-                    <div className="w-7 h-7 rounded-lg bg-amber-100 text-amber-700 flex items-center justify-center shrink-0 text-xs font-bold">2</div>
-                    <div>
-                      <div className="text-xs font-bold text-gray-800">Create and send investment proposals from analysis</div>
-                      <div className="text-[11px] text-gray-500">Clara drafts investor-specific teasers, sends via email after team approval. Analysis reports and proposals are preserved as deliverables in Folder.</div>
-                    </div>
-                  </div>
-                  <div className="flex gap-3 p-3 bg-violet-50/50 rounded-xl border border-violet-100">
-                    <div className="w-7 h-7 rounded-lg bg-violet-100 text-violet-700 flex items-center justify-center shrink-0 text-xs font-bold">3</div>
-                    <div>
-                      <div className="text-xs font-bold text-gray-800">&ldquo;Turn this into a reusable Playbook&rdquo;</div>
-                      <div className="text-[11px] text-gray-500">One fundraising process auto-organizes into a 5-step workflow (assessment→investor search→deep analysis→matching execution→post-management), instantly reusable for the next portfolio company.</div>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="p-3 bg-gray-50 rounded-xl border border-gray-200">
-                  <div className="text-[10px] font-semibold text-violet-600 mb-1">Generated Playbook</div>
-                  <div className="text-xs font-bold text-gray-800 mb-0.5">VC Follow-on Investment Support</div>
-                  <div className="text-[11px] text-gray-500">Portfolio company profiling → potential investor search → Dry Powder & peer analysis → custom proposal & meeting setup → post-management & documentation</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* ── Other 3 Industry Cards ── */}
-          <div className="section-fade grid md:grid-cols-3 gap-8">
-
-            {/* Law Firm */}
-            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-blue-200 hover:shadow-lg transition group">
-              <div className="inline-flex items-center gap-2 bg-blue-50 text-blue-700 px-2.5 py-1 rounded-full text-[10px] font-semibold mb-4">
-                ⚖️ Law Firms
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Contract review → Legal Playbook</h3>
-              <p className="text-sm text-gray-500 leading-relaxed mb-5">
-                When a client requests contract review via email, attorneys discuss risk clauses in Clara chat.
-                AI auto-links similar past contracts and case law to Folder and drafts the review opinion letter.
-              </p>
-              <div className="space-y-2 mb-5">
-                {[
-                  "Client email → auto contract classification & risk highlights",
-                  "Clause-by-clause risk discussion in team chat → decision trail preserved",
-                  "AI auto-references similar past contract review history",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-2 text-[11px] text-gray-600">
-                    <IconCheck /><span>{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="p-2.5 bg-blue-50/50 rounded-lg border border-blue-100">
-                <div className="text-[10px] font-semibold text-blue-600 mb-0.5">Generated Playbook</div>
-                <div className="text-[11px] text-gray-700 font-medium">Contract type review checklist & risk response guide</div>
-              </div>
-            </div>
-
-            {/* Accounting Firm */}
-            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-emerald-200 hover:shadow-lg transition group">
-              <div className="inline-flex items-center gap-2 bg-emerald-50 text-emerald-700 px-2.5 py-1 rounded-full text-[10px] font-semibold mb-4">
-                📋 Accounting Firms
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Audit response → Compliance Playbook</h3>
-              <p className="text-sm text-gray-500 leading-relaxed mb-5">
-                When client financial statements and supporting documents arrive via email, the assigned accountant discusses review points with the team in Clara.
-                AI links relevant accounting standards and past audit history, and generates audit workpaper drafts.
-              </p>
-              <div className="space-y-2 mb-5">
-                {[
-                  "Client financial data email → auto audit item classification",
-                  "Issue discussion in team chat → audit judgment rationale auto-recorded",
-                  "AI auto-compares prior audit records and accounting standard changes",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-2 text-[11px] text-gray-600">
-                    <IconCheck /><span>{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="p-2.5 bg-emerald-50/50 rounded-lg border border-emerald-100">
-                <div className="text-[10px] font-semibold text-emerald-600 mb-0.5">Generated Playbook</div>
-                <div className="text-[11px] text-gray-700 font-medium">Industry-specific audit checklist & issue response manual</div>
-              </div>
-            </div>
-
-            {/* Consulting */}
-            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-purple-200 hover:shadow-lg transition group">
-              <div className="inline-flex items-center gap-2 bg-purple-50 text-purple-700 px-2.5 py-1 rounded-full text-[10px] font-semibold mb-4">
-                💼 Consulting
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Project proposal → Delivery Playbook</h3>
-              <p className="text-sm text-gray-500 leading-relaxed mb-5">
-                When a client RFP arrives via email, consultants discuss approach strategy in Clara.
-                AI auto-links past similar project proposals and deliverables, and drafts the new proposal.
-              </p>
-              <div className="space-y-2 mb-5">
-                {[
-                  "Client RFP email → auto requirement analysis & task creation",
-                  "Proposal strategy discussion in team chat → past similar projects auto-referenced",
-                  "Post-project lessons learned auto-accumulated",
-                ].map((item, i) => (
-                  <div key={i} className="flex items-start gap-2 text-[11px] text-gray-600">
-                    <IconCheck /><span>{item}</span>
-                  </div>
-                ))}
-              </div>
-              <div className="p-2.5 bg-purple-50/50 rounded-lg border border-purple-100">
-                <div className="text-[10px] font-semibold text-purple-600 mb-0.5">Generated Playbook</div>
-                <div className="text-[11px] text-gray-700 font-medium">Industry-specific project proposal template & delivery guide</div>
-              </div>
-            </div>
-
-          </div>
-
-          {/* Playbook Emphasis Banner */}
-          <div className="section-fade mt-12 p-6 bg-gradient-to-r from-violet-600 to-violet-800 rounded-2xl text-white text-center">
-            <h3 className="text-lg font-bold mb-2">What professional firms have in common: the review process is the knowledge</h3>
-            <p className="text-sm text-violet-200 max-w-2xl mx-auto">
-              At 20–100 person law, accounting, advisory, and investment firms where small teams serve multiple clients,<br />
-              when the entire research→cross-verification→team review→document creation process accumulates — even new hires instantly reuse a senior's process.
             </p>
           </div>
         </div>
