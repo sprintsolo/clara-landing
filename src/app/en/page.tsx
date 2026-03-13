@@ -466,8 +466,8 @@ export default function Home() {
               <span>✦</span> AI Colleague for Professional Teams, Clara
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Research, review, and create documents<br />
-              Are you starting from <span className="gradient-text">scratch</span> every time?
+              Half a day for a senior, two for a new hire<br />
+              Everything changes with <span className="gradient-text">Clara</span>
             </h1>
             <div className="mb-10">
               <PainPointCarousel />

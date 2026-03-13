@@ -479,8 +479,8 @@ export default function Home() {
               <span>✦</span> 전문직 팀을 위한 AI 동료, Clara
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              리서치하고, 검토하고, 문서 만드는 일<br />
-              매번 <span className="gradient-text">처음부터</span> 하고 계신가요?
+              경력자는 반나절, 신입은 이틀<br />
+              <span className="gradient-text">Clara</span>가 함께하면 달라집니다
             </h1>
             <div className="mb-10">
               <PainPointCarousel />
