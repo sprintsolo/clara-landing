@@ -81,8 +81,17 @@ const PAIN_POINTS = [
     icon: "✉",
     badge: "bg-red-50 text-red-600 border-red-200",
     highlight: "bg-red-50 border-red-100",
-    title: "이메일을 보면서 동료와 바로 논의할 수 없습니다",
-    desc: "Gmail에서 'Share in chat'을 눌러도, 수신자를 고르고 채팅방을 만들고 맥락을 다시 설명해야 합니다. 이메일 원문을 보면서 동시에 대화할 수 없고, 검토 의견은 Google Chat에 흩어져 나중에 찾을 수 없습니다. Front가 이 문제로 성장한 이유입니다.",
+    title: "'Share in chat' — 이메일을 보면서 논의할 수 없습니다",
+    desc: "Gmail에서 'Share in chat'을 눌러도 수신자를 고르고, 채팅방을 새로 만들고, 맥락을 다시 설명해야 합니다. 공유된 이메일은 읽기 전용 미리보기일 뿐 — 답장도, 액션도, 문서 연결도 Chat 안에서 할 수 없습니다. 논의는 Chat에, 원문은 Gmail에, 문서는 Drive에 분산되어 하나로 연결되지 않습니다.",
+  },
+  {
+    app: "Gmail + Slack",
+    color: "pink",
+    icon: "💬",
+    badge: "bg-pink-50 text-pink-600 border-pink-200",
+    highlight: "bg-pink-50 border-pink-100",
+    title: "Slack에 공유한 이메일은 답장도, 추적도 안 됩니다",
+    desc: "Slack에 이메일을 전달하면 서식이 깨진 알림 한 줄로 도착합니다. 원문 스레드와 연결되지 않아 답장도 불가능하고, 빠르게 흘러가는 채널에 몇 분 만에 묻힙니다. 30개 고객사를 관리하는 팀이라면 이메일이 수십 개 채널에 흩어져 한 고객의 전체 흐름을 볼 수 없습니다.",
   },
   {
     app: "Front",
@@ -90,8 +99,8 @@ const PAIN_POINTS = [
     icon: "📮",
     badge: "bg-orange-50 text-orange-600 border-orange-200",
     highlight: "bg-orange-50 border-orange-100",
-    title: "공유 인박스는 좋지만, 내부 문서와 연결되지 않습니다",
-    desc: "Front는 팀 이메일 협업에 탁월하지만, 인당 $25/월의 AI는 이메일만 봅니다. 고객사별 Google Drive 자료, 과거 검토 이력, 팀 논의가 연결되지 않아 교차 검증이 불가능합니다.",
+    title: "공유 인박스는 좋지만, AI 추가하면 인당 $85/월입니다",
+    desc: "Front의 공유 인박스는 이메일 협업 문제를 해결하지만, Starter($25)는 10명 제한·단일 채널뿐이라 실질적으로 Professional($65) + AI Copilot($20) = 인당 $85/월이 필요합니다. 40명이면 연 $40,800입니다. 그런데 AI는 이메일만 학습하고 — Google Drive 자료, 과거 검토 이력, 리서치 결과와의 교차 검증은 불가능합니다.",
   },
   {
     app: "HubSpot",
@@ -99,8 +108,8 @@ const PAIN_POINTS = [
     icon: "🔶",
     badge: "bg-amber-50 text-amber-600 border-amber-200",
     highlight: "bg-amber-50 border-amber-100",
-    title: "20~50명 전문직 회사에 CRM은 과합니다",
-    desc: "HubSpot은 설정과 커스터마이징에 전담 인력이 필요합니다. 법무·회계·자문사처럼 소수 정예 팀이 다수 고객사를 대응하는 구조에는 과한 기능과 높은 가격($90+/월)이 맞지 않습니다.",
+    title: "도입에만 수천만 원, 그런데 영업 파이프라인 도구입니다",
+    desc: "HubSpot Professional은 인당 $90+/월이지만 진짜 비용은 도입입니다 — 데이터 마이그레이션, 커스터마이징, 교육에 $25,000~$50,000가 소요됩니다. 핵심 UX가 영업 딜·마케팅 퍼널 중심이라 법무·회계·자문사의 고객별 검토 워크플로우와 맞지 않습니다. 랜딩페이지 빌더, 광고 관리 등 쓰지 않을 기능에 비용을 내게 됩니다.",
   },
   {
     app: "Monday.com",
@@ -108,8 +117,8 @@ const PAIN_POINTS = [
     icon: "📋",
     badge: "bg-blue-50 text-blue-600 border-blue-200",
     highlight: "bg-blue-50 border-blue-100",
-    title: "태스크는 관리되지만, 검토 맥락이 사라집니다",
-    desc: "Monday.com에서 태스크를 만들어도, 그 태스크의 시작인 고객 이메일, 참고한 내부 문서, 팀의 검토 논의가 연결되지 않습니다. '왜 이렇게 결정했는지' 맥락이 유실되면, 다음 유사 안건에서 같은 리서치를 처음부터 반복합니다.",
+    title: "이메일 연동이 불안정하고, 문서 맥락이 끊깁니다",
+    desc: "Monday.com의 이메일 연동은 발신자·수신자·참조가 모두 일치해야 작동하는 취약한 구조입니다. 이메일이 누락되거나 연결이 끊기면 동기화된 이메일이 전부 사라집니다. 이메일-태스크 AI 자동 추출의 정확도는 약 80% — 5건 중 1건이 잘못 분류됩니다. 원본 이메일 스레드와 리서치 문서, 검토 논의를 하나의 뷰에서 볼 수 없습니다.",
   },
   {
     app: "ChatGPT",
@@ -117,8 +126,8 @@ const PAIN_POINTS = [
     icon: "🤖",
     badge: "bg-emerald-50 text-emerald-600 border-emerald-200",
     highlight: "bg-emerald-50 border-emerald-100",
-    title: "리서치는 되지만, 내부 자료와 교차 검증이 안 됩니다",
-    desc: "ChatGPT로 법률·재무·시장 리서치는 가능하지만, AI 결과를 고객사별 Google Drive 자료나 과거 이메일과 대조할 수 없습니다. 결국 사람이 탭을 오가며 수동으로 검증해야 합니다.",
+    title: "Gmail 검색에 12분, 결과의 1/3이 틀립니다",
+    desc: "ChatGPT의 Gmail 연동 테스트에서 네이티브 Gmail로 수 초면 되는 검색이 12분 걸렸고, Deep Research 모드에서 3건 중 정확한 이메일은 1건뿐이었습니다. PDF 속 이미지 텍스트나 복잡한 재무 데이터는 제대로 읽지 못합니다. 무엇보다 별도의 브라우저 탭이라 — 고객사 이메일, Drive 자료, 팀 검토 이력을 하나의 질의로 교차 참조할 수 없습니다.",
   },
 ];
 
