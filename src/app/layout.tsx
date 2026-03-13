@@ -13,12 +13,12 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Clara - AI 직원과 함께하는 이메일 협업 플랫폼",
-  description: "이메일에 AI 직원을 합류시키세요. Front + Slack + ChatGPT + Monday.com을 하나로 통합한 전문가 기업을 위한 WorkOS. Shared Inbox, 이메일 공유 채팅, AI 액티브 에이전트, 프로젝트 관리를 하나의 도구로.",
-  keywords: "Clara, AI, 이메일, 프로젝트 관리, Shared Inbox, WorkOS, 협업, 전문가, 투자, 회계, 변호사",
+  title: "Clara - 전문직 팀을 위한 AI 동료",
+  description: "리서치하고, 검토하고, 문서 만드는 일을 매번 처음부터 하고 계신가요? Clara는 이메일·내부 문서·AI 리서치·팀 검토가 하나로 연결된 전문직 팀을 위한 AI 동료입니다.",
+  keywords: "Clara, AI 동료, 전문직, 법무법인, 회계법인, 자문사, 투자사, 이메일 협업, Shared Inbox, 플레이북, 교차 검증",
   openGraph: {
-    title: "Clara - AI 직원과 함께하는 이메일 협업 플랫폼",
-    description: "Front + Slack + ChatGPT + Monday.com을 하나로. 전문가 기업을 위한 AI 기반 WorkOS.",
+    title: "Clara - 전문직 팀을 위한 AI 동료",
+    description: "이메일·내부 문서·AI 리서치·팀 검토가 하나로 연결됩니다. 리서치→교차 검증→검토→문서 작성의 전 과정이 팀의 자산으로 축적됩니다.",
     type: "website",
   },
 };

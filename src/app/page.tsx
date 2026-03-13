@@ -462,9 +462,12 @@ export default function Home() {
             <a href="#pricing" className="hover:text-violet-600 transition">비교</a>
             <a href="#plans" className="hover:text-violet-600 transition">요금제</a>
           </nav>
-          <a href="#cta" className="bg-violet-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-violet-700 transition">
-            시작하기
-          </a>
+          <div className="flex items-center gap-3">
+            <a href="/en" className="text-xs font-medium text-gray-400 hover:text-violet-600 transition border border-gray-200 px-2.5 py-1 rounded-full">EN</a>
+            <a href="#cta" className="bg-violet-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-violet-700 transition">
+              시작하기
+            </a>
+          </div>
         </div>
       </header>
 
