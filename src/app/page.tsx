@@ -1260,19 +1260,19 @@ export default function Home() {
               <div className="absolute -top-3 left-1/2 -translate-x-1/2 bg-violet-600 text-white text-xs font-bold px-4 py-1 rounded-full">추천</div>
               <div className="text-sm font-semibold text-violet-600 mb-2">SaaS</div>
               <h3 className="text-2xl font-bold text-gray-900 mb-1">Clara Cloud</h3>
-              <p className="text-sm text-gray-500 mb-6">빠르게 시작하고 싶은 팀</p>
+              <p className="text-sm text-gray-500 mb-6">기본 요금 + AI는 쓴 만큼만</p>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-gray-900">$100</span>
+                <span className="text-4xl font-bold text-gray-900">$39</span>
                 <span className="text-gray-500 text-sm"> / 인 / 월</span>
               </div>
-              <div className="text-xs text-gray-400 mb-6">+ AI 크레딧 (사용량 기반)</div>
+              <div className="text-xs text-gray-400 mb-6">+ AI 요금은 팀이 쓴 만큼만 (월 $500부터)</div>
               <ul className="space-y-3 mb-8">
                 {[
-                  "이메일·채팅·프로젝트·AI 전체 기능",
+                  "이메일·채팅·프로젝트 전체 기능",
                   "Google Workspace 완전 연동",
+                  "AI는 쓴 만큼만 과금 (팀 단위 관리)",
                   "AI 리서치 & 내부 자료 교차 검증",
                   "플레이북 자동 생성",
-                  "Clara 관리형 서버 (자동 업데이트)",
                   "SSL 암호화 및 SOC 2 준수",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-sm text-gray-600">
@@ -1291,16 +1291,16 @@ export default function Home() {
               <h3 className="text-2xl font-bold text-gray-900 mb-1">독립 서버</h3>
               <p className="text-sm text-gray-500 mb-6">데이터 보안이 중요한 팀</p>
               <div className="mb-6">
-                <span className="text-4xl font-bold text-gray-900">$2,000</span>
+                <span className="text-4xl font-bold text-gray-900">$3,500</span>
                 <span className="text-gray-500 text-sm"> / 서버 / 월</span>
               </div>
-              <div className="text-xs text-gray-400 mb-6">최대 100명 · BYOK (자체 LLM 키 사용)</div>
+              <div className="text-xs text-gray-400 mb-6">최대 100명 · BYOK — LLM 비용 고객 직접 관리</div>
               <ul className="space-y-3 mb-8">
                 {[
                   "SaaS 플랜의 모든 기능 포함",
                   "전용 서버 격리 (데이터 분리)",
                   "BYOK — 자체 OpenAI/Anthropic 키 사용",
-                  "LLM 비용을 팀이 직접 관리·절감",
+                  "LLM 비용 고객 직접 관리 (투명한 비용 구조)",
                   "커스텀 보안 정책 적용 가능",
                   "우선 기술 지원",
                 ].map((item, i) => (

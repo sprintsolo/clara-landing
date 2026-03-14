@@ -450,7 +450,7 @@ export default function Home() {
             <a href="#plans" className="hover:text-violet-600 transition">Pricing</a>
           </nav>
           <div className="flex items-center gap-3">
-            <a href="/" className="text-xs font-medium text-gray-400 hover:text-violet-600 transition border border-gray-200 px-2.5 py-1 rounded-full">한국어</a>
+            <a href="/v1" className="text-xs font-medium text-gray-400 hover:text-violet-600 transition border border-gray-200 px-2.5 py-1 rounded-full">한국어</a>
             <a href="#cta" className="bg-violet-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-violet-700 transition">
               Get Started
             </a>

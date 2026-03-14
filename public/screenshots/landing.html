@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clara | Engagement Intelligence for Accounting Firms</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0A2540;
+            --accent: #0066FF;
+            --bg-color: #F8FAFC;
+            --text-main: #334155;
+            --text-light: #64748B;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background: white;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: -1px;
+        }
+
+        .nav-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .nav-btn:hover {
+            background-color: #0052cc;
+        }
+
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 100px 20px;
+            background: linear-gradient(135deg, var(--primary) 0%, #1A365D 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #E2E8F0;
+            max-width: 700px;
+            margin: 0 auto 40px auto;
+        }
+
+        .cta-btn {
+            background-color: var(--accent);
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-block;
+            transition: transform 0.2s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Features Section (Pain-Agitate-Solve) */
+        .features {
+            max-width: 1200px;
+            margin: 80px auto;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 40px;
+        }
+
+        .card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.05);
+            border-top: 4px solid var(--accent);
+        }
+
+        .tag {
+            display: inline-block;
+            background: #FEE2E2;
+            color: #991B1B;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 22px;
+            color: var(--primary);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .agitate {
+            color: var(--text-light);
+            font-size: 15px;
+            margin-bottom: 25px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #E2E8F0;
+        }
+
+        .solve {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0F766E;
+        }
+
+        .solve-text {
+            color: var(--text-main);
+            font-size: 15px;
+            margin-top: 10px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 40px;
+            background: var(--primary);
+            color: #94A3B8;
+            font-size: 14px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            nav {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">Clara.</div>
+        <a href="#" class="nav-btn">Book a Demo</a>
+    </nav>
+
+    <header class="hero">
+        <h1>When a Senior Leaves, Does Your Client's History Leave With Them?</h1>
+        <p>Clara is the first <strong>Engagement Intelligence Platform</strong> for accounting firms. We automatically
+            capture, organize, and transfer years of context from Emails and WhatsApp—so your next associate never has
+            to ask a client, "Could you explain this to me again?"</p>
+        <a href="#" class="cta-btn">Stop Flying Blind. See Clara in Action.</a>
+    </header>
+
+    <section class="features">
+        <div class="card">
+            <span class="tag">The Pain</span>
+            <h3>The "Handover Friction" is costing you clients.</h3>
+            <div class="agitate">
+                Staff turnover is inevitable, but client frustration shouldn't be. When a new assignee takes over right
+                before busy season, they are completely flying blind. Without the context of <em>why</em> things were
+                done last year (SALY), they end up asking the client for the same documents all over again. You look
+                disorganized.
+            </div>
+            <div class="solve">✨ Seamless Transitions</div>
+            <div class="solve-text">
+                Clara acts as your firm's permanent memory. It instantly briefs the new team member on the entire
+                engagement history. The client never feels the bump of a staff change.
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="tag">The Pain</span>
+            <h3>Crucial PBCs are buried in WhatsApp.</h3>
+            <div class="agitate">
+                Clients don't use your secure portal—they text associates on WhatsApp or send quick emails. When those
+                aren't saved to the firm's workspace, you lose the audit trail. Worse, partners are exposed to severe
+                compliance and malpractice risks.
+            </div>
+            <div class="solve">✨ Automated Capture</div>
+            <div class="solve-text">
+                Clara runs quietly, automatically tagging every email and WhatsApp thread to the correct Engagement. It
+                transforms unstructured chatter into a searchable, compliant timeline.
+            </div>
+        </div>
+
+        <div class="card">
+            <span class="tag">The Pain</span>
+            <h3>Archiving is defensive. You need an offensive strategy.</h3>
+            <div class="agitate">
+                Legacy tools (like Smarsh) treat your communications as a dead graveyard of data, only useful when
+                auditors knock. They don't make your firm smarter, and they certainly don't save your compliance
+                officers any billable hours.
+            </div>
+            <div class="solve">✨ Ready-to-use Reports</div>
+            <div class="solve-text">
+                Clara is an active agent. It not only secures off-channel communications but automatically flags risks
+                and generates Compliance Reports. Turn data into actionable Engagement Intelligence.
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 Clara Engagement Intelligence. All rights reserved.
+    </footer>
+
+</body>
+
+</html>

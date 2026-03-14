@@ -450,7 +450,7 @@ export default function Home() {
             <a href="#plans" className="hover:text-violet-600 transition">Pricing</a>
           </nav>
           <div className="flex items-center gap-3">
-            <a href="/" className="text-xs font-medium text-gray-400 hover:text-violet-600 transition border border-gray-200 px-2.5 py-1 rounded-full">한국어</a>
+            <a href="/v2" className="text-xs font-medium text-gray-400 hover:text-violet-600 transition border border-gray-200 px-2.5 py-1 rounded-full">한국어</a>
             <a href="#cta" className="bg-violet-600 text-white px-5 py-2 rounded-full text-sm font-medium hover:bg-violet-700 transition">
               Get Started
             </a>
@@ -463,11 +463,11 @@ export default function Home() {
         <div className="max-w-6xl mx-auto text-center">
           <div className="section-fade">
             <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-              <span>✦</span> AI Colleague for Professional Firms, Clara
+              <span>✦</span> Stop paying for Front + Slack + ChatGPT separately
             </div>
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              Half a day for a senior, two days for a junior<br />
-              Everything changes with <span className="gradient-text">Clara</span>
+              Scattered context, repeated research<br />
+              <span className="gradient-text">Clara</span> brings it all together
             </h1>
             <div className="mb-10">
               <PainPointCarousel />
@@ -493,16 +493,16 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="section-fade text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Common problems at law, accounting,<br />advisory, and investment firms
+              The &lsquo;Context Gap&rsquo; in 20–100 person<br />professional firms
             </h2>
-            <p className="text-lg text-gray-500">These arise when small teams at 20–100 person professional firms serve multiple clients simultaneously.</p>
+            <p className="text-lg text-gray-500">Enterprise AI (Glean, Harvey) is too expensive. ChatGPT alone can&apos;t cross-verify with your internal docs.</p>
           </div>
           <div className="section-fade grid md:grid-cols-2 gap-6">
             {[
-              { icon: "🔍", title: "Can't cross-verify AI research with internal documents", desc: "To cross-verify ChatGPT research results with client-specific Google Drive files and past emails, you have to manually compare across tabs." },
-              { icon: "📧", title: "Client context is buried in email threads", desc: "Client discussions, contract terms, and review history are buried in Gmail, but you can't pull them back into projects or chats." },
-              { icon: "👥", title: "Review and QA processes leave no trail", desc: "Professional deliverables must go through peer review, but review comments scatter across Slack chats, making it impossible to trace 'why we reached this conclusion'." },
-              { icon: "🔄", title: "Similar engagements, yet starting from zero each time", desc: "You can't find how you handled a similar client case last time, so you repeat research, review, and document creation. Senior expertise never becomes a team asset." },
+              { icon: "💸", title: "$100+/person/month, yet your AI tools don't talk to each other", desc: "Front($59) + Slack($15) + ChatGPT($20) — you're paying for AI in each app, but they can't access each other's data. Cross-verifying research with internal docs is still manual." },
+              { icon: "🤖", title: "AI-generated drafts you can't trust", desc: "You can't use ChatGPT's output as-is. In professional services with legal liability, using AI results without cross-verifying against internal documents is a real risk." },
+              { icon: "📧", title: "Client context scattered across 6 different apps", desc: "Emails in Gmail, discussions in Slack, tasks in Monday, research in ChatGPT, documents in Drive — one project's context is fragmented across 5 tools." },
+              { icon: "👋", title: "When a junior leaves, their context leaves too", desc: "A senior's email review criteria, AI research process, and team discussion outcomes live only in their head. When they leave, that know-how disappears." },
             ].map((item, i) => (
               <div key={i} className="p-6 rounded-2xl border border-gray-200 hover:border-violet-200 transition">
                 <span className="text-3xl mb-3 block">{item.icon}</span>
@@ -513,7 +513,7 @@ export default function Home() {
           </div>
           <div className="section-fade text-center mt-12">
             <div className="inline-flex items-center gap-2 bg-violet-600 text-white px-6 py-3 rounded-full text-base font-medium">
-              Clara connects all this context ↓
+              Clara solves all of these — in one workspace ↓
             </div>
           </div>
         </div>
@@ -524,39 +524,39 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="section-fade text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 leading-tight">
-              Why does professional team work<br />
-              start from scratch every time?
+              Not generation —<br />
+              Context integration
             </h2>
             <p className="text-lg text-gray-500 max-w-3xl mx-auto mb-10 leading-relaxed">
-              When client emails, Google Drive files, AI research results, and team review discussions<br className="hidden md:block" />
-              are scattered across different apps — you repeat the same work from zero on the next engagement.
+              Clara isn&apos;t just another AI that writes. It cross-verifies email, internal docs, AI research,<br className="hidden md:block" />
+              and team reviews in one workspace.
             </p>
           </div>
           <div className="section-fade grid md:grid-cols-3 gap-8">
             {/* Step 1 */}
             <div className="relative p-6 rounded-2xl bg-white border border-gray-200 shadow-sm">
               <div className="w-10 h-10 rounded-xl bg-violet-100 text-violet-600 flex items-center justify-center font-bold mb-4">1</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">Client materials converge in one place</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">Scattered context unifies by project</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
-                Client emails, Google Drive docs, and team discussions auto-link by project. Review context that used to vanish across 6 apps is now preserved.
+                Client data from Gmail, Drive, and Slack auto-connects by project. No more paying separately for Front + Slack + ChatGPT.
               </p>
               <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-violet-300 text-2xl">→</div>
             </div>
             {/* Step 2 */}
             <div className="relative p-6 rounded-2xl bg-white border border-violet-200 shadow-sm ring-1 ring-violet-100">
               <div className="w-10 h-10 rounded-xl bg-violet-500 text-white flex items-center justify-center font-bold mb-4">2</div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">AI research cross-verified with internal docs</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-2">AI cross-verifies with your internal docs</h3>
               <p className="text-sm text-gray-500 leading-relaxed">
-                No need to manually compare ChatGPT research with internal documents. Clara AI cross-verifies across emails, Drive, and past projects to pinpoint key findings.
+                Not just generating text — Clara verifies research against your emails, Drive files, and past projects. No hallucination, just verified answers.
               </p>
               <div className="hidden md:block absolute -right-4 top-1/2 -translate-y-1/2 text-violet-300 text-2xl">→</div>
             </div>
             {/* Step 3 */}
             <div className="p-6 rounded-2xl bg-gradient-to-br from-violet-600 to-violet-800 text-white shadow-lg">
               <div className="w-10 h-10 rounded-xl bg-white/20 text-white flex items-center justify-center font-bold mb-4">3</div>
-              <h3 className="text-lg font-bold mb-2">Review processes become Playbooks</h3>
+              <h3 className="text-lg font-bold mb-2">Senior processes become company assets</h3>
               <p className="text-sm text-white/80 leading-relaxed">
-                The entire research→review→document creation process becomes a reusable Playbook. On the next similar engagement, even new hires can instantly follow a senior's review process.
+                The entire research→review→document workflow accumulates as reusable Playbooks. Even when juniors leave, your senior&apos;s review process stays in the system.
               </p>
             </div>
           </div>
@@ -571,10 +571,10 @@ export default function Home() {
               <span>✦</span> Clara Core Features
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              From research to document creation<br />in a single app
+              Front + Slack + ChatGPT,<br />unified in one app
             </h2>
             <p className="text-lg text-gray-500 max-w-3xl mx-auto">
-              Email, chat, AI, projects, and contact management — all connected in one workspace.
+              Save $100+/person/month while connecting email, chat, AI research, and projects.
             </p>
           </div>
 
@@ -700,10 +700,10 @@ export default function Home() {
                 <span className="bg-white/20 px-2.5 py-0.5 rounded-full text-[10px] font-bold">Key Differentiator</span>
               </div>
               <h3 className="text-xl font-bold mb-1">Playbook</h3>
-              <p className="text-xs text-amber-200 mb-4">Work processes automatically become reusable guides</p>
+              <p className="text-xs text-amber-200 mb-4">Even when juniors leave, your senior&apos;s review process stays in the system</p>
               <p className="text-sm text-white/80 leading-relaxed mb-5">
                 Just say &ldquo;Turn this into a Playbook&rdquo; and the entire research→review→document creation process
-                is auto-organized into a step-by-step workflow. On the next similar engagement, even new hires follow a senior's process.
+                is auto-organized into a step-by-step workflow. Even with high turnover, your team&apos;s service quality stays consistent.
               </p>
               <ul className="space-y-2">
                 {[
@@ -946,10 +946,10 @@ export default function Home() {
 
           {/* Playbook Emphasis Banner */}
           <div className="section-fade mt-12 p-6 bg-gradient-to-r from-violet-600 to-violet-800 rounded-2xl text-white text-center">
-            <h3 className="text-lg font-bold mb-2">What professional firms have in common: the review process is the knowledge</h3>
+            <h3 className="text-lg font-bold mb-2">Maintain service quality despite high turnover</h3>
             <p className="text-sm text-violet-200 max-w-2xl mx-auto">
-              At 20–100 person law, accounting, advisory, and investment firms where small teams serve multiple clients,<br />
-              when the entire research→cross-verification→team review→document creation process accumulates — even new hires instantly reuse a senior's process.
+              When juniors leave, seniors&apos; review criteria, research methods, and document processes remain in Playbooks.<br />
+              New team members start following accumulated processes from day one.
             </p>
           </div>
         </div>
@@ -1040,15 +1040,15 @@ export default function Home() {
         <div className="max-w-6xl mx-auto">
           <div className="section-fade text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-white/20 text-white px-4 py-1.5 rounded-full text-sm font-medium mb-6">
-              ✦ Ask — AI Colleague
+              ✦ Ask — AI Cross-Verification
             </div>
             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              ChatGPT doesn't know your company.<br />
-              Clara AI <span className="text-violet-200">cross-verifies with your internal data.</span>
+              Not just AI that writes.<br />
+              AI that <span className="text-violet-200">cross-verifies with your firm&apos;s truth.</span>
             </h2>
             <p className="text-lg text-violet-200 max-w-2xl mx-auto">
-              No more manually verifying ChatGPT research results. Clara AI is an AI colleague that<br />
-              cross-references emails, Google Drive, and past projects to verify research against your internal data.
+              Worried about hallucinations in AI output? Clara AI cross-verifies against your emails,<br />
+              Google Drive, and past projects to deliver answers grounded in your internal data.
             </p>
           </div>
           <div className="section-fade grid md:grid-cols-2 gap-12 items-start">
@@ -1152,11 +1152,11 @@ export default function Home() {
         <div className="max-w-5xl mx-auto">
           <div className="section-fade text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Even paying for AI plans on 6 apps,<br />cross-verification is impossible
+              $171+/person/month in SaaS costs —<br />consolidate with Clara
             </h2>
             <p className="text-lg text-gray-500">
-              Even subscribing to each app's AI plan, they can't access each other's data.<br />
-              In the end, cross-verifying research results with internal docs is done manually.
+              Paying separately for Front + Slack + ChatGPT + Monday + HubSpot means rising costs with no AI integration.<br />
+              Clara unifies everything in one workspace.
             </p>
           </div>
           <div className="section-fade">
@@ -1347,11 +1347,11 @@ export default function Home() {
               <span className="text-white text-3xl">✦</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Research, review, and document creation —<br />stop starting from scratch every time.
+              Cut your Front + Slack + ChatGPT costs<br />and build your team&apos;s knowledge asset.
             </h2>
             <p className="text-lg text-gray-500 mb-8 max-w-xl mx-auto">
-              All you need is a Gmail account. The moment client emails, internal docs, AI research, and team reviews connect —<br />
-              a senior's work process starts accumulating as the entire team's asset.
+              Set up in 5 minutes with just a Gmail account. The moment email, chat, and AI research connect,<br />
+              your senior&apos;s review process becomes a reusable company asset.
             </p>
             <div className="flex items-center justify-center gap-4">
               <a href="#" className="bg-violet-600 text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-violet-700 transition flex items-center gap-2 shadow-lg shadow-violet-200">
@@ -1372,7 +1372,7 @@ export default function Home() {
                 <span className="text-white font-bold text-xs">C</span>
               </div>
               <span className="text-lg font-bold text-gray-900">Clara</span>
-              <span className="text-xs text-gray-400 ml-2">AI Colleague for Professional Firms by SprintSolo</span>
+              <span className="text-xs text-gray-400 ml-2">AI Knowledge Workspace for Professional Firms by SprintSolo</span>
             </div>
             <div className="flex items-center gap-6 text-sm text-gray-500">
               <a href="#core-features" className="hover:text-violet-600 transition">Core Features</a>
