@@ -576,6 +576,116 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ─── Clara가 일하는 방식 — 4개 부품 ─── */}
+      <section id="how-clara-works" className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="section-fade text-center mb-14">
+            <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+              <span>⚙</span> Clara를 구성하는 세 가지 핵심
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              메모리 · 스킬 · 플레이북
+            </h2>
+            <p className="text-lg text-gray-500 max-w-3xl mx-auto">
+              전문직 회사에 맞춘 AI 동료가 어떻게 구성되는지 — 확장은 늘리되, 통제는 회사가.
+            </p>
+          </div>
+
+          <div className="section-fade grid md:grid-cols-2 gap-6">
+
+            {/* 메모리 */}
+            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-blue-200 hover:shadow-lg transition">
+              <div className="w-12 h-12 rounded-xl bg-blue-100 text-blue-600 flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-1">메모리</h3>
+              <p className="text-sm font-semibold text-blue-600 mb-3">AI가 당신을 기억한다</p>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                대화하면서 알게 된 당신의 취향·결정·약속·규칙을 자동으로 저장하고 검색합니다.
+                매번 다시 알려주지 않아도 됩니다.
+              </p>
+              <div className="p-3 bg-blue-50/50 rounded-lg border border-blue-100">
+                <div className="text-[10px] font-semibold text-blue-600 mb-1">예시</div>
+                <div className="text-xs text-gray-600">&ldquo;마이크는 월요일 오전 미팅 싫어함&rdquo; · &ldquo;청구서 검토는 항상 수동 확인&rdquo;</div>
+              </div>
+            </div>
+
+            {/* 스킬 */}
+            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-indigo-200 hover:shadow-lg transition relative">
+              <div className="absolute -top-3 right-6 bg-indigo-600 text-white text-[10px] font-bold px-3 py-1 rounded-full">확장 + 보안</div>
+              <div className="w-12 h-12 rounded-xl bg-indigo-100 text-indigo-600 flex items-center justify-center mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
+                </svg>
+              </div>
+              <h3 className="text-xl font-bold text-gray-900 mb-1">스킬</h3>
+              <p className="text-sm font-semibold text-indigo-600 mb-3">필요한 능력은 늘리되, 통제는 회사가</p>
+              <p className="text-sm text-gray-600 leading-relaxed mb-3">
+                Clara는 Claude Cowork의 표준 Agent Skill을 <strong>거의 그대로 사용할 수 있는 Sandbox 내장 구조</strong>를 가집니다.
+                다만 누구나 임의로 설치하는 데스크톱 앱과 달리, <strong>검증된 Skill만 회사별로 사전 탑재</strong> — 관리자가 보안 정책에 맞춰 선별한 Skill을 팀원이 사용합니다.
+              </p>
+              <div className="p-3 bg-indigo-50/50 rounded-lg border border-indigo-100">
+                <div className="text-[10px] font-semibold text-indigo-600 mb-1">예시</div>
+                <div className="text-xs text-gray-600">문서 처리(docx·pdf·xlsx) · Google Workspace 도구 체인 · 회사 맞춤 검증 절차. 신규 Skill은 관리자 승인만으로 즉시 반영.</div>
+              </div>
+            </div>
+
+            {/* 플레이북 — 강조 */}
+            <div className="p-6 rounded-2xl bg-gradient-to-br from-amber-500 to-orange-600 text-white hover:shadow-lg transition relative md:col-span-2">
+              <div className="absolute -top-3 right-6 bg-white text-amber-700 text-[10px] font-bold px-3 py-1 rounded-full shadow-sm">Clara만의 컨셉 ⭐</div>
+              <div className="grid md:grid-cols-5 gap-6">
+                <div className="md:col-span-2">
+                  <div className="w-12 h-12 rounded-xl bg-white/20 flex items-center justify-center mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+                    </svg>
+                  </div>
+                  <h3 className="text-2xl font-bold mb-1">플레이북</h3>
+                  <p className="text-sm font-semibold text-amber-100 mb-3">자율 학습으로 자라는 업무 매뉴얼</p>
+                  <p className="text-sm text-white/85 leading-relaxed">
+                    프롬프트·스킬·코드가 아니라 <strong>자연어로만 구성된 &ldquo;업무 매뉴얼&rdquo;</strong>.
+                    누구나 읽고 쓸 수 있는 한국어 절차서입니다.
+                  </p>
+                </div>
+                <div className="md:col-span-3 space-y-3">
+                  <div className="p-4 bg-white/15 rounded-xl">
+                    <div className="flex items-start gap-3">
+                      <span className="shrink-0 w-6 h-6 rounded bg-white/25 text-xs font-bold flex items-center justify-center">1</span>
+                      <div>
+                        <div className="text-sm font-bold mb-0.5">사용자가 직접 작성·수정</div>
+                        <div className="text-xs text-white/80">처음 만들거나 손본 매뉴얼을, <strong>자율 학습 에이전트가 계속 다듬어 점진적으로 개선</strong>합니다.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-4 bg-white/15 rounded-xl">
+                    <div className="flex items-start gap-3">
+                      <span className="shrink-0 w-6 h-6 rounded bg-white/25 text-xs font-bold flex items-center justify-center">2</span>
+                      <div>
+                        <div className="text-sm font-bold mb-0.5">평소 대화방에서 자율 생성</div>
+                        <div className="text-xs text-white/80">팀원들이 평소 일하는 동안 에이전트가 흐름을 관찰해, <strong>자율적으로 플레이북을 작성·갱신</strong>합니다.</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div className="p-3 bg-white/10 rounded-lg">
+                    <div className="text-[10px] font-semibold text-amber-100 mb-1">예시</div>
+                    <div className="text-xs text-white/90">&ldquo;마케팅 제안서 작성&rdquo; · &ldquo;고객 KYC 검토&rdquo; · &ldquo;이메일 응답 가이드&rdquo; — 신입도 자연어로 시니어 절차를 즉시 따름</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <div className="section-fade text-center mt-12">
+            <p className="text-base text-gray-600 max-w-2xl mx-auto">
+              이 세 가지가 함께 동작하여, Clara는 <strong className="text-violet-700">확장 가능하면서도 통제되고, 스스로 배우면서 자라는</strong> AI 동료가 됩니다.
+            </p>
+          </div>
+        </div>
+      </section>
+
       {/* ─── 핵심 기능 ─── */}
       <section id="core-features" className="py-20 px-6">
         <div className="max-w-6xl mx-auto">
@@ -649,17 +759,17 @@ export default function Home() {
                 <IconMail />
               </div>
               <h3 className="text-xl font-bold text-gray-900 mb-1">Inbox</h3>
-              <p className="text-xs text-gray-400 mb-4">AI가 브리핑하는 팀 공유 인박스</p>
+              <p className="text-xs text-gray-400 mb-4">AI가 요약·연결·답장까지 한 자리에서</p>
               <p className="text-sm text-gray-500 leading-relaxed mb-5">
                 고객사 이메일이 도착하면 AI가 핵심을 요약하고, 관련 프로젝트와 내부 문서를 자동 연결합니다.
-                이메일 옆에서 바로 팀 채팅을 시작하고, 다음 액션을 제안받으세요.
+                이메일 옆에서 바로 팀 채팅을 시작하고, 맥락을 반영한 답장 초안까지 한 번에 처리하세요.
               </p>
               <ul className="space-y-2.5">
                 {[
-                  "OVERVIEW — 이메일 핵심 자동 요약 & 브리핑",
+                  "OVERVIEW — 이메일 핵심 자동 요약",
                   "Linked Context — 관련 프로젝트·고객사·문서 연결",
-                  "Suggest — 답장 초안·태스크 생성·후속 액션 제안",
-                  "팀원별 처리 현황 실시간 확인",
+                  "AI 답장 작성 — 대화 맥락·내부 자료 반영 초안 + 바로 발송",
+                  "Suggest — 태스크 생성·후속 액션 제안",
                   "이메일 옆에서 바로 팀 채팅 시작",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
@@ -670,30 +780,32 @@ export default function Home() {
             </div>
           </div>
 
-          {/* 중단: Compose, Playbook */}
+          {/* 중단: Briefing, Playbook */}
           <div className="section-fade grid md:grid-cols-2 gap-6 mb-6">
 
-            {/* Compose */}
-            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-rose-200 hover:shadow-lg transition">
+            {/* Briefing */}
+            <div className="p-6 rounded-2xl bg-white border border-gray-200 hover:border-sky-200 hover:shadow-lg transition">
               <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl bg-rose-100 text-rose-600 flex items-center justify-center">
+                <div className="w-10 h-10 rounded-xl bg-sky-100 text-sky-600 flex items-center justify-center">
                   <svg xmlns="http://www.w3.org/2000/svg" className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                    <path strokeLinecap="round" strokeLinejoin="round" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M9 17v-2m3 2v-4m3 4v-6m2 10H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
                   </svg>
                 </div>
+                <span className="bg-sky-50 text-sky-700 px-2.5 py-0.5 rounded-full text-[10px] font-bold border border-sky-100">신규</span>
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-1">Compose</h3>
-              <p className="text-xs text-gray-400 mb-4">AI가 맥락을 이해하고 작성하는 문서·이메일</p>
+              <h3 className="text-xl font-bold text-gray-900 mb-1">Briefing</h3>
+              <p className="text-xs text-gray-400 mb-4">매일 자동 생성되는 나만의 업무 브리핑</p>
               <p className="text-sm text-gray-500 leading-relaxed mb-5">
-                Clara에게 &ldquo;이메일 답장 작성해줘&rdquo; &ldquo;보고서 초안 만들어줘&rdquo;라고 요청하면,
-                대화 맥락·내부 자료·팀 검토 의견을 반영한 문서를 생성합니다. 작성된 이메일은 바로 발송할 수 있습니다.
+                Workbook(자연어 프롬프트)으로 브리핑 기준을 적어두면, Clara가 매일 24시간 윈도우의
+                이메일·태스크·프로젝트·채팅·문서를 순회해 당신만의 브리핑을 자동 생성합니다.
               </p>
               <ul className="space-y-2">
                 {[
-                  "이메일 답장 — 과거 대화 맥락 반영 초안",
-                  "보고서·제안서 — 내부 자료 기반 문서 생성",
-                  "팀 검토 의견을 자동 반영한 수정 버전",
-                  "작성 즉시 이메일 발송 또는 Drive 저장",
+                  "Workbook — 자연어로 브리핑 기준 설정",
+                  "24시간 윈도우 자동 정리 (cron + 수동 트리거)",
+                  "이메일·태스크·프로젝트·문서 교차 요약",
+                  "Suggestion 카드 — Draft Override + SSE 미리보기",
+                  "출근 전·미팅 전 핵심을 미리 정리",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-xs text-gray-600">
                     <IconCheck /><span>{item}</span>
@@ -713,18 +825,18 @@ export default function Home() {
                 <span className="bg-white/20 px-2.5 py-0.5 rounded-full text-[10px] font-bold">핵심 차별점</span>
               </div>
               <h3 className="text-xl font-bold mb-1">Playbook</h3>
-              <p className="text-xs text-amber-200 mb-4">업무 프로세스가 자동으로 재사용 가능한 가이드가 됩니다</p>
+              <p className="text-xs text-amber-200 mb-4">자율 학습으로 자라는, 자연어로 된 업무 매뉴얼</p>
               <p className="text-sm text-white/80 leading-relaxed mb-5">
-                &ldquo;이걸 플레이북으로 만들어줘&rdquo; 한마디면, 리서치→검토→문서 작성의 전체 과정이
-                단계별 워크플로우로 자동 정리됩니다. 다음 유사 안건에서 신입도 시니어의 프로세스를 따릅니다.
+                자율 학습 에이전트가 사용자 대화에서 플레이북을 자동으로 작성·갱신하거나,
+                사용자가 만든 매뉴얼을 점진적으로 개선합니다. 프롬프트·코드가 아닌 누구나 읽고 쓰는 한국어 절차서입니다.
               </p>
               <ul className="space-y-2">
                 {[
-                  "대화 한 번으로 업무 프로세스 자동 추출",
+                  "사용자 대화에서 에이전트가 자율적으로 추출·갱신",
                   "단계별 워크플로우 + 참고 자료 링크 포함",
                   "팀 전체가 동일한 품질로 업무 수행",
                   "신규 입사자 온보딩 시간 대폭 단축",
-                  "유사 안건에서 즉시 재사용·커스터마이징",
+                  "자율 학습으로 사용할수록 점진적으로 개선",
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2 text-xs text-white/80">
                     <IconCheck /><span>{item}</span>
@@ -780,6 +892,98 @@ export default function Home() {
                 ))}
               </ul>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 최근 추가된 기능 ─── */}
+      <section id="recent-features" className="py-20 px-6 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <div className="section-fade text-center mb-12">
+            <div className="inline-flex items-center gap-2 bg-violet-50 text-violet-700 px-4 py-1.5 rounded-full text-sm font-medium mb-6">
+              <span>✨</span> 최근 추가된 기능
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              대화·작업·산출물이<br />한 화면에서 흐르도록
+            </h2>
+          </div>
+
+          <div className="section-fade grid md:grid-cols-2 gap-6">
+
+            {/* Document Canvas */}
+            <div className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-violet-50 to-fuchsia-50 border border-violet-100">
+              <div className="inline-flex items-center gap-2 bg-white text-violet-700 px-2.5 py-1 rounded-full text-[10px] font-bold border border-violet-200 mb-4">
+                🎨 Document Canvas
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">대화하면서 동시에 문서를 본다</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-5">
+                채팅 옆에 Playbook · Task · Project · Docs가 캔버스로 펼쳐집니다.
+                대화·실행·산출물이 하나의 화면에서 흐릅니다.
+              </p>
+              <div className="bg-white rounded-xl border border-violet-100 p-4 shadow-sm">
+                <div className="grid grid-cols-2 gap-3 text-[10px]">
+                  <div className="p-3 bg-gray-50 rounded-lg border border-gray-100">
+                    <div className="font-semibold text-gray-500 mb-2">💬 Chat</div>
+                    <div className="space-y-1 text-gray-400 leading-relaxed">
+                      <div>&ldquo;이 KYC 검토 절차로 정리해줘&rdquo;</div>
+                      <div className="text-violet-600">→ Playbook 자율 갱신 중...</div>
+                      <div className="text-gray-300 font-mono">patch_playbook ↻</div>
+                    </div>
+                  </div>
+                  <div className="p-3 bg-violet-50 rounded-lg border border-violet-100">
+                    <div className="font-semibold text-violet-700 mb-2">📋 Playbook Canvas</div>
+                    <div className="space-y-1 text-gray-500 leading-relaxed">
+                      <div>1. 신원 정보 수집</div>
+                      <div>2. 위험도 점수 산정</div>
+                      <div className="text-violet-700 font-semibold">3. 외부 제재 리스트 대조 ✨</div>
+                      <div>4. 결재선 통보</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <ul className="mt-5 space-y-2 text-xs text-gray-600">
+                <li className="flex items-start gap-2"><IconCheck /><span>Playbook · Task · Project · Docs 통합 캔버스</span></li>
+                <li className="flex items-start gap-2"><IconCheck /><span>대화·실행·산출물이 같은 화면에서 흐름</span></li>
+              </ul>
+            </div>
+
+            {/* Ask AI 고도화 */}
+            <div className="p-6 md:p-8 rounded-2xl bg-gradient-to-br from-slate-50 to-blue-50 border border-slate-200">
+              <div className="inline-flex items-center gap-2 bg-white text-blue-700 px-2.5 py-1 rounded-full text-[10px] font-bold border border-blue-200 mb-4">
+                ✦ Ask AI 고도화
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-2">필요한 컨텍스트를<br />한 입력창에 넣는다</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-5">
+                사람·태스크·프로젝트 멘션, 파일 첨부, 음성 입력, 모델 선택, 다음 답변 제안 —
+                전문직 업무의 정밀한 요청을 위한 도구가 한 입력창에 모입니다.
+              </p>
+              <div className="bg-white rounded-xl border border-slate-200 p-3.5 shadow-sm">
+                <div className="text-xs text-gray-600 mb-2.5 leading-relaxed">
+                  <span className="bg-violet-50 text-violet-700 px-1 rounded">@마이크</span>{" "}
+                  <span className="bg-blue-50 text-blue-700 px-1 rounded">@KYC-검토</span>{" "}
+                  이번 건 리스크 정리해줘
+                </div>
+                <div className="flex flex-wrap items-center gap-1.5 mb-2.5">
+                  <span className="text-[9px] bg-emerald-50 text-emerald-700 px-1.5 py-0.5 rounded border border-emerald-100">📎 첨부 2</span>
+                  <span className="text-[9px] bg-amber-50 text-amber-700 px-1.5 py-0.5 rounded border border-amber-100">🎙 음성</span>
+                  <span className="text-[9px] bg-fuchsia-50 text-fuchsia-700 px-1.5 py-0.5 rounded border border-fuchsia-100">💡 다음 답변 제안</span>
+                </div>
+                <div className="flex items-center justify-between border-t border-slate-100 pt-2.5">
+                  <div className="flex items-center gap-1 text-[10px]">
+                    <span className="text-gray-400">모델</span>
+                    <span className="bg-slate-100 text-slate-700 px-1.5 py-0.5 rounded text-[9px] font-semibold">Claude</span>
+                    <span className="text-gray-300">↔</span>
+                    <span className="bg-violet-100 text-violet-700 px-1.5 py-0.5 rounded text-[9px] font-semibold">Clara</span>
+                  </div>
+                  <div className="w-5 h-5 rounded-full bg-violet-500 flex items-center justify-center text-white text-[8px]">▶</div>
+                </div>
+              </div>
+              <ul className="mt-5 space-y-2 text-xs text-gray-600">
+                <li className="flex items-start gap-2"><IconCheck /><span>@멘션 · 첨부 · 음성 · 모델 선택 · Suggested Replies</span></li>
+                <li className="flex items-start gap-2"><IconCheck /><span>도구 결과 전용 렌더러 (tasks_search 등)</span></li>
+              </ul>
+            </div>
+
           </div>
         </div>
       </section>
