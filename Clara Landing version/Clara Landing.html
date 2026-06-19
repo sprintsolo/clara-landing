@@ -1,0 +1,658 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Clara — 이메일에 잠든 노하우를, 팀의 플레이북으로</title>
+<meta name="description" content="회사 이메일을 팀과 공유하고, AI와 함께 대화하며, 재사용 가능한 업무 플레이북을 자동으로 만듭니다. 법무법인·컨설팅·VC를 위한 지식 자산화 플랫폼." />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,300..700;1,8..60,300..700&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- Masthead: Newspaper-style top strip -->
+<div class="masthead-wrap" style="background: var(--ink); color: var(--paper);">
+  <div class="wrap">
+    <div style="display:flex; justify-content: space-between; align-items: center; padding: 10px 0; font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;">
+      <span style="color: oklch(0.78 0.01 260);">Clara Edition · No. 014 · 2026. 04. 18</span>
+      <span style="color: oklch(0.78 0.01 260); display:flex; gap: 28px;">
+        <span>Seoul · 22℃</span>
+        <span>이메일 <strong style="color: var(--paper); font-weight: 500;">공유</strong> · AI <strong style="color: var(--paper); font-weight: 500;">대화</strong> · Playbook <strong style="color: var(--paper); font-weight: 500;">자산화</strong></span>
+        <span>도입 법인·컨설팅 <strong style="color: var(--paper); font-weight: 500;">143곳</strong></span>
+      </span>
+    </div>
+  </div>
+</div>
+
+<!-- Nav -->
+<nav class="nav">
+  <div class="wrap nav-inner">
+    <a href="#" class="brand" style="text-decoration:none; color:inherit;">
+      <span class="brand-mark">C</span>
+      <span>Clara</span>
+      <span class="brand-sub">Knowledge · Memory · Judgment</span>
+    </a>
+    <div class="nav-center">
+      <a href="#pains" class="navlink">문제 진단</a>
+      <a href="#features" class="navlink">제품</a>
+      <a href="#industries" class="navlink">산업별 활용</a>
+      <a href="#pricing" class="navlink">도입</a>
+    </div>
+    <div style="display:flex; gap: 8px; align-items: center;">
+      <a href="#contact" class="navlink" style="font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;">로그인</a>
+      <a href="#contact" class="btn btn-sm btn-arrow">도입 문의</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-kicker">
+      <span>Issue 014 · Spring 2026</span>
+      <span>For Law Firms · Consultancies · Venture Funds</span>
+    </div>
+
+    <div class="hero-grid">
+      <div>
+        <h1>
+          이메일에 잠든 노하우를,<br/>
+          팀의 <em>플레이북</em>으로.
+        </h1>
+        <p class="hero-lede">
+          회사 이메일을 팀과 한 번에 공유하고,<br/>
+          AI와 함께 대화하며 일합니다. 그 대화는<br/>
+          그대로 <em>재사용 가능한 업무 지식</em>이 됩니다.
+        </p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn btn-lg btn-arrow">30일 파일럿 신청</a>
+          <a href="#features" class="btn btn-lg btn-ghost">작동 방식 보기</a>
+        </div>
+
+        <!-- Flywheel inline -->
+        <div style="margin-top: 56px; display: grid; grid-template-columns: 1fr auto 1fr auto 1fr; gap: 18px; align-items: center; padding-top: 28px; border-top: 1px solid var(--rule);">
+          <div>
+            <div class="eyebrow-num" style="margin-bottom: 6px;">01 · Share</div>
+            <div style="font-family: var(--serif); font-size: 18px; letter-spacing: -0.01em; line-height: 1.2;">이메일 공유</div>
+          </div>
+          <span style="font-family: var(--mono); color: var(--claret); font-size: 16px;">→</span>
+          <div>
+            <div class="eyebrow-num" style="margin-bottom: 6px;">02 · Talk</div>
+            <div style="font-family: var(--serif); font-size: 18px; letter-spacing: -0.01em; line-height: 1.2;">팀 + AI 대화</div>
+          </div>
+          <span style="font-family: var(--mono); color: var(--claret); font-size: 16px;">→</span>
+          <div>
+            <div class="eyebrow-num" style="margin-bottom: 6px;">03 · Keep</div>
+            <div style="font-family: var(--serif); font-size: 18px; letter-spacing: -0.01em; line-height: 1.2;">Playbook 자동 저장</div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="hero-aside">
+        <div class="label">— 파트너 변호사, 중견 법무법인 A</div>
+        <blockquote>
+          "이메일 한 건을 팀원과 AI에게 공유하면, 우리가 그 건을 어떻게 처리했는지가 조직에 남습니다. 그 대화가 곧 다음 사건의 매뉴얼이 됩니다."
+        </blockquote>
+        <div class="cite">Managing Partner · 법무법인 A · 서울</div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- Logo bar -->
+<section>
+  <div class="wrap">
+    <div class="logos">
+      <span class="lbl">Trusted by</span>
+      <span class="logo">Sullivan &amp; Cho</span>
+      <span class="logo">HanWool Partners</span>
+      <span class="logo">Kim · Lee · Park</span>
+      <span class="logo">Permit Ventures</span>
+      <span class="logo">DeltaStone Consulting</span>
+      <span class="lbl">+138 more</span>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN — editorial carousel + grid -->
+<section class="section" id="pains">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-num">§ I · 진단</div>
+      <div>
+        <h2>회사의 가장 값진 자산은<br/>누군가의 <em>이메일함</em>에 잠들어 있습니다.</h2>
+        <p class="desc">
+          수년간 고객과 주고받은 이메일 안에는 검토 기준, 협상 패턴, 리스크 판단, 반복되는 업무 흐름이 통째로 저장되어 있습니다. 그러나 이 노하우를 팀과 공유하거나 재사용 가능한 형태로 남길 수단이 없습니다. Clara가 해결하는 본질적인 문제입니다.
+        </p>
+      </div>
+    </div>
+    <div id="pain-carousel-mount"></div>
+
+    <div style="height: 64px;"></div>
+
+    <div class="section-head" style="border-top: 0; padding-top: 0;">
+      <div class="eyebrow-num">§ I · ii · 네 가지 단절</div>
+      <div>
+        <h2>왜 이메일의 노하우는<br/>항상 묻혀버리는가.</h2>
+      </div>
+    </div>
+
+    <div class="pain-grid">
+      <div class="pain-cell">
+        <div class="num">01 / 이메일의 고립</div>
+        <h3>이메일이 담당자 한 명의 받은편지함에 갇혀 있습니다.</h3>
+        <p>고객 히스토리·검토 근거·첨부가 전부 담당자의 개인 메일함에만 존재합니다. 전달·CC로는 팀이 제대로 읽지 않고, 필요할 때 다시 꺼내 쓸 수도 없습니다.</p>
+      </div>
+      <div class="pain-cell">
+        <div class="num">02 / 대화의 휘발</div>
+        <h3>Slack·Chat에서 나눈 논의는 몇 시간 만에 사라집니다.</h3>
+        <p>"이 조항은 왜 이렇게 수정했는지"에 대한 팀원과의 대화, 경력자의 판단 기준 — 채널을 거슬러 올라가야 하고, 이메일 원문과 연결되지 않으며, 다음에 재사용할 수 없습니다.</p>
+      </div>
+      <div class="pain-cell">
+        <div class="num">03 / AI의 단독 대화</div>
+        <h3>ChatGPT와 혼자 나눈 대화는 동료에게 전달되지 않습니다.</h3>
+        <p>개인이 AI와 주고받은 수십 번의 질의응답이 브라우저 탭에서 사라집니다. 조직은 같은 질문을 매번 처음부터 다시 하고, 같은 노하우를 매번 새로 발견합니다.</p>
+      </div>
+      <div class="pain-cell">
+        <div class="num">04 / 플레이북의 부재</div>
+        <h3>재사용 가능한 업무 지식의 형태가 존재하지 않습니다.</h3>
+        <p>경력자가 지난번 유사 안건을 어떻게 처리했는지 아는 사람도, 그 방식을 문서화해 신입에게 넘겨줄 여력도 없습니다. 노하우는 존재하나 전달되지 못합니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Pullquote -->
+<section class="quote-block">
+  <div class="wrap-sm">
+    <blockquote>이메일을 공유하고, AI와 함께 대화하면,<br/>그 대화가 조직의 플레이북으로 남습니다.</blockquote>
+    <div class="cite">Clara Manifesto · 2026</div>
+  </div>
+</section>
+
+<!-- HOW — 3 step process -->
+<section class="section sunk">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-num">§ II · 작동 방식</div>
+      <div>
+        <h2>세 단계로 돌아가는<br/><em>지식 플라이휠</em>.</h2>
+        <p class="desc">Clara는 새로운 앱이 아니라 Gmail 위에 얹히는 협업 레이어입니다. 이메일을 팀과 공유하고, AI와 함께 대화하며, 대화를 재사용 가능한 Playbook으로 저장합니다.</p>
+      </div>
+    </div>
+
+    <div class="process">
+      <div class="process-col">
+        <div class="step-num">01</div>
+        <h3>공유 · Share</h3>
+        <p>회사의 이메일을 한 번의 클릭으로 팀원과 공유합니다. 별도 포워딩·CC 없이, 관련 담당자들이 동일한 맥락에서 메일을 읽고 스레드를 따라갑니다.</p>
+      </div>
+      <div class="process-col emph">
+        <div class="step-num">02</div>
+        <h3>대화 · Talk</h3>
+        <p>공유된 이메일을 놓고 팀원과 AI가 동일한 스레드에서 대화합니다. "이 조항 어떻게 대응할까?" 질문에 AI는 이메일 원문과 과거 유사 건을 동시 참조해 답하고, 팀원은 검토하는 곳입니다.</p>
+      </div>
+      <div class="process-col">
+        <div class="step-num">03</div>
+        <h3>자산화 · Keep</h3>
+        <p>가치 있었던 대화는 클릭 한 번으로 <strong style="color: var(--claret-wash); font-weight: 600;">Playbook</strong>으로 저장됩니다. 다음번 유사한 상황에서 누구든지 그 플레이북을 실행해 동일한 방식으로 일할 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURES — Editorial feature spreads -->
+<section class="section" id="features">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-num">§ III · 제품</div>
+      <div>
+        <h2>이메일 → 대화 →<br/><em>플레이북</em>으로 이어지는 하나의 흐름.</h2>
+        <p class="desc">Clara의 모든 기능은 "이메일에 잠든 노하우를 조직의 재사용 가능한 지식으로" 만드는 하나의 흐름을 위해 설계되었습니다.</p>
+      </div>
+    </div>
+
+    <!-- Spread 01 -->
+    <div class="spread">
+      <div class="spread-text">
+        <span class="eyebrow">I · Share — 이메일 공유</span>
+        <h3>담당자의 메일함을<br/>팀의 작업공간으로.</h3>
+        <p class="lede">이메일 위에서 "팀에게 공유" 버튼을 누르면 해당 스레드가 팀원에게 전달됩니다. CC도, 포워딩도, 스크린샷도 필요없습니다.</p>
+        <ul class="checklist">
+          <li><div><strong>원클릭 공유</strong>Gmail 상단의 Clara 버튼으로 메일 스레드 전체를 팀원에게 공개</div></li>
+          <li><div><strong>자동 브리핑</strong>공유된 메일의 핵심 요청·맥락을 3줄로 요약해 팀원에게 전달</div></li>
+          <li><div><strong>논평 쓰레드</strong>메일 여백에 논평을 달면 담당자에게 알림 · 원본 흑식 없이 맥락 보존</div></li>
+        </ul>
+      </div>
+      <div class="spread-mock" id="mock-inbox"></div>
+    </div>
+
+    <!-- Spread 02 -->
+    <div class="spread reverse">
+      <div class="spread-text">
+        <span class="eyebrow">II · Talk — 팀 + AI 대화</span>
+        <h3>팀원과 AI가<br/>한 스레드에서 대화합니다.</h3>
+        <p class="lede">공유된 이메일 아래에서 동료들과 AI가 동일한 대화방을 공유합니다. 팀원의 경험과 AI의 리서치가 같은 장소에서 붙습니다.</p>
+        <ul class="checklist">
+          <li><div><strong>@Clara 실시간 호출</strong>대화 중 @Clara로 AI 호출 · 이메일 원문과 과거 유사 건을 동시 참조</div></li>
+          <li><div><strong>동료의 검토</strong>AI의 답변 위에 팀원이 "여기는 이렇게 수정해" 논평 · 대화가 검토로 이어짐</div></li>
+          <li><div><strong>모든 주장에 출처</strong>AI 답변의 각 문장에 이메일·문서 원본 링크 자동 부착</div></li>
+        </ul>
+      </div>
+      <div class="spread-mock" id="mock-ask"></div>
+    </div>
+
+    <!-- Spread 03 -->
+    <div class="spread">
+      <div class="spread-text">
+        <span class="eyebrow">III · Keep — Playbook 자동화</span>
+        <h3>좋았던 대화를<br/>해결책 플레이북으로.</h3>
+        <p class="lede">"이 대화 잘 끝났네 — Playbook으로" 버튼 한 번으로, 대화에 등장한 결정·기준·참고한 문서가 단계별 플레이북 초안으로 만들어집니다.</p>
+        <ul class="checklist">
+          <li><div><strong>대화 → 단계 자동 추출</strong>설정 · 분석 · 의사결정 · 다음 액션을 AI가 단계별로 재구성</div></li>
+          <li><div><strong>재사용 지표</strong>Playbook별 실행 횟수 · 절감 시간 · 개선 이력을 조직 대시보드에서 정량화</div></li>
+          <li><div><strong>버전 관리</strong>구성원별 수정 이력을 Git-like diff로 · 누가 어떻게 개선했는지 추적</div></li>
+        </ul>
+      </div>
+      <div class="spread-mock" id="mock-playbook"></div>
+    </div>
+
+    <!-- Spread 04 -->
+    <div class="spread reverse">
+      <div class="spread-text">
+        <span class="eyebrow">IV · Apply — 플레이북 실행</span>
+        <h3>지식이 쌓이면<br/>다음 업무가 빨라집니다.</h3>
+        <p class="lede">누적된 Playbook 라이브러리가 팀의 업무 표준이 됩니다. 신입은 경력자의 방식으로 바로 일을 시작하고, 팀은 반복 업무의 시간을 되찾습니다.</p>
+        <ul class="checklist">
+          <li><div><strong>작무 시작에 자동 추천</strong>새 이메일·고객 유형을 인식해 적합한 Playbook 3개를 제안</div></li>
+          <li><div><strong>단계별 AI 동행</strong>플레이북 실행 중 AI가 각 단계에 필요한 초안·리서치 제공</div></li>
+          <li><div><strong>실시간 개선</strong>실행 중 나온 새로운 판단·기준이 자동으로 플레이북 다음 버전에 반영</div></li>
+        </ul>
+      </div>
+      <div class="spread-mock" id="mock-project"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Feature grid (supplementary) -->
+<section class="section sunk">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-num">§ III · ii · 차별화 요소</div>
+      <div>
+        <h2>전문가 집단을 위한<br/>여섯 가지 보증.</h2>
+      </div>
+    </div>
+
+    <div class="feat-grid">
+      <div class="feat-cell">
+        <span class="feat-num">01</span>
+        <h4>Source-linked 답변</h4>
+        <span class="feat-sub">Citation first</span>
+        <p>Clara의 모든 답변에는 근거가 되는 원본 이메일·문서·판례 링크가 첨부됩니다. 검증 없이는 어떠한 문장도 생성되지 않습니다.</p>
+        <span class="chip">설명 가능</span>
+        <span class="chip">감사 추적</span>
+      </div>
+      <div class="feat-cell dark">
+        <span class="feat-num">02</span>
+        <h4>조직 전용 색인</h4>
+        <span class="feat-sub">Private by design</span>
+        <p>귀사의 데이터는 외부 모델 학습에 사용되지 않습니다. 기업 전용 색인과 단일 테넌트 분리로 완전히 격리 운영됩니다.</p>
+        <span class="chip">SOC 2 Type II</span>
+        <span class="chip">ISO 27001</span>
+      </div>
+      <div class="feat-cell">
+        <span class="feat-num">03</span>
+        <h4>권한 상속</h4>
+        <span class="feat-sub">Permission-aware</span>
+        <p>Gmail·Drive·Slack의 원본 권한 설정을 그대로 승계. 권한이 없는 구성원에게는 검색 결과에서도 노출되지 않습니다.</p>
+        <span class="chip">ACL 준수</span>
+      </div>
+      <div class="feat-cell">
+        <span class="feat-num">04</span>
+        <h4>한국어 특화</h4>
+        <span class="feat-sub">Domain-tuned</span>
+        <p>법률·회계·컨설팅 한국어 용어와 관용 표현, 판례 인용 형식을 전문적으로 처리. 영문 혼용 업무에서도 정확도가 유지됩니다.</p>
+        <span class="chip">Legal KO</span>
+        <span class="chip">판례 인용</span>
+      </div>
+      <div class="feat-cell">
+        <span class="feat-num">05</span>
+        <h4>도입 3주</h4>
+        <span class="feat-sub">Pilot in 21 days</span>
+        <p>별도 데이터 이관 없이 기존 Gmail·Drive를 그대로 사용. 3주 내 파일럿 운영이 가능하며 해지 시 모든 색인은 완전 삭제됩니다.</p>
+        <span class="chip">제로 마이그레이션</span>
+      </div>
+      <div class="feat-cell dark">
+        <span class="feat-num">06</span>
+        <h4>단일 구독</h4>
+        <span class="feat-sub">One subscription</span>
+        <p>CRM·메신저·노트·AI 어시스턴트를 별도로 구독할 필요가 없습니다. 하나의 라인 아이템으로 팀 전체가 접근합니다.</p>
+        <span class="chip">도구 통합</span>
+        <span class="chip">비용 일원화</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INDUSTRIES -->
+<section class="section" id="industries">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-num">§ IV · 산업별 활용</div>
+      <div>
+        <h2>세 가지 유형의<br/>전문가 조직을 위해.</h2>
+        <p class="desc">모든 팀에 적합하지는 않습니다. Clara는 판단 자체가 제품인 산업 — 법무·컨설팅·투자 — 에 최적화되어 있습니다.</p>
+      </div>
+    </div>
+
+    <div class="industries">
+      <div class="ind-col">
+        <div class="ind-label"><span>CASE A</span><span>법무법인</span></div>
+        <h4>계약서 검토의 맥락을 조직화합니다.</h4>
+        <p>파트너 변호사의 검토 기준을 Playbook으로 기록하여 신입도 일관된 품질로 초안을 작성할 수 있습니다.</p>
+        <ul class="checklist">
+          <li><div>과거 유사 계약 자동 발굴 · 조항별 비교</div></li>
+          <li><div>판례 인용 자동 교차 검증</div></li>
+          <li><div>고객별 검토 히스토리 타임라인화</div></li>
+        </ul>
+        <div class="playbook-card">
+          <div class="lbl">Playbook · 대표 사례</div>
+          <div class="name">투자계약서 §Indemnity 검토 — v2.3</div>
+        </div>
+      </div>
+
+      <div class="ind-col">
+        <div class="ind-label"><span>CASE B</span><span>컨설팅 · 회계</span></div>
+        <h4>리서치가 팀의 지적 자산이 됩니다.</h4>
+        <p>매 프로젝트마다 반복되는 시장 분석·재무 실사·벤치마킹이 재사용 가능한 데이터로 축적됩니다.</p>
+        <ul class="checklist">
+          <li><div>산업별 벤치마크 자동 업데이트</div></li>
+          <li><div>RFP 대응 초안 생성 — 과거 유사 제안 기반</div></li>
+          <li><div>고객 인터뷰 녹취 색인·검색</div></li>
+        </ul>
+        <div class="playbook-card">
+          <div class="lbl">Playbook · 대표 사례</div>
+          <div class="name">재무 실사 — FDD 1주 스프린트</div>
+        </div>
+      </div>
+
+      <div class="ind-col">
+        <div class="ind-label"><span>CASE C</span><span>벤처캐피탈</span></div>
+        <h4>딜 플로우가 기관의 기억이 됩니다.</h4>
+        <p>과거 검토한 모든 스타트업, 미팅 기록, 투자 이력이 하나의 매트릭스로 연결되어 팀의 투자 논리가 일관됩니다.</p>
+        <ul class="checklist">
+          <li><div>포트폴리오사 후속 투자 매칭</div></li>
+          <li><div>경쟁사·섹터 동향 자동 모니터링</div></li>
+          <li><div>LP 리포트 초안 자동 작성</div></li>
+        </ul>
+        <div class="playbook-card">
+          <div class="lbl">Playbook · 대표 사례</div>
+          <div class="name">VC 후속 투자 연계 지원 — v1.2</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section class="section sunk">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-num">§ V · 비교</div>
+      <div>
+        <h2>기능이 아니라,<br/><em>철학</em>의 차이.</h2>
+        <p class="desc">유사해 보이는 도구들과 Clara의 결정적 차이는 "조직의 판단을 자산화할 수 있는가"입니다. 나머지 차이는 그에서 파생됩니다.</p>
+      </div>
+    </div>
+
+    <table class="cmp">
+      <thead>
+        <tr>
+          <th style="width: 28%;">항목</th>
+          <th class="clara-col">
+            <span class="tool-name">Clara</span>
+            <span class="tool-price">$49 / user · mo</span>
+          </th>
+          <th>
+            <span class="tool-name">HubSpot</span>
+            <span class="tool-price">$25k~50k 도입비</span>
+          </th>
+          <th>
+            <span class="tool-name">Front</span>
+            <span class="tool-price">$59 / user · mo</span>
+          </th>
+          <th>
+            <span class="tool-name">Monday</span>
+            <span class="tool-price">$24 / user · mo</span>
+          </th>
+          <th>
+            <span class="tool-name">ChatGPT</span>
+            <span class="tool-price">$30 / user · mo</span>
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>이메일 원클릭 팀 공유</td>
+          <td class="clara-cell">●</td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-yes">●</span></td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-no">—</span></td>
+        </tr>
+        <tr>
+          <td>팀원 + AI 동일 스레드 대화</td>
+          <td class="clara-cell">●</td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-no">—</span></td>
+        </tr>
+        <tr>
+          <td>대화 → Playbook 자동 생성</td>
+          <td class="clara-cell">●</td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-no">—</span></td>
+        </tr>
+        <tr>
+          <td>Playbook 재사용 지표 추적</td>
+          <td class="clara-cell">●</td>
+          <td><span class="mark-partial">◐</span></td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-partial">◐</span></td>
+          <td><span class="mark-no">—</span></td>
+        </tr>
+        <tr>
+          <td>모든 답변에 출처 링크</td>
+          <td class="clara-cell">●</td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-partial">◐</span></td>
+        </tr>
+        <tr>
+          <td>조직 전용 격리 색인</td>
+          <td class="clara-cell">●</td>
+          <td><span class="mark-yes">●</span></td>
+          <td><span class="mark-yes">●</span></td>
+          <td><span class="mark-yes">●</span></td>
+          <td><span class="mark-no">—</span></td>
+        </tr>
+        <tr>
+          <td>한국어 법률 · 회계 용어</td>
+          <td class="clara-cell">●</td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-no">—</span></td>
+          <td><span class="mark-partial">◐</span></td>
+        </tr>
+        <tr>
+          <td>도입 소요 기간</td>
+          <td class="clara-cell">3주</td>
+          <td>3~6개월</td>
+          <td>1개월</td>
+          <td>2주</td>
+          <td>즉시</td>
+        </tr>
+        <tr class="total">
+          <td>10명 팀 연간 비용</td>
+          <td class="clara-cell">$5,880</td>
+          <td>$25,000+</td>
+          <td>$7,080</td>
+          <td>$2,880</td>
+          <td>$3,600</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="section" id="pricing">
+  <div class="wrap">
+    <div class="section-head">
+      <div class="eyebrow-num">§ VI · 도입</div>
+      <div>
+        <h2>조직 규모에 맞춘<br/>세 가지 플랜.</h2>
+        <p class="desc">모든 플랜에 30일 파일럿이 포함됩니다. 파일럿 종료 후 연간 계약으로 전환 시에만 비용이 청구됩니다.</p>
+      </div>
+    </div>
+
+    <div class="plans">
+      <div class="plan">
+        <div class="plan-label">— Starter</div>
+        <h3>소규모 팀</h3>
+        <div class="plan-sub">5~15명 규모의 부티크 법무·컨설팅 펌을 위한 기본 플랜</div>
+        <div class="plan-price">$29<span class="unit">/ user · mo</span></div>
+        <p class="plan-fine">연간 계약 · 월 환산 · VAT 별도</p>
+        <ul class="checklist">
+          <li><div><strong>공유 인박스 · 기본 Ask</strong>Gmail 연동 · 무제한 대화</div></li>
+          <li><div><strong>Drive · Slack 연동</strong>최대 3개 통합</div></li>
+          <li><div><strong>Playbook 10개</strong>기본 템플릿 포함</div></li>
+          <li><div><strong>커뮤니티 지원</strong>영업일 24h 응대</div></li>
+        </ul>
+        <a href="#contact" class="btn btn-arrow">파일럿 신청</a>
+      </div>
+
+      <div class="plan featured">
+        <div class="plan-featured-tag">Recommended</div>
+        <div class="plan-label">— Firm</div>
+        <h3>전문가 집단</h3>
+        <div class="plan-sub">법무법인·경영 컨설팅·회계법인을 위한 표준 플랜. 도입 조직의 82%가 선택.</div>
+        <div class="plan-price">$49<span class="unit">/ user · mo</span></div>
+        <p class="plan-fine">연간 계약 · 월 환산 · VAT 별도</p>
+        <ul class="checklist">
+          <li><div><strong>Starter의 모든 기능</strong>포함</div></li>
+          <li><div><strong>무제한 Playbook · Project</strong>버전 관리 포함</div></li>
+          <li><div><strong>Salesforce · Notion 연동</strong>최대 15개 통합</div></li>
+          <li><div><strong>한국어 법률 · 회계 도메인 모델</strong>판례 인용 자동화</div></li>
+          <li><div><strong>전담 CS 매니저</strong>분기별 리뷰 세션</div></li>
+        </ul>
+        <a href="#contact" class="btn btn-arrow">파일럿 신청</a>
+      </div>
+
+      <div class="plan">
+        <div class="plan-label">— Enterprise</div>
+        <h3>대형 법인 · 재단</h3>
+        <div class="plan-sub">100명 이상 조직, 온프레미스·커스텀 모델이 필요한 경우</div>
+        <div class="plan-price serif" style="font-size: 36px; padding-top: 12px;">맞춤 견적</div>
+        <p class="plan-fine">연간 계약 · 온프레미스 옵션 가능</p>
+        <ul class="checklist">
+          <li><div><strong>Firm의 모든 기능</strong>포함</div></li>
+          <li><div><strong>전용 모델 미세조정</strong>조직 문서 기반</div></li>
+          <li><div><strong>SSO · SCIM · 감사 로그</strong>완전 준수</div></li>
+          <li><div><strong>온프레미스 배포</strong>AWS · GCP · 자체 DC</div></li>
+          <li><div><strong>24/7 파트너 지원</strong>전담 엔지니어</div></li>
+        </ul>
+        <a href="#contact" class="btn btn-arrow btn-ghost">영업팀 문의</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="cta" id="contact">
+  <div class="wrap-sm">
+    <div class="eyebrow-num" style="margin-bottom: 28px;">§ VII · 다음 단계</div>
+    <h2>
+      이메일에 잠든 노하우를,<br/>
+      <em>팀 전체의 플레이북으로.</em>
+    </h2>
+    <p class="lede">
+      30일 파일럿은 별도 비용 없이 진행되며, 귀사의 실제 데이터는 저장되지 않습니다. 파일럿 종료 후 도입하지 않으시더라도 모든 색인은 72시간 내 완전히 삭제됩니다.
+    </p>
+    <div class="cta-actions">
+      <a href="mailto:hello@clara.ai" class="btn btn-lg btn-arrow">30일 파일럿 신청</a>
+      <a href="#features" class="btn btn-lg btn-ghost">제품 데모 예약</a>
+    </div>
+    <div class="cta-fine">No credit card · No data retention · 3-week setup</div>
+  </div>
+</section>
+
+<!-- Colophon / footer -->
+<footer class="colophon">
+  <div class="wrap">
+    <div class="colophon-top">
+      <div>
+        <div class="brand" style="margin-bottom: 12px;">
+          <span class="brand-mark">C</span>
+          <span style="color: var(--ink);">Clara</span>
+        </div>
+        <p style="color: var(--ink-soft); max-width: 36ch; font-family: var(--sans); font-size: 13px; line-height: 1.55; letter-spacing: 0; text-transform: none;">
+          경력자의 판단을, 팀 전체의 자산으로.<br/>
+          Clara · Sprintsolo Inc.
+        </p>
+      </div>
+      <div>
+        <h6>제품</h6>
+        <a href="#features">공유 인박스</a>
+        <a href="#features">Ask · Research</a>
+        <a href="#features">Playbooks</a>
+        <a href="#features">Projects</a>
+      </div>
+      <div>
+        <h6>리소스</h6>
+        <a href="#">도입 가이드</a>
+        <a href="#">보안 백서</a>
+        <a href="#">사례 연구</a>
+        <a href="#">API 문서</a>
+      </div>
+      <div>
+        <h6>회사</h6>
+        <a href="#">소개</a>
+        <a href="#">채용</a>
+        <a href="#">보도자료</a>
+        <a href="mailto:hello@clara.ai">contact</a>
+      </div>
+    </div>
+    <div class="colophon-bottom">
+      <span>© 2026 Sprintsolo Inc. · Seoul · 서울특별시 강남구</span>
+      <span>Set in Source Serif 4 · Instrument Sans · JetBrains Mono</span>
+    </div>
+  </div>
+</footer>
+
+<!-- React -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+
+<script type="text/babel" src="components.jsx"></script>
+
+<script type="text/babel">
+  ReactDOM.createRoot(document.getElementById("pain-carousel-mount")).render(<PainCarousel />);
+  ReactDOM.createRoot(document.getElementById("mock-inbox")).render(<MockInbox />);
+  ReactDOM.createRoot(document.getElementById("mock-ask")).render(<MockAsk />);
+  ReactDOM.createRoot(document.getElementById("mock-project")).render(<MockProject />);
+  ReactDOM.createRoot(document.getElementById("mock-playbook")).render(<MockPlaybook />);
+</script>
+
+</body>
+</html>
